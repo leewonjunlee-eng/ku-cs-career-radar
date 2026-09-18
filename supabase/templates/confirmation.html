@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko">
+  <body>
+    <h2>이메일 주소를 확인해주세요</h2>
+    <p>아래 링크를 열면 가입이 완료되고 로그인됩니다.</p>
+    <p>
+      <a href="{{ .RedirectTo }}/auth/confirm?token_hash={{ .TokenHash }}&amp;type=email&amp;next=/">이메일 확인하기</a>
+    </p>
+  </body>
+</html>

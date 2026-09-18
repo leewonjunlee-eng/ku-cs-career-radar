@@ -1,0 +1,66 @@
+# 통합 테스트 전용 Supabase 스택. 파괴적 테스트는 이 스택에만 실행한다.
+# project_id 와 포트(5632x)는 tests/support/test-db-guard.ts 의 상수와 일치해야 한다 (단위 테스트가 검사).
+# 마이그레이션은 여기 두지 않고 scripts/test-db.ts 가 저장소 루트 supabase/migrations 를 적용한다.
+project_id = "bypp-p0-test"
+
+[api]
+enabled = true
+port = 56321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+auto_expose_new_tables = false
+
+[db]
+port = 56322
+shadow_port = 56320
+major_version = 17
+
+[db.pooler]
+enabled = false
+port = 56329
+
+[db.seed]
+enabled = false
+
+[realtime]
+enabled = false
+
+[studio]
+enabled = false
+port = 56323
+
+[local_smtp]
+enabled = true
+port = 56324
+
+[storage]
+enabled = false
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = [
+  "http://127.0.0.1:3000",
+  "http://localhost:3000"
+]
+jwt_expiry = 3600
+enable_signup = true
+enable_anonymous_sign_ins = false
+
+[auth.email]
+# 전용 lifecycle 테스트에서 공개 signup과 미확인 이메일 로그인을 검증한다.
+enable_signup = true
+enable_confirmations = true
+
+# 테스트 스택도 앱과 같은 SSR TokenHash 콜백을 사용한다.
+[auth.email.template.confirmation]
+subject = "KU CS Career Radar 이메일 확인"
+content_path = "./supabase/templates/confirmation.html"
+
+[edge_runtime]
+enabled = false
+
+[analytics]
+enabled = false
+port = 56327

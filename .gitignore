@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# builds
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# secrets / local env
+.env
+.env.*
+!.env.example
+
+# test / tooling output
+coverage/
+.vitest/
+
+# local handoffs and agent scratch
+.hermes/
+
+# Supabase CLI local state (per-machine, not project config)
+supabase/.branches/
+supabase/.temp/
+supabase/snippets/
+supabase/test-stack/supabase/.branches/
+supabase/test-stack/supabase/.temp/
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# logs
+*.log
+npm-debug.log*
+
+.vercel

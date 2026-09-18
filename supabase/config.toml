@@ -1,0 +1,73 @@
+# 로컬 개발용 Supabase 스택 (앱이 사용). 통합 테스트 스택은 supabase/test-stack 에 별도로 둔다.
+# 누락된 키는 Supabase CLI 2.117.0 기본값을 사용한다. 포트는 기본(5432x)과 겹치지 않게 5532x 를 쓴다.
+project_id = "bypp-p0-dev"
+
+[api]
+enabled = true
+port = 55321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+# 새 테이블·함수가 Data API 역할에 자동 노출되지 않게 한다. 권한은 마이그레이션의 명시적 GRANT 만 사용한다.
+auto_expose_new_tables = false
+
+[db]
+port = 55322
+shadow_port = 55320
+major_version = 17
+
+[db.pooler]
+enabled = false
+port = 55329
+
+[db.migrations]
+enabled = true
+
+[db.seed]
+# 검증된 초기 콘텐츠가 확정되기 전까지 seed 를 적용하지 않는다. (content/initial-content.json 없음)
+enabled = false
+
+[realtime]
+enabled = false
+
+[studio]
+enabled = true
+port = 55323
+api_url = "http://127.0.0.1"
+
+[local_smtp]
+enabled = true
+port = 55324
+
+[storage]
+enabled = false
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = [
+  "http://127.0.0.1:3000",
+  "http://localhost:3000"
+]
+jwt_expiry = 3600
+enable_signup = true
+enable_anonymous_sign_ins = false
+minimum_password_length = 8
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+
+# The SSR confirmation handler exchanges TokenHash for cookie-backed session
+# tokens. `emailRedirectTo` is the configured app origin, so the template
+# itself owns the fixed /auth/confirm callback path.
+[auth.email.template.confirmation]
+subject = "KU CS Career Radar 이메일 확인"
+content_path = "./supabase/templates/confirmation.html"
+
+[edge_runtime]
+enabled = false
+
+[analytics]
+enabled = false
+port = 55327

@@ -1,0 +1,18 @@
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { TeamManager } from './team-manager';
+
+type Activity = { bookmarks: { opportunityId: string; title: string; organization: string }[]; teams: { id: string; opportunityId: string; name: string; status: string; isOwner?: boolean }[]; teamRequests: { id: string; teamId: string; opportunityId: string; teamName: string; status: string }[] };
+
+export function MyActivity() {
+  const [activity, setActivity] = useState<Activity | null>(null); const [error, setError] = useState<string | null>(null); const [contacts, setContacts] = useState<Record<string, string>>({});
+  useEffect(() => { void (async () => { try { const response = await fetch('/api/me', { cache: 'no-store' }); if (!response.ok) throw new Error(); setActivity(await response.json() as Activity); } catch { setError('Your activity could not be loaded.'); } })(); }, []);
+  if (error) return <p role="alert" className="text-sm text-red-700">{error}</p>;
+  if (!activity) return <p className="text-sm text-slate-500">Loading activity...</p>;
+  async function reload() { setActivity(null); const response = await fetch('/api/me', { cache: 'no-store' }); if (!response.ok) throw new Error(); setActivity(await response.json() as Activity); }
+  async function cancel(teamId: string, requestId: string) { try { const response = await fetch(`/api/teams/${teamId}/requests/${requestId}`, { method: 'DELETE' }); if (!response.ok) throw new Error(); await reload(); } catch { setError('Request could not be cancelled.'); } }
+  async function contact(teamId: string) { try { const response = await fetch(`/api/teams/${teamId}/contact`, { cache: 'no-store' }); if (!response.ok) throw new Error(); const data = await response.json() as { contactLink: string }; setContacts((current) => ({ ...current, [teamId]: data.contactLink })); } catch { setError('Team contact could not be loaded.'); } }
+  return <div className="space-y-5"><div className="grid gap-5 md:grid-cols-3"><section><h2 className="font-semibold">Bookmarks</h2>{activity.bookmarks.length ? <ul className="mt-2 space-y-1 text-sm">{activity.bookmarks.map((item) => <li key={item.opportunityId}><Link className="underline" href={`/opportunities/${item.opportunityId}`}>{item.title}</Link><span className="text-slate-500"> · {item.organization}</span></li>)}</ul> : <p className="mt-2 text-sm text-slate-500">No bookmarks yet.</p>}</section><section><h2 className="font-semibold">My teams</h2>{activity.teams.length ? <ul className="mt-2 space-y-2 text-sm">{activity.teams.map((item) => <li key={item.id}><Link className="underline" href={`/opportunities/${item.opportunityId}`}>{item.name}</Link><span className="text-slate-500"> · {item.status}</span><button onClick={() => void contact(item.id)} className="ml-2 underline">Contact</button>{contacts[item.id] && <a className="ml-2 underline" target="_blank" rel="noreferrer" href={contacts[item.id]}>Open link</a>}</li>)}</ul> : <p className="mt-2 text-sm text-slate-500">You are not on a team yet.</p>}</section><section><h2 className="font-semibold">Join requests</h2>{activity.teamRequests.length ? <ul className="mt-2 space-y-2 text-sm">{activity.teamRequests.map((item) => <li key={item.id}><Link className="underline" href={`/opportunities/${item.opportunityId}`}>{item.teamName}</Link><span className="text-slate-500"> · {item.status}</span>{item.status === 'pending' && <button onClick={() => void cancel(item.teamId, item.id)} className="ml-2 underline">Cancel</button>}</li>)}</ul> : <p className="mt-2 text-sm text-slate-500">No join requests.</p>}</section></div><TeamManager teams={activity.teams} reload={reload} /></div>;
+}
