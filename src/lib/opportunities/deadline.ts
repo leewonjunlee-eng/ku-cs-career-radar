@@ -149,3 +149,15 @@ export function compareByDeadline(
 export function sortByDeadline<T extends OpportunityDeadline>(opportunities: readonly T[], now = new Date()): T[] {
   return [...opportunities].sort((left, right) => compareByDeadline(left, right, now));
 }
+
+/** 목록 정렬: 고려대 원문 공고를 먼저, 각 그룹 안에서는 마감일 순. */
+export function sortKoreaUniversityFirst<T extends OpportunityDeadline & { is_korea_university_source: boolean | null }>(
+  opportunities: readonly T[],
+  now = new Date(),
+): T[] {
+  return [...opportunities].sort(
+    (left, right) =>
+      Number(Boolean(right.is_korea_university_source)) - Number(Boolean(left.is_korea_university_source))
+      || compareByDeadline(left, right, now),
+  );
+}

@@ -3,7 +3,7 @@ import 'server-only';
 import { HttpError } from '@/lib/http/security';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type { Tables } from '@/types/database';
-import { classifyDeadline, isDeadlineThisWeek, kstWeekBounds, sortByDeadline, type DeadlineClassification } from './deadline';
+import { classifyDeadline, isDeadlineThisWeek, kstWeekBounds, sortKoreaUniversityFirst, type DeadlineClassification } from './deadline';
 import {
   escapeIlikePattern,
   quotePostgrestValue,
@@ -76,6 +76,8 @@ export async function listPublicOpportunities(
     .select(publicSelect, { count: 'exact' })
     // SQL sorting performs pagination before mapping. Fixed upcoming deadlines
     // precede rolling/TBD; id keeps ties stable.
+    // 고려대 원문 공고를 먼저 보여준다. 그 안에서는 마감일 순.
+    .order('is_korea_university_source', { ascending: false })
     .order('deadline', { ascending: true, nullsFirst: false })
     .order('id', { ascending: true })
     .range(start, end);
@@ -120,7 +122,7 @@ export async function listPublicOpportunities(
   // re-sort with the documented rule (open fixed first, then rolling/tbd)
   // before mapping. This is exact within a page; a row that should move
   // across a page boundary under includeExpired=true is a known gap.
-  const rows = sortByDeadline((data ?? []) as OpportunityRow[], now);
+  const rows = sortKoreaUniversityFirst((data ?? []) as OpportunityRow[], now);
   return {
     items: rows.map((row) => mapPublicOpportunity(row, now)),
     page: pagination.page,

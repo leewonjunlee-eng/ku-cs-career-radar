@@ -5,6 +5,7 @@ import {
   formatSeoulDateTime,
   isDeadlineThisWeek,
   sortByDeadline,
+  sortKoreaUniversityFirst,
   type OpportunityDeadline,
 } from '@/lib/opportunities/deadline';
 import { escapeIlikePattern, parseOpportunityPagination, parseOpportunityQuery } from '@/lib/opportunities/query';
@@ -58,6 +59,24 @@ describe('opportunity deadlines', () => {
     expect(isDeadlineThisWeek(fixed({ deadline: '2026-09-21T15:00:00.000Z', deadline_precision: 'date' }), now)).toBe(true);
     expect(isDeadlineThisWeek(fixed({ deadline: '2026-09-28T15:00:00.000Z', deadline_precision: 'date' }), now)).toBe(false);
     expect(isDeadlineThisWeek(fixed({ deadline: '2026-09-20T14:00:00.000Z' }), now)).toBe(false);
+  });
+});
+
+describe('listing order', () => {
+  it('puts Korea University sources first, each group ordered by deadline', () => {
+    const now = new Date('2026-09-19T00:00:00Z');
+    const row = (id: string, ku: boolean, deadline: string | null) => ({
+      ...fixed({ id, deadline, deadline_type: deadline ? 'fixed' : 'rolling', deadline_precision: deadline ? 'time' : null }),
+      is_korea_university_source: ku,
+    });
+    const sorted = sortKoreaUniversityFirst([
+      row('ext-soon', false, '2026-09-20T00:00:00Z'),
+      row('ku-late', true, '2026-10-30T00:00:00Z'),
+      row('ku-rolling', true, null),
+      row('ku-soon', true, '2026-09-25T00:00:00Z'),
+      row('ext-late', false, '2026-11-01T00:00:00Z'),
+    ], now);
+    expect(sorted.map((r) => r.id)).toEqual(['ku-soon', 'ku-late', 'ku-rolling', 'ext-soon', 'ext-late']);
   });
 });
 
