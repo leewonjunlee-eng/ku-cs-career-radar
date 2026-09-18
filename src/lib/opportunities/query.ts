@@ -19,6 +19,21 @@ export const opportunityCategoryLabels: Record<Enums<'opp_category'>, string> = 
   extracurricular: '대외활동',
 };
 
+export const opportunitySearchTags = [
+  'AI',
+  '데이터',
+  '백엔드',
+  '프론트엔드',
+  '보안',
+  '클라우드',
+  '인프라',
+  '네트워크',
+  '게임',
+  '로봇',
+  '연구',
+  '창업',
+] as const;
+
 /** 상단 메뉴 탭. 공모전 탭은 해커톤까지 함께 보여준다. */
 export const opportunityTabs: { label: string; categories: Enums<'opp_category'>[] }[] = [
   { label: '인턴', categories: ['internship'] },
@@ -34,6 +49,9 @@ export function opportunityTabHref(categories: readonly string[]) {
 
 export type OpportunityQuery = {
   keyword?: string;
+  title?: string;
+  organization?: string;
+  description?: string;
   categories: Enums<'opp_category'>[];
   tags: string[];
   includeExpired: boolean;
@@ -77,6 +95,9 @@ export function quotePostgrestValue(value: string): string {
  */
 export function parseOpportunityQuery(searchParams: URLSearchParams): OpportunityQuery {
   const keyword = searchParams.get('q')?.trim();
+  const title = searchParams.get('title')?.trim();
+  const organization = searchParams.get('organization')?.trim();
+  const description = searchParams.get('description')?.trim();
   const categories = [...new Set(searchParams.getAll('category').filter(Boolean))];
   const includeExpired = searchParams.get('includeExpired');
   const deadline = searchParams.get('deadline');
@@ -84,6 +105,11 @@ export function parseOpportunityQuery(searchParams: URLSearchParams): Opportunit
 
   if (keyword && Array.from(keyword).length > 200) {
     throw new ValidationError('검색어는 200자 이하로 입력해 주세요.', 'q');
+  }
+  for (const [field, value] of Object.entries({ title, organization, description })) {
+    if (value && Array.from(value).length > 200) {
+      throw new ValidationError(`${field} 검색어는 200자 이하로 입력해 주세요.`, field);
+    }
   }
   if (categories.some((category) => !opportunityCategories.includes(category as Enums<'opp_category'>))) {
     throw new ValidationError('알 수 없는 공고 분야입니다.', 'category');
@@ -100,6 +126,9 @@ export function parseOpportunityQuery(searchParams: URLSearchParams): Opportunit
 
   return {
     ...(keyword ? { keyword } : {}),
+    ...(title ? { title } : {}),
+    ...(organization ? { organization } : {}),
+    ...(description ? { description } : {}),
     categories: categories as Enums<'opp_category'>[],
     tags,
     includeExpired: includeExpired === TRUE,

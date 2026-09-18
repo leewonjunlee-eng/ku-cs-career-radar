@@ -2,6 +2,7 @@ import { OpportunityCard } from '@/components/opportunity-card';
 import { listPublicOpportunities, listThisWeekOpportunities } from '@/lib/opportunities/public-data';
 import {
   opportunityTabs,
+  opportunitySearchTags,
   parseOpportunityPagination,
   parseOpportunityQuery,
 } from '@/lib/opportunities/query';
@@ -23,13 +24,13 @@ export default async function HomePage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const rawParams = toSearchParams(await searchParams);
-  const q = rawParams.get('q') ?? '';
+  const title = rawParams.get('title') ?? '';
+  const organization = rawParams.get('organization') ?? '';
+  const description = rawParams.get('description') ?? '';
   const selectedCategories = rawParams.getAll('category');
   const selectedKey = [...selectedCategories].sort().join(',');
   const tab = opportunityTabs.find((t) => [...t.categories].sort().join(',') === selectedKey);
-  const selectedDeadline = rawParams.get('deadline') ?? '';
-  const selectedTag = rawParams.get('tag') ?? '';
-  const includeExpired = rawParams.get('includeExpired') === 'true';
+  const selectedTags = rawParams.getAll('tag');
 
   const thisWeek = await listThisWeekOpportunities();
 
@@ -89,30 +90,37 @@ export default async function HomePage({
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">{tab ? `${tab.label} 공고` : '기회 탐색'}</h2>
 
-        <form className="flex flex-wrap gap-2" role="search">
-          <input
-            type="search"
-            name="q"
-            defaultValue={q}
-            placeholder="제목, 기관, 설명 검색"
-            className="min-w-56 flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm"
-          />
+        <form className="space-y-3" role="search">
+          <div className="grid gap-2 sm:grid-cols-3">
+            <label className="text-sm text-slate-700">
+              제목
+              <input name="title" defaultValue={title} placeholder="공고 제목" className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+            </label>
+            <label className="text-sm text-slate-700">
+              기관
+              <input name="organization" defaultValue={organization} placeholder="기관 또는 회사" className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+            </label>
+            <label className="text-sm text-slate-700">
+              설명
+              <input name="description" defaultValue={description} placeholder="설명에 포함된 내용" className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+            </label>
+          </div>
           {/* 카테고리는 상단 탭이 고른다. 검색해도 현재 탭을 유지한다. */}
           {selectedCategories.map((category) => (
             <input key={category} type="hidden" name="category" value={category} />
           ))}
-          <input name="tag" defaultValue={selectedTag} placeholder="태그 (예: AI)" className="min-w-28 rounded-md border border-slate-300 px-3 py-2 text-sm" />
-          <select name="deadline" defaultValue={selectedDeadline} className="rounded-md border border-slate-300 px-3 py-2 text-sm">
-            <option value="">마감 전체</option>
-            <option value="this-week">이번 주 마감</option>
-            <option value="fixed">마감일 확정</option>
-            <option value="rolling">모집시 마감</option>
-            <option value="tbd">마감일 미정</option>
-          </select>
-          <label className="flex items-center gap-1 text-sm text-slate-600"><input type="checkbox" name="includeExpired" value="true" defaultChecked={includeExpired} /> 마감된 공고 포함</label>
-          <button type="submit" className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100">
-            검색
-          </button>
+          <fieldset>
+            <legend className="text-sm font-medium text-slate-700">태그</legend>
+            <div className="mt-1 flex flex-wrap gap-2">
+              {opportunitySearchTags.map((tag) => (
+                <label key={tag} className="cursor-pointer rounded-full border border-slate-300 px-3 py-1.5 text-sm text-slate-700 has-[:checked]:border-primary has-[:checked]:bg-sky-50 has-[:checked]:font-medium has-[:checked]:text-primary">
+                  <input type="checkbox" name="tag" value={tag} defaultChecked={selectedTags.includes(tag)} className="sr-only" />
+                  {tag}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <button type="submit" className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100">검색</button>
         </form>
 
         <p className="text-sm text-slate-600">
