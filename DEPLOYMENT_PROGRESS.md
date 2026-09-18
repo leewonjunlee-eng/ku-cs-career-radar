@@ -16,8 +16,24 @@
 - `/me` 응답 `Cache-Control: private, no-store`
 - 배포별 URL(`bypp-*-wonjun1.vercel.app`)은 Vercel Deployment Protection으로 302 → 공개 주소는 `bypp-one.vercel.app`만 사용
 
-### 아직 확인하지 않은 것
-- 실제 메일 가입 → 확인 → 로그인, 팀 생성·요청·수락·연락처 권한, 북마크/프로필 격리, Origin 거부 (docs/deployment.md 배포 후 체크리스트)
+### 배포 후 검증 (2026-09-19, 상세: docs/stage8-10-verification.md 재검증 절)
+- 로컬 전체: `tsc --noEmit --incremental false`, 단위 71, 통합 123(실제 PostgreSQL), `next build` 통과
+- 로컬 HTTP E2E(계정 4개, next dev + 로컬 Supabase): 팀 생성→요청→수락→연락처, 거절·취소·재요청 불가,
+  정원 초과·종료·마감 공고 거부, 연락처/요청 목록 권한 격리, 공개 팀 응답에 연락처·식별자 없음,
+  북마크·프로필 저장/재조회 및 사용자 간 격리, Origin 누락·외부 Origin 403 — 40/41 통과
+  (나머지 1건은 dev 서버가 페이지 Cache-Control을 덮어쓰는 차이. 운영 `/me`는 `private, no-store` 확인)
+- 로컬 메일 가입(Mailpit): 가입 → 확인 메일 → `/auth/confirm` → 세션 쿠키 → `/api/me` 200, 재사용·위조 토큰 거부,
+  로그아웃 시 쿠키 삭제 및 기존 토큰 401, 외부 Origin 로그아웃 403
+- 운영(조회·거부 요청만): 공개 페이지/API 200, 비로그인 개인 API 401, 외부 Origin 변경 요청 403, 위조 확인 링크 거부
+
+### 검증 중 수정
+- 이번 주 필터를 페이지네이션 전에 SQL로 적용(`kstWeekBounds`), total과 목록 일치. 경계 통합 테스트 추가
+- 마감된 공고에서는 팀 만들기·참여 요청 버튼을 숨김
+- 내 활동의 팀 관리에 수정 폼 추가: 이름·소개·역할·스킬·연락 링크(비우면 유지). 단위 테스트 + 로컬 HTTP로 저장·공개 반영 확인
+
+### 남은 미검증·미구현·개선점
+- 운영 실제 메일 가입: 무료 플랜 기본 메일러라 사람이 실제 받은편지함으로 확인 필요
+- 모바일(390px): 홈·후기·로그인·가입·내 활동 가로 넘침 없음 확인. 단 상단 메뉴가 3줄(149px)로 접히는 고정 헤더라 개선 여지
 
 ### 알려진 제한
 - 무료 플랜 + 기본 메일러라 확인 메일 템플릿 변경 불가(`supabase/templates/confirmation.html` 미적용).

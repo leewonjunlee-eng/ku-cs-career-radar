@@ -1,6 +1,6 @@
 import type pg from 'pg';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { classifyDeadline } from '@/lib/opportunities/deadline';
+import { classifyDeadline, isDeadlineThisWeek, kstWeekBounds } from '@/lib/opportunities/deadline';
 import { escapeIlikePattern, quotePostgrestValue } from '@/lib/opportunities/query';
 import { connectDb, rest, testDb, truncateAppData } from './helpers';
 
@@ -149,6 +149,46 @@ describe('공고 조회 (실제 DB)', () => {
     const starResult = await rest(`opportunities?select=id&or=(${starOr})`, service);
     expect(starResult.status).toBe(200);
     expect((starResult.body as { id: string }[]).length).toBeGreaterThan(1);
+  });
+
+  it('이번 주 필터를 페이지 전에 SQL로 적용하며 경계는 isDeadlineThisWeek와 같다', async () => {
+    // 2026-09-16(수) 12:00 KST. 이번 주 = 09-14(월) 00:00 ~ 09-21(월) 00:00 KST.
+    const now = new Date('2026-09-16T03:00:00Z');
+    const { start, end } = kstWeekBounds(now);
+    expect({ start, end }).toEqual({ start: '2026-09-13T15:00:00.000Z', end: '2026-09-20T15:00:00.000Z' });
+
+    const ms = (iso: string, delta: number) => new Date(Date.parse(iso) + delta).toISOString();
+    const cases: [string, 'time' | 'date', string][] = [
+      ['시각 마감 주 끝 직전', 'time', ms(end, -1)],
+      ['시각 마감 주 끝', 'time', end],
+      ['날짜 마감 일요일', 'date', end],
+      ['날짜 마감 다음 월요일', 'date', ms(end, 86_400_000)],
+      ['시각 마감 now 직후', 'time', ms(now.toISOString(), 60_000)],
+      ['시각 마감 now 직전', 'time', ms(now.toISOString(), -60_000)],
+    ];
+    const ids = new Map<string, string>();
+    for (const [title, precision, deadline] of cases) {
+      ids.set(await insertOpportunity({
+        title, tags: ['week-test'], deadline_type: 'fixed', deadline_precision: precision, deadline,
+      }), title);
+    }
+
+    const or = `and(deadline_precision.eq.time,deadline.gte.${start},deadline.lt.${end}),` +
+      `and(deadline_precision.eq.date,deadline.gt.${start},deadline.lte.${end})`;
+    const result = await rest(
+      `opportunities?select=id,deadline,deadline_type,deadline_precision&tags=cs.{week-test}` +
+        `&deadline_type=eq.fixed&deadline=gt.${now.toISOString()}&or=(${or})`,
+      service,
+    );
+    expect(result.status).toBe(200);
+    const got = (result.body as { id: string }[]).map((r) => ids.get(r.id)).sort();
+
+    const { rows } = await db.query(
+      `select id, deadline, deadline_type, deadline_precision from public.opportunities where tags @> array['week-test']`,
+    );
+    const expected = rows.filter((r) => isDeadlineThisWeek(r, now)).map((r) => ids.get(r.id)).sort();
+    expect(got).toEqual(expected);
+    expect(got).toEqual(['날짜 마감 일요일', '시각 마감 now 직후', '시각 마감 주 끝 직전'].sort());
   });
 
   it('카테고리로 필터링한다', async () => {

@@ -102,7 +102,7 @@ export default async function OpportunityDetailPage({
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">팀원 모집</h2>
-        <TeamSection opportunityId={id} signedIn={Boolean(userData.user)} canRecruit={opportunity.category === 'contest' || opportunity.category === 'hackathon'} />
+        <TeamSection opportunityId={id} signedIn={Boolean(userData.user)} canRecruit={opportunity.category === 'contest' || opportunity.category === 'hackathon'} closed={opportunity.deadline.kind === 'expired'} />
       </section>
 
       <Link href="/" className="inline-block text-sm text-slate-600 underline">

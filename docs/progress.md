@@ -15,9 +15,9 @@ https://bypp-one.vercel.app (no custom SMTP provider yet).
 | P0-5 | Complete | Server-only team transaction RPCs for create, request, accept, reject, cancel, and close. Browser team UI/API is P1-8 work. |
 | P1-6 | Complete | Public opportunity list/detail data access, search/filter parsing, deadline helpers, and pages. |
 | P1-7 | Implemented and locally verified | Public and personal review APIs, review pages/forms/cards, anonymized/demo handling, validation, ownership boundaries, and Stage 7 remediation. |
-| P1-8 | Implemented, unverified | Team list/create/request/decision/cancel/close APIs and UI, private contact endpoint, and owner request management. |
-| P2-9 | Implemented, unverified | Bookmarks, personal activity, profile display-name editing, recruitment-copy/contact editing API, and tag/category/deadline/expired filters. |
-| 10: release/deploy | Deployed, smoke-checked only | Vercel production at https://bypp-one.vercel.app on hosted Supabase with migrations 0001-0010 and reviewed seed. Post-deploy user-flow checklist not yet executed. |
+| P1-8 | Implemented and HTTP-verified locally | Team list/create/request/decision/cancel/close APIs and UI, private contact endpoint, and owner request management. |
+| P2-9 | Implemented and HTTP-verified locally | Bookmarks, personal activity, profile display-name editing, recruitment-copy/contact editing API, and tag/category/deadline/expired filters. |
+| 10: release/deploy | Deployed and verified (see DEPLOYMENT_PROGRESS.md) | Vercel production at https://bypp-one.vercel.app on hosted Supabase with migrations 0001-0010 and reviewed seed. User flows verified locally over HTTP; production checked with read-only and rejected requests. |
 
 ## Hackathon deployment snapshot
 

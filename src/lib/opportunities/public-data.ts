@@ -3,7 +3,7 @@ import 'server-only';
 import { HttpError } from '@/lib/http/security';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type { Tables } from '@/types/database';
-import { classifyDeadline, isDeadlineThisWeek, sortByDeadline, type DeadlineClassification } from './deadline';
+import { classifyDeadline, isDeadlineThisWeek, kstWeekBounds, sortByDeadline, type DeadlineClassification } from './deadline';
 import {
   escapeIlikePattern,
   quotePostgrestValue,
@@ -96,6 +96,19 @@ export async function listPublicOpportunities(
   if (filters.deadline === 'fixed') query = query.eq('deadline_type', 'fixed');
   if (filters.deadline === 'rolling') query = query.eq('deadline_type', 'rolling');
   if (filters.deadline === 'tbd') query = query.eq('deadline_type', 'tbd');
+  if (filters.deadline === 'this-week') {
+    // Same rule as isDeadlineThisWeek, applied before pagination so the page
+    // and total agree. A date-precision deadline is stored as the next KST
+    // day's start, so its window is (start, end] instead of [start, end).
+    const { start, end } = kstWeekBounds(now);
+    query = query
+      .eq('deadline_type', 'fixed')
+      .gt('deadline', now.toISOString())
+      .or(
+        `and(deadline_precision.eq.time,deadline.gte.${start},deadline.lt.${end}),` +
+          `and(deadline_precision.eq.date,deadline.gt.${start},deadline.lte.${end})`,
+      );
+  }
   if (filters.tags.length > 0) query = query.contains('tags', filters.tags);
 
   const { data, error, count } = await query;
@@ -107,8 +120,7 @@ export async function listPublicOpportunities(
   // re-sort with the documented rule (open fixed first, then rolling/tbd)
   // before mapping. This is exact within a page; a row that should move
   // across a page boundary under includeExpired=true is a known gap.
-  let rows = sortByDeadline((data ?? []) as OpportunityRow[], now);
-  if (filters.deadline === 'this-week') rows = rows.filter((row) => isDeadlineThisWeek(row, now));
+  const rows = sortByDeadline((data ?? []) as OpportunityRow[], now);
   return {
     items: rows.map((row) => mapPublicOpportunity(row, now)),
     page: pagination.page,

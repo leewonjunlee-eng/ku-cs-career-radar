@@ -107,6 +107,15 @@ export function classifyDeadline(deadline: OpportunityDeadline, now = new Date()
   };
 }
 
+/** This KST week's Monday 00:00 and next Monday 00:00 as UTC ISO instants, for SQL filters. */
+export function kstWeekBounds(now = new Date()): { start: string; end: string } {
+  const today = seoulDateKey(now);
+  const dayOfWeek = new Date(`${today}T00:00:00.000Z`).getUTCDay();
+  const monday = addCalendarDays(today, dayOfWeek === 0 ? -6 : 1 - dayOfWeek);
+  const at = (key: string) => new Date(`${key}T00:00:00+09:00`).toISOString();
+  return { start: at(monday), end: at(addCalendarDays(monday, 7)) };
+}
+
 /** Monday 00:00 KST through (but excluding) the following Monday. */
 export function isDeadlineThisWeek(deadline: OpportunityDeadline, now = new Date()): boolean {
   if (deadline.deadline_type !== 'fixed' || isExpired(deadline, now)) return false;
