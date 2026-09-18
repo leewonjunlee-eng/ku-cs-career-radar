@@ -6,7 +6,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { createBrowserClient } from '@/lib/supabase/browser';
 import { opportunityTabHref, opportunityTabs } from '@/lib/opportunities/query';
 
-const TABS = [{ label: '홈', categories: [] as string[] }, ...opportunityTabs];
+const TABS = [{ label: '홈', categories: [] as string[] }, ...opportunityTabs.filter((tab) => !tab.categories.includes('lab'))];
 const SECONDARY = [
   { href: '/reviews', label: '후기 모아보기' },
   { href: '/me', label: '내 활동' },
@@ -35,6 +35,21 @@ function TabsWithParams() {
   const selected = params.getAll('category').sort().join(',');
   const match = pathname === '/' ? TABS.find((tab) => [...tab.categories].sort().join(',') === selected) : undefined;
   return <Tabs current={match?.label ?? null} />;
+}
+
+function LabLinks() {
+  const pathname = usePathname();
+  const params = useSearchParams();
+  const labNoticesActive = pathname === '/' && params.getAll('category').length === 1 && params.get('category') === 'lab';
+  return (
+    <li className="flex flex-col gap-0.5 border-l border-slate-200 pl-2" aria-label="연구실">
+      <span className="px-3 text-xs font-semibold text-slate-500">연구실</span>
+      <div className="flex flex-col">
+        <Link href="/?category=lab" aria-current={labNoticesActive ? 'page' : undefined} className={itemClass(labNoticesActive)}>연구실 공고</Link>
+        <Link href="/labs" aria-current={pathname === '/labs' ? 'page' : undefined} className={itemClass(pathname === '/labs')}>연구실 정보</Link>
+      </div>
+    </li>
+  );
 }
 
 export function SiteNav() {
@@ -82,6 +97,7 @@ export function SiteNav() {
         <Suspense fallback={<Tabs current={null} />}>
           <TabsWithParams />
         </Suspense>
+        <Suspense fallback={null}><LabLinks /></Suspense>
         {SECONDARY.map((item, i) => (
           <li key={item.href} className={i === 0 ? 'ml-auto' : undefined}>
             <Link href={item.href} aria-current={item.href === pathname ? 'page' : undefined} className={itemClass(item.href === pathname)}>

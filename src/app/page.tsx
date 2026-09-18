@@ -7,6 +7,8 @@ import {
 } from '@/lib/opportunities/query';
 import { ValidationError } from '@/lib/validation/common';
 import { UnavailableNotice } from '@/components/unavailable-notice';
+import { LabDirectory } from '@/components/lab-directory';
+import { getLabDirectory } from '@/lib/labs/data';
 
 function toSearchParams(raw: Record<string, string | string[] | undefined>): URLSearchParams {
   const params = new URLSearchParams();
@@ -32,6 +34,8 @@ export default async function HomePage({
   const includeExpired = rawParams.get('includeExpired') === 'true';
 
   const thisWeek = await listThisWeekOpportunities();
+  const showLabDirectory = selectedCategories.length === 1 && selectedCategories[0] === 'lab';
+  const labDirectory = showLabDirectory ? await getLabDirectory() : null;
 
   // 잘못된 검색 조건(사용자 입력)만 여기서 안내로 흡수한다. DB/네트워크 장애 같은
   // 그 외 오류는 그대로 던져서 error.tsx가 실패 상태로 처리하게 둔다.
@@ -146,6 +150,8 @@ export default async function HomePage({
           </nav>
         )}
       </section>
+
+      {labDirectory && <LabDirectory directory={labDirectory} />}
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">경험 후기</h2>

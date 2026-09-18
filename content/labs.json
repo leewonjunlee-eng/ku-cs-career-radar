@@ -1,0 +1,2368 @@
+{
+  "checkedAt": "2026-09-19",
+  "scope": "고려대학교 서울캠퍼스",
+  "sources": [
+    {
+      "id": "cs",
+      "label": "컴퓨터학과 연구실 소개",
+      "url": "https://info.korea.ac.kr/info/research/labintro_cs.do"
+    },
+    {
+      "id": "ai",
+      "label": "인공지능학과 연구실 소개",
+      "url": "https://info.korea.ac.kr/info/research/labintro_AI.do"
+    },
+    {
+      "id": "brain",
+      "label": "뇌공학과 연구실 소개",
+      "url": "https://info.korea.ac.kr/info/research/labintro_brain.do"
+    },
+    {
+      "id": "security",
+      "label": "정보보호대학원 연구실",
+      "url": "https://security.korea.ac.kr/bbs/page.php?hid=m04_02_01_01"
+    },
+    {
+      "id": "ee",
+      "label": "전기전자공학부 연구실",
+      "url": "https://ee.korea.ac.kr/research/laboratory.html"
+    },
+    {
+      "id": "ie",
+      "label": "산업경영공학부 연구실",
+      "url": "https://ie.korea.ac.kr/research/labs"
+    },
+    {
+      "id": "bio",
+      "label": "바이오의공학부 연구실",
+      "url": "https://bmeng.korea.ac.kr/faculty/lab.html"
+    },
+    {
+      "id": "me",
+      "label": "기계공학부 연구실",
+      "url": "https://me.korea.ac.kr/research/laboratory.html"
+    }
+  ],
+  "labs": [
+    {
+      "id": "intelligent-data-science-and-applications-lab",
+      "name": "Intelligent Data Science and Applications Lab (데이터과학 및 응용 연구실)",
+      "professors": [
+        "강성구"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "인공지능·기계학습"
+      ],
+      "website": "https://idea.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "data-mining-and-information-systems-lab",
+      "name": "Data Mining and Information Systems Lab (데이터마이닝 및 인포메이션시스템 랩)",
+      "professors": [
+        "강재우"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "소프트웨어·시스템"
+      ],
+      "website": "https://dmis.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "iiixr-intelligent-immersive-interactive-extended-reality-lab",
+      "name": "IIIXR (Intelligent Immersive Interactive Extended Reality) Lab",
+      "professors": [
+        "강형엽"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "http://iiixr.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "intelligent-computing-and-networking-lab-icnl",
+      "name": "Intelligent Computing and Networking Lab. (ICNL 지능 컴퓨팅 및 네트워킹 연구실)",
+      "professors": [
+        "곽정호"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "네트워크",
+        "인공지능·기계학습"
+      ],
+      "website": "https://icnl.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "computer-system-architecture-lab",
+      "name": "Computer System Architecture Lab.(컴퓨터 시스템 구조 연구실)",
+      "professors": [
+        "구건재"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템"
+      ],
+      "website": "http://csarch.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "palm-program-analysis-learning-and-mining-group",
+      "name": "PALM (Program Analysis, Learning, and Mining) Group",
+      "professors": [
+        "김동선"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "소프트웨어·시스템",
+        "인공지능·기계학습"
+      ],
+      "website": "https://darkrsw.github.io/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "sera-lab-systems-for-extended-reality-and-ai-lab",
+      "name": "SERA Lab. (Systems for Extended Reality and AI Lab.)",
+      "professors": [
+        "김세연"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://seralab.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "intelligent-computer-architecture-and-systems-lab",
+      "name": "지능형 컴퓨터 구조 및 시스템 연구실 (Intelligent Computer Architecture and Systems Lab)",
+      "professors": [
+        "김영근"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템",
+        "인공지능·기계학습"
+      ],
+      "website": "https://casl.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "dxp-digital-experience-lab",
+      "name": "디지털체험연구실 (DXP, Digital eXPerience Lab)",
+      "professors": [
+        "김정현"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "https://dxp.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "vision-and-ai-lab",
+      "name": "비전 및 인공지능 연구실 (Vision and AI lab)",
+      "professors": [
+        "김진규"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "컴퓨터 비전",
+        "인공지능·기계학습"
+      ],
+      "website": null,
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "intelligence-and-informatics-lab",
+      "name": "지능인포매틱스 연구실(Intelligence aNd Informatics Lab)",
+      "professors": [
+        "김현철"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "http://ini.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-12",
+      "name": "무선데이터통신 연구실",
+      "professors": [
+        "김효곤"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "네트워크"
+      ],
+      "website": "http://widen.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "visual-computing-and-ai-lab",
+      "name": "Visual Computing and AI Lab (비주얼 컴퓨팅 및 인공지능 연구실)",
+      "professors": [
+        "문경식"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "컴퓨터 비전",
+        "인공지능·기계학습"
+      ],
+      "website": "https://www.vcai.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-14",
+      "name": "고속통신연구실",
+      "professors": [
+        "민성기"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "네트워크"
+      ],
+      "website": "http://hcl.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-15",
+      "name": "하이퍼미디어연구실",
+      "professors": [
+        "박성빈"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": null,
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "generative-intelligence-lab",
+      "name": "Generative Intelligence Lab (생성형 지능시스템 연구실)",
+      "professors": [
+        "박성우"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템",
+        "인공지능·기계학습"
+      ],
+      "website": "http://www.gi.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "database-systems-lab",
+      "name": "Database Systems Lab (데이터베이스 시스템 연구실)",
+      "professors": [
+        "박종혁"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "소프트웨어·시스템"
+      ],
+      "website": "http://dbs.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "programming-language-research-group",
+      "name": "프로그래밍 언어 연구실 (Programming Language Research Group)",
+      "professors": [
+        "박지혁"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "자연어·음성",
+        "소프트웨어·시스템"
+      ],
+      "website": "https://plrg.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "augmented-experience-and-interactive-systems-laboratory",
+      "name": "Augmented Experience and Interactive Systems Laboratory (증강경험 및 인터랙티브시스템 연구실)",
+      "professors": [
+        "박채용"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템"
+      ],
+      "website": "https://axis.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "system-intelligence-group",
+      "name": "지능시스템 연구실 (System Intelligence Group)",
+      "professors": [
+        "백승준"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템",
+        "인공지능·기계학습"
+      ],
+      "website": "http://sing.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-21",
+      "name": "임베디드컴퓨팅 연구실",
+      "professors": [
+        "서태원"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://esca.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "multimodal-interactive-intelligence-laboratory-miil",
+      "name": "Multimodal Interactive Intelligence Laboratory (MIIL)",
+      "professors": [
+        "서홍석"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://miil.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "software-engineering-laboratory-for-next-gen-ecosystems-selene",
+      "name": "Software Engineering Laboratory for Next-Gen Ecosystems(SELENE)",
+      "professors": [
+        "안가빈"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템"
+      ],
+      "website": "https://ku-selene.github.io/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "system-software-lab",
+      "name": "시스템 소프트웨어 연구실 (System Software Lab)",
+      "professors": [
+        "양경식"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템"
+      ],
+      "website": "https://ss.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "mobile-embedded-systems-mes-lab",
+      "name": "Mobile Embedded Systems (MES) Lab",
+      "professors": [
+        "오상은"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "https://mes.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-26",
+      "name": "소프트웨어 분석 연구실",
+      "professors": [
+        "오학주"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://prl.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "software-security-and-privacy-laboratory",
+      "name": "소프트웨어 보안 연구실 (Software Security and Privacy Laboratory)",
+      "professors": [
+        "우승훈"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "정보보호",
+        "소프트웨어·시스템"
+      ],
+      "website": "https://ssp.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "distributed-cloud-computing-lab",
+      "name": "분산&클라우드컴퓨팅 연구실(Distributed & Cloud Computing Lab)",
+      "professors": [
+        "유헌창"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://ds.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-29",
+      "name": "인공지능 연구실",
+      "professors": [
+        "육동석"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://ai.korea.ac.kr/~yook/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-30",
+      "name": "데이터 및 적응형 지능 시스템 연구실",
+      "professors": [
+        "윤수식"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "소프트웨어·시스템"
+      ],
+      "website": "http://dais.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "pixel-lab",
+      "name": "Pixel Lab",
+      "professors": [
+        "이상민"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "https://sites.google.com/view/pixel-lab-ai",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "physical-computing-lab",
+      "name": "피지컬컴퓨팅연구실 (Physical Computing Lab.)",
+      "professors": [
+        "이재훈"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "https://sites.google.com/site/mplabku",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "vision-and-ai-lab",
+      "name": "비전 및 인공지능 연구실(Vision and AI Lab)",
+      "professors": [
+        "이정범"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "컴퓨터 비전",
+        "인공지능·기계학습"
+      ],
+      "website": "https://visionai.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "microwave-millimeter-wave-laboratory",
+      "name": "Microwave/Millimeter Wave Laboratory",
+      "professors": [
+        "이주섭"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "https://sites.google.com/site/juseoplee",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "computer-communication-security-laboratory-ccs-lab",
+      "name": "컴퓨터보안연구실[Computer & Communication Security Laboratory (CCS Lab)]",
+      "professors": [
+        "이희조"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "정보보호"
+      ],
+      "website": "https://ccs.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "intelligent-blockchain-engineering-lab",
+      "name": "지능형 블록체인 공학 연구실(Intelligent Blockchain Engineering Lab.)",
+      "professors": [
+        "인호"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://ibel.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "nlp-ai-lab",
+      "name": "자연어처리 & 인공지능 연구실(NLP&AI Lab)",
+      "professors": [
+        "임희석"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "자연어·음성",
+        "인공지능·기계학습"
+      ],
+      "website": "http://nlp.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "language-and-intelligence-laboratory",
+      "name": "언어 및 지능 연구실 (Language and Intelligence Laboratory)",
+      "professors": [
+        "장부루"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "자연어·음성",
+        "인공지능·기계학습"
+      ],
+      "website": "http://lilab.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "secure-software-lab-s2-lab",
+      "name": "Secure Software Lab (S2 Lab)",
+      "professors": [
+        "전유석"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템"
+      ],
+      "website": "https://s2-lab.github.io/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "smrl-soc-and-microprocessor-research-lab",
+      "name": "SMRL (SoC and Microprocessor Research Lab.)",
+      "professors": [
+        "정성우"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://smrl.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "intelligence-engineering-lab",
+      "name": "지능공학 연구실(Intelligence Engineering Lab)",
+      "professors": [
+        "정순영"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://kuielab.github.io/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "dx-datax-lab",
+      "name": "DX 연구실(DataX Lab)",
+      "professors": [
+        "정연돈"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "데이터 분석"
+      ],
+      "website": "https://dx.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "high-performance-visual-computing-lab",
+      "name": "고성능시각컴퓨팅 연구실 (High-performance Visual Computing Lab)",
+      "professors": [
+        "정원기"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://hvcl.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "prism-lab",
+      "name": "PRISM Lab",
+      "professors": [
+        "정형진"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "https://ku-prism-lab.github.io/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "rain",
+      "name": "RAIN 연구실",
+      "professors": [
+        "주창희"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://rain.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "lab-46",
+      "name": "미디어 연구실",
+      "professors": [
+        "한정현"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [],
+      "website": "http://media.korea.ac.kr",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "information-system-security-lab",
+      "name": "정보시스템보안연구실 (Information System Security Lab.)",
+      "professors": [
+        "허준범"
+      ],
+      "departments": [
+        "컴퓨터학과"
+      ],
+      "topics": [
+        "정보보호",
+        "데이터 분석",
+        "소프트웨어·시스템"
+      ],
+      "website": "https://issl.korea.ac.kr/",
+      "sourceIds": [
+        "cs"
+      ]
+    },
+    {
+      "id": "mai-lab",
+      "name": "의료인공지능 연구실 (MAI Lab)",
+      "professors": [
+        "감태의"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "뇌·의료 AI",
+        "인공지능·기계학습"
+      ],
+      "website": "https://mailab.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "universal-transfer-learning-lab-utl",
+      "name": "Universal Transfer Learning Lab (UTL, 범용 전이 학습 연구실)",
+      "professors": [
+        "김동현"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://utl.korea.ac.kr/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "lab-50",
+      "name": "컴퓨터비전연구실",
+      "professors": [
+        "김상필"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [],
+      "website": null,
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "artificial-general-intelligence-lab",
+      "name": "Artificial General Intelligence Lab (범용 인공지능 연구실)",
+      "professors": [
+        "김성웅"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://agi.korea.ac.kr/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "speech-and-language-processing-lab-slp",
+      "name": "Speech and Language Processing Lab (SLP)",
+      "professors": [
+        "김찬우"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "자연어·음성"
+      ],
+      "website": null,
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "visual-general-intelligence-lab-vgi",
+      "name": "Visual & General Intelligence Lab (VGI, 시각 및 범용 지능 연구실)",
+      "professors": [
+        "박경문"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://vgi.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "lab-54",
+      "name": "효율적 추론 및 학습 연구실",
+      "professors": [
+        "박세준"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": null,
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "huilab",
+      "name": "인간중심 유비쿼터스 지능 연구실 (HUILAB)",
+      "professors": [
+        "서승호"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [],
+      "website": null,
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "intelligent-image-processing-lab",
+      "name": "지능형 영상처리 연구실 / Intelligent Image Processing Lab",
+      "professors": [
+        "서현석"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "컴퓨터 비전",
+        "인공지능·기계학습"
+      ],
+      "website": "https://sites.google.com/view/i2pl/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "machine-intelligence-lab",
+      "name": "Machine Intelligence Lab. (기계지능 연구실)",
+      "professors": [
+        "석흥일"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://milab.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "brain-reverse-engineering-by-intelligent-neuroimaging-brein-lab",
+      "name": "Brain Reverse Engineering by Intelligent Neuroimaging (BREIN) Lab",
+      "professors": [
+        "성준경"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "뇌·의료 AI",
+        "인공지능·기계학습"
+      ],
+      "website": "http://brein.korea.ac.kr/lab/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "dm-lab",
+      "name": "의사결정연구실 (DM Lab)",
+      "professors": [
+        "이병준"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [],
+      "website": "http://dmlab.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "data-intelligence-lab",
+      "name": "Data Intelligence Lab",
+      "professors": [
+        "이상근"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "데이터 분석",
+        "인공지능·기계학습"
+      ],
+      "website": "http://dilab.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "lab-61",
+      "name": "패턴인식 및 머신러닝 연구실",
+      "professors": [
+        "이성환"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [],
+      "website": "http://pr.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "distributed-robot-intelligence-lab",
+      "name": "Distributed Robot Intelligence Lab (로봇 분산지능 연구실)",
+      "professors": [
+        "이승규"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "로보틱스",
+        "인공지능·기계학습"
+      ],
+      "website": "https://sites.google.com/view/drilab/home?authuser=0",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "actionable-intelligence-lab",
+      "name": "Actionable Intelligence Lab",
+      "professors": [
+        "이창희"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "http://aix.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "autonomous-artificial-intelligence-lab",
+      "name": "자율인공지능연구실(Autonomous Artificial Intelligence Lab)",
+      "professors": [
+        "정우환"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://aai.korea.ac.kr/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "statistical-intelligence-lab",
+      "name": "통계지능 연구실 (Statistical Intelligence Lab)",
+      "professors": [
+        "정원주"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "http://spl.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "trustworthy-ai-lab-tail",
+      "name": "신뢰가능한 인공지능 연구실 (Trustworthy AI Lab, TAIL)",
+      "professors": [
+        "정종헌"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://tail.korea.ac.kr/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "robot-intelligence-lab-a",
+      "name": "로봇지능연구실 (Robot Intelligence Lab)",
+      "professors": [
+        "최성준(A)"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "로보틱스",
+        "인공지능·기계학습"
+      ],
+      "website": null,
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "ai-b",
+      "name": "AI 이미징 연구실",
+      "professors": [
+        "최성준(B)"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": "https://aii.korea.ac.kr",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "stochastic-dynamic-machine-learning-lab-anh-tong",
+      "name": "Stochastic Dynamic Machine Learning Lab",
+      "professors": [
+        "Anh Tong"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "인공지능·기계학습"
+      ],
+      "website": null,
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "cognitive-systems-lab-christian-wallraven",
+      "name": "Cognitive systems Lab 인지시스템 연구실",
+      "professors": [
+        "Christian wallraven"
+      ],
+      "departments": [
+        "인공지능학과"
+      ],
+      "topics": [
+        "소프트웨어·시스템"
+      ],
+      "website": "https://cogsys.korea.ac.kr/",
+      "sourceIds": [
+        "ai"
+      ]
+    },
+    {
+      "id": "brain-lab",
+      "name": "Brain Lab.",
+      "professors": [
+        "김동주"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [
+        "뇌·의료 AI",
+        "인공지능·기계학습"
+      ],
+      "website": "https://brainlabku.github.io/",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "affective-cognition",
+      "name": "정서인지연구실(Affective Cognition)",
+      "professors": [
+        "김상희"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [],
+      "website": "https://acnl.korea.ac.kr",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "camin-lab-computational-analysis-for-multimodal-neuroimaging-lab",
+      "name": "CAMIN Lab (Computational Analysis for Multimodal Neuroimaging Lab, 멀티모달 뇌 영상 분석 연구실)",
+      "professors": [
+        "박보용"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [
+        "컴퓨터 비전",
+        "뇌·의료 AI"
+      ],
+      "website": "https://www.caminlab.com/",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "neural-engineering-and-precision-surgery-neps",
+      "name": "Neural Engineering and Precision Surgery (NEPS, 정밀신경공학 연구실)",
+      "professors": [
+        "오윤배"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [],
+      "website": "https://sites.google.com/view/nepskorea",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "bspl",
+      "name": "뇌신호처리연구실 (BSPL)",
+      "professors": [
+        "이종환"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [
+        "뇌·의료 AI"
+      ],
+      "website": "http://bspl.korea.ac.kr",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "brain-and-machine-cognition-lab",
+      "name": "뇌기계인지연구실 (Brain and Machine Cognition Lab)",
+      "professors": [
+        "장호진"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [
+        "뇌·의료 AI",
+        "인공지능·기계학습"
+      ],
+      "website": "https://bmcl.korea.ac.kr/",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "lab-77",
+      "name": "광생체전자공학연구실",
+      "professors": [
+        "한재호"
+      ],
+      "departments": [
+        "뇌공학과"
+      ],
+      "topics": [],
+      "website": "http://faculty.korea.ac.kr/hanjaeho",
+      "sourceIds": [
+        "brain"
+      ]
+    },
+    {
+      "id": "lab-78",
+      "name": "프라이버시향상기술 연구실",
+      "professors": [
+        "정익래"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "프라이버시향상기술"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-79",
+      "name": "응용암호 및 프라이버시 연구실",
+      "professors": [
+        "김성광"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "응용암호",
+        "프라이버시"
+      ],
+      "website": "https://acpg.korea.ac.kr",
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-80",
+      "name": "디지털포렌식연구실",
+      "professors": [
+        "이상진",
+        "박정흠"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "디지털포렌식"
+      ],
+      "website": "https://dfrc.korea.ac.kr",
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-81",
+      "name": "무선네트워크 연구실",
+      "professors": [
+        "오성준"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "무선네트워크"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-82",
+      "name": "보안공학 연구실",
+      "professors": [
+        "김승주"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "보안공학"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-83",
+      "name": "사이버법정책 연구실",
+      "professors": [
+        "권헌영"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "사이버법·정책"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-84",
+      "name": "신호정보해독 연구실",
+      "professors": [
+        "윤지원"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "신호정보해독"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-85",
+      "name": "양자내성암호 연구실",
+      "professors": [
+        "이창민"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "양자내성암호"
+      ],
+      "website": "https://pqsnc.korea.ac.kr",
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-86",
+      "name": "위험관리 연구실",
+      "professors": [
+        "이경호"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "위험관리"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "air",
+      "name": "인공지능 연구실 (AIR)",
+      "professors": [
+        "이상근"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "인공지능"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-88",
+      "name": "임베디드보안 연구실",
+      "professors": [
+        "최원석"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "임베디드 보안"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-89",
+      "name": "금융보안 연구실",
+      "professors": [
+        "강형우"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "금융보안"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-90",
+      "name": "컴퓨터시스템보안 연구실",
+      "professors": [
+        "신영주"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "컴퓨터시스템 보안"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-91",
+      "name": "하드웨어보안 연구실",
+      "professors": [
+        "이중희"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "하드웨어 보안"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-92",
+      "name": "해킹대응기술 연구실",
+      "professors": [
+        "김휘강"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "해킹 대응"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "lab-93",
+      "name": "소프트웨어 검증 연구실",
+      "professors": [
+        "소순범"
+      ],
+      "departments": [
+        "정보보호대학원·스마트보안학부"
+      ],
+      "topics": [
+        "소프트웨어 검증"
+      ],
+      "website": null,
+      "sourceIds": [
+        "security"
+      ]
+    },
+    {
+      "id": "quantitative-imaging-and-informatics-laboratory",
+      "name": "Quantitative Imaging and Informatics Laboratory",
+      "professors": [
+        "곽진태"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "의료영상",
+        "정보학"
+      ],
+      "website": "http://kwaklab.net",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "compiler-and-microarchitecture-lab",
+      "name": "Compiler and Microarchitecture Lab.",
+      "professors": [
+        "김선욱"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "컴파일러",
+        "컴퓨터 구조"
+      ],
+      "website": "http://compiler.korea.ac.kr",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "high-performance-and-intelligence-computing-lab",
+      "name": "High Performance and Intelligence Computing Lab.",
+      "professors": [
+        "김종국"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "고성능 컴퓨팅",
+        "인공지능"
+      ],
+      "website": "https://hpic.korea.ac.kr/",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "wireless-intelligence-at-network-edge-lab",
+      "name": "Wireless Intelligence at Network Edge Lab.",
+      "professors": [
+        "김황남"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "무선 네트워크",
+        "엣지 AI"
+      ],
+      "website": "http://wine.korea.ac.kr",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "big-data-analysis-lab",
+      "name": "Big Data Analysis Lab.",
+      "professors": [
+        "석준희"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "빅데이터 분석"
+      ],
+      "website": "https://sites.google.com/view/ku-cdal",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "computer-systems-laboratory",
+      "name": "Computer Systems Laboratory",
+      "professors": [
+        "안정섭"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "컴퓨터 시스템"
+      ],
+      "website": "https://sites.google.com/korea.ac.kr/csl",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "computer-architecture-and-system-software-lab",
+      "name": "Computer Architecture and System Software Lab.",
+      "professors": [
+        "오윤호"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "컴퓨터 구조",
+        "시스템 소프트웨어"
+      ],
+      "website": "https://comsys-lab.github.io",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "system-2-machine-learning-s2ml-lab",
+      "name": "System 2 Machine Learning (S2ML) Lab",
+      "professors": [
+        "이해범"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "기계학습"
+      ],
+      "website": null,
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "indoor-positioning-lab",
+      "name": "Indoor Positioning Lab.",
+      "professors": [
+        "최린"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "실내 위치추정"
+      ],
+      "website": "http://it.korea.ac.kr",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "multimedia-information-lab",
+      "name": "Multimedia Information Lab.",
+      "professors": [
+        "황인준"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "멀티미디어"
+      ],
+      "website": "http://mil.korea.ac.kr",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "image-communication-quality-lab",
+      "name": "Image & Communication Quality Lab.",
+      "professors": [
+        "김종옥"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "영상·통신"
+      ],
+      "website": "https://sites.google.com/a/icq.korea.ac.kr/iml",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "media-communications-lab",
+      "name": "Media Communications Lab.",
+      "professors": [
+        "김창수"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "미디어 통신"
+      ],
+      "website": "http://mcl.korea.ac.kr",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "deep-image-processing-lab",
+      "name": "Deep Image Processing Lab.",
+      "professors": [
+        "정승원"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "딥러닝",
+        "영상처리"
+      ],
+      "website": "https://sites.google.com/view/deepiplab",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "image-processing-algorithm-lab",
+      "name": "Image Processing Algorithm Lab.",
+      "professors": [
+        "진경환"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "영상처리"
+      ],
+      "website": "https://ipa.korea.ac.kr/",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "signal-learning-lab",
+      "name": "Signal Learning Lab.",
+      "professors": [
+        "황원준"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "신호처리",
+        "기계학습"
+      ],
+      "website": "https://sites.google.com/view/siglearnlab/home",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "soft-mechatronics-and-robotics-lab",
+      "name": "Soft Mechatronics and Robotics Lab.",
+      "professors": [
+        "차영수"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "로보틱스",
+        "메카트로닉스"
+      ],
+      "website": "https://sites.google.com/view/smrobotics",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "artificial-intelligence-and-mobility-lab",
+      "name": "Artificial Intelligence and Mobility Lab.",
+      "professors": [
+        "김중헌"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "인공지능",
+        "모빌리티"
+      ],
+      "website": "https://aimlab-kuee.github.io",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "mobile-network-and-communications-lab",
+      "name": "Mobile Network and Communications Lab.",
+      "professors": [
+        "백상헌"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "모바일 네트워크"
+      ],
+      "website": "https://sites.google.com/site/mnclab",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "wireless-communication-systems-lab",
+      "name": "Wireless Communication Systems Lab.",
+      "professors": [
+        "신원재"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "무선 통신"
+      ],
+      "website": "https://sites.google.com/view/theshinlab/",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "lab-for-informatics-communications-and-systems",
+      "name": "Lab. for Informatics, Communications, and Systems",
+      "professors": [
+        "이상현"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "통신 시스템"
+      ],
+      "website": "https://lics.korea.ac.kr/",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "communication-and-intelligent-system-lab",
+      "name": "Communication and Intelligent System Lab.",
+      "professors": [
+        "이인규"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "통신",
+        "지능 시스템"
+      ],
+      "website": "http://wireless.korea.ac.kr",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "lab-117",
+      "name": "김영은 연구실",
+      "professors": [
+        "김영은"
+      ],
+      "departments": [
+        "전기전자공학부"
+      ],
+      "topics": [
+        "인공지능",
+        "뉴로모픽"
+      ],
+      "website": "https://emilab-ku.github.io/",
+      "sourceIds": [
+        "ee"
+      ]
+    },
+    {
+      "id": "lab-118",
+      "name": "인지인간공학 연구실",
+      "professors": [
+        "명노해"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "인지인간공학(Cognitive Ergonomics)",
+        "HCI (Human-Computer Interaction)",
+        "인지모델(Cognitive Modeling)",
+        "항공심리(Aviation Psychology)"
+      ],
+      "website": "http://ui.korea.ac.kr/",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-119",
+      "name": "정보학 연구실",
+      "professors": [
+        "류홍서"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "Global & Combinatorial Optimization",
+        "Data Analytics & Classification",
+        "Biomedical Informatics"
+      ],
+      "website": "http://more.korea.ac.kr",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-121",
+      "name": "스마트생산시스템 연구실",
+      "professors": [
+        "백준걸"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "Deep Learning",
+        "Machine Learning",
+        "Big Data Analytics",
+        "Datamining"
+      ],
+      "website": "http://sps.korea.ac.kr/",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-122",
+      "name": "데이터마이닝 및 품질애널리틱스 연구실",
+      "professors": [
+        "김성범"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "Artificial Intelligence",
+        "Large Language Models and Agentic AI",
+        "Vision-Language Models",
+        "Reinforcement Learning"
+      ],
+      "website": "http://dmqa.korea.ac.kr",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-124",
+      "name": "인공지능 및 데이터 분석 연구실",
+      "professors": [
+        "한성원"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "Deep Learning",
+        "Machine Learning",
+        "Statistics",
+        "Probabilistic Graphical Modeling"
+      ],
+      "website": "http://aida.korea.ac.kr",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-125",
+      "name": "데이터 어낼리틱스 및 헬스케어 시스템 연구실",
+      "professors": [
+        "이효경"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "Data Analytics",
+        "Clinical Decision Support Systems",
+        "Healthcare Operations Management"
+      ],
+      "website": "https://dahs.korea.ac.kr/",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-126",
+      "name": "인터랙션디자인개발 연구실",
+      "professors": [
+        "이상원"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "Interaction Design",
+        "Learning Data and Knowledge Generation",
+        "Recommender System",
+        "XAI Interface"
+      ],
+      "website": "https://idsq.korea.ac.kr/",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-128",
+      "name": "산업지능 연구실",
+      "professors": [
+        "임성훈"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "스마트 제조",
+        "스마트 공장",
+        "산업 인공지능"
+      ],
+      "website": "https://ii.korea.ac.kr/",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-129",
+      "name": "시스템 인텔리전스 및 애널리틱스 연구실",
+      "professors": [
+        "정석현"
+      ],
+      "departments": [
+        "산업경영공학부"
+      ],
+      "topics": [
+        "확률적 인공지능/머신러닝",
+        "통계모델링",
+        "데이터 분석",
+        "신뢰성 공학"
+      ],
+      "website": "https://sia.korea.ac.kr/",
+      "sourceIds": [
+        "ie"
+      ]
+    },
+    {
+      "id": "lab-131",
+      "name": "의료정보처리 연구실",
+      "professors": [
+        "이기성"
+      ],
+      "departments": [
+        "바이오의공학부"
+      ],
+      "topics": [
+        "의료정보처리"
+      ],
+      "website": null,
+      "sourceIds": [
+        "bio"
+      ]
+    },
+    {
+      "id": "lab-132",
+      "name": "뇌영상 연구실",
+      "professors": [
+        "성준경"
+      ],
+      "departments": [
+        "바이오의공학부"
+      ],
+      "topics": [
+        "뇌영상",
+        "인공지능"
+      ],
+      "website": "http://brein.korea.ac.kr/lab/",
+      "sourceIds": [
+        "bio"
+      ]
+    },
+    {
+      "id": "mint-lab",
+      "name": "MINT Lab",
+      "professors": [
+        "김대겸"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "로보틱스"
+      ],
+      "website": "https://mintlab.korea.ac.kr",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "birc",
+      "name": "BIRC",
+      "professors": [
+        "배준범"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "로보틱스"
+      ],
+      "website": "https://birc.korea.ac.kr",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "isr-lab",
+      "name": "ISR Lab",
+      "professors": [
+        "정우진"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "지능 로봇"
+      ],
+      "website": "https://isr.korea.ac.kr",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "mfr-lab",
+      "name": "MFR Lab",
+      "professors": [
+        "홍대희"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "로봇"
+      ],
+      "website": "https://mfr.korea.ac.kr",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "lab-140",
+      "name": "문두환 연구실",
+      "professors": [
+        "문두환"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "로봇"
+      ],
+      "website": "https://www.dhmun.net",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "sid-lab",
+      "name": "SID Lab",
+      "professors": [
+        "정석"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "지능 시스템"
+      ],
+      "website": "https://sidlab.kr",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "mekateka",
+      "name": "MEKATEKA",
+      "professors": [
+        "임다현"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "메카트로닉스"
+      ],
+      "website": "https://mekateka.com",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "lab-143",
+      "name": "전규정 연구실",
+      "professors": [
+        "전규정"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "로보틱스"
+      ],
+      "website": "https://kyujungjun.github.io",
+      "sourceIds": [
+        "me"
+      ]
+    },
+    {
+      "id": "lab-144",
+      "name": "홍승우 연구실",
+      "professors": [
+        "홍승우"
+      ],
+      "departments": [
+        "기계공학부"
+      ],
+      "topics": [
+        "로보틱스"
+      ],
+      "website": "https://seungwoo-hong.github.io",
+      "sourceIds": [
+        "me"
+      ]
+    }
+  ]
+}
