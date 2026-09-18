@@ -91,7 +91,7 @@ export function SiteNav() {
       <ul className="mx-auto flex max-w-screen-2xl flex-wrap items-center gap-1 px-4 py-3 sm:px-8 text-sm font-medium">
         <li className="mr-3">
           <Link href="/" className="block px-1 py-2 text-base font-bold tracking-tight text-slate-900">
-            KU CS Career Radar
+            KCCR
           </Link>
         </li>
         <Suspense fallback={<Tabs current={null} />}>

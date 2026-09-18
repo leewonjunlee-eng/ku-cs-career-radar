@@ -55,7 +55,7 @@ enable_confirmations = true
 
 # 테스트 스택도 앱과 같은 SSR TokenHash 콜백을 사용한다.
 [auth.email.template.confirmation]
-subject = "KU CS Career Radar 이메일 확인"
+subject = "KCCR 이메일 확인"
 content_path = "./supabase/templates/confirmation.html"
 
 [edge_runtime]

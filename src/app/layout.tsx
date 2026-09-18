@@ -4,7 +4,7 @@ import { SiteNav } from '@/components/site-nav';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'KU CS Career Radar',
+  title: 'KCCR',
   description: '고려대 컴퓨터 관련 학생을 위한 공고·후기·팀원 모집 모음',
 };
 

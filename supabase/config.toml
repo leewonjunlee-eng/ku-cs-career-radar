@@ -62,7 +62,7 @@ enable_confirmations = true
 # tokens. `emailRedirectTo` is the configured app origin, so the template
 # itself owns the fixed /auth/confirm callback path.
 [auth.email.template.confirmation]
-subject = "KU CS Career Radar 이메일 확인"
+subject = "KCCR 이메일 확인"
 content_path = "./supabase/templates/confirmation.html"
 
 [edge_runtime]

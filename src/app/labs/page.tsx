@@ -3,7 +3,7 @@ import { LabDirectory } from '@/components/lab-directory';
 import { getLabDirectory } from '@/lib/labs/data';
 
 export const metadata: Metadata = {
-  title: '연구실 정보 | KU CS Career Radar',
+  title: '연구실 정보 | KCCR',
   description: '고려대학교 서울캠퍼스 컴퓨터 관련 연구실 디렉터리',
 };
 
