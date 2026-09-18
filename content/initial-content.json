@@ -1,7 +1,7 @@
 {
   "meta": {
-    "prepared_for": "P0 stage 2 initial content (seed wiring deferred to stage 3 after schema review)",
-    "prepared_at": "2026-09-18T11:55:00Z",
+    "prepared_for": "Opportunity refresh 2026-09-19 (all candidate sources, quality-capped intern/hiring/activity)",
+    "prepared_at": "2026-09-18T22:40:00Z",
     "timezone_note": "deadline is ISO 8601 with +09:00 (KST). Date-only source deadlines use next-day 00:00 KST as exclusive deadline with deadline_precision=date, per docs/features/opportunities.md.",
     "evidence": "content/source-evidence.md",
     "category_labels": {
@@ -19,334 +19,2813 @@
       "lab": "연구실",
       "company": "기업"
     },
-    "deadline_type_labels": { "fixed": "확정", "rolling": "상시", "unknown": "미정" },
-    "deadline_precision_labels": { "time": "시각", "date": "날짜" },
-    "ingestion_method_labels": { "manual": "수동 입력", "script": "스크립트 수집" }
+    "deadline_type_labels": {
+      "fixed": "확정",
+      "rolling": "상시",
+      "unknown": "미정"
+    },
+    "deadline_precision_labels": {
+      "time": "시각",
+      "date": "날짜"
+    },
+    "ingestion_method_labels": {
+      "manual": "수동 입력",
+      "script": "스크립트 수집"
+    }
   },
   "subjects": [
-    { "slug": "korea-tourism-datalab-contest", "kind": "contest_series", "name": "한국관광 데이터랩 활용 경진대회", "official_url": "https://datalab.visitkorea.or.kr/" },
-    { "slug": "k-cure-data-competition", "kind": "contest_series", "name": "K-CURE 데이터 경진대회", "official_url": "https://kcurecompetition.com/" },
-    { "slug": "modu-ai-lab-ai-service-contest", "kind": "contest_series", "name": "모두의 AI 실험실 AI 서비스 경진대회", "official_url": "https://contest.aitestbed.kr/" },
-    { "slug": "bto-public-data-ai-idea-contest", "kind": "contest_series", "name": "부산관광공사 공공데이터·AI 활용 아이디어 공모전", "official_url": null },
-    { "slug": "nais-ai-hackathon", "kind": "hackathon_series", "name": "NAIS AI 해커톤", "official_url": null },
-    { "slug": "naeilro-hackathon", "kind": "hackathon_series", "name": "내일路 해커톤", "official_url": null },
-    { "slug": "openai-game-builders-seoul", "kind": "hackathon_series", "name": "오픈AI 게임 빌더스 서울 (OpenAI Game Builders Seoul)", "official_url": "https://openaigame2026.com/" },
-    { "slug": "ku-sw-centered-univ-industry-urp", "kind": "program", "name": "고려대 SW중심대학사업 산학협력 프로젝트 학부연구생", "official_url": null },
-    { "slug": "ku-oslab", "kind": "lab", "name": "고려대학교 운영체제연구실 (OSLab)", "official_url": "https://os.korea.ac.kr/" },
-    { "slug": "ku-hvcl", "kind": "lab", "name": "고려대학교 고성능비주얼컴퓨팅 연구실 (HVCL)", "official_url": "https://hvcl.korea.ac.kr/" },
-    { "slug": "nexon", "kind": "company", "name": "넥슨", "official_url": "https://www.nexon.com/" },
-    { "slug": "naver-z", "kind": "company", "name": "NAVER Z", "official_url": "https://naverz-corp.com/" },
-    { "slug": "lx-international", "kind": "company", "name": "LX인터내셔널", "official_url": "https://www.lxinternational.com/" },
-    { "slug": "bioresearch-ai", "kind": "company", "name": "바이오리서치에이아이", "official_url": null },
-    { "slug": "hyundai-mobis", "kind": "company", "name": "현대모비스", "official_url": "https://careers.mobis.com/" },
-    { "slug": "sc-bio", "kind": "company", "name": "에스씨바이오", "official_url": null },
-    { "slug": "gldc-kist-europe-internship", "kind": "program", "name": "고려대 GLDC KIST 유럽연구소 글로벌 인턴십 프로그램", "official_url": "https://gldc.korea.ac.kr/gldc/intern/intro.do" },
-    { "slug": "ku-glp", "kind": "program", "name": "KU-Global Leadership Program (KU-GLP)", "official_url": "https://gldc.korea.ac.kr/gldc/glp/intro.do" }
+    {
+      "slug": "korea-tourism-datalab-contest",
+      "kind": "contest_series",
+      "name": "한국관광 데이터랩 활용 경진대회",
+      "official_url": "https://datalab.visitkorea.or.kr/"
+    },
+    {
+      "slug": "ku-sw-centered-univ-industry-urp",
+      "kind": "program",
+      "name": "고려대 SW중심대학사업 산학협력 프로젝트 학부연구생",
+      "official_url": null
+    },
+    {
+      "slug": "nexon",
+      "kind": "company",
+      "name": "넥슨",
+      "official_url": "https://www.nexon.com/"
+    },
+    {
+      "slug": "s-362c2969b7",
+      "kind": "contest_series",
+      "name": "경남AI·SW 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-077fdb9f38",
+      "kind": "hackathon_series",
+      "name": "AI 농산물 가격예측 온라인 해커톤",
+      "official_url": null
+    },
+    {
+      "slug": "s-b8ce8de7aa",
+      "kind": "contest_series",
+      "name": "KoMaP AI 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-1c7dde0fa7",
+      "kind": "hackathon_series",
+      "name": "스페이스 해커톤",
+      "official_url": null
+    },
+    {
+      "slug": "s-afb5c03ce5",
+      "kind": "contest_series",
+      "name": "충남권역 모빌리티 자율주행 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-c9aea939b4",
+      "kind": "contest_series",
+      "name": "데이터+AI 혁신챌린지 데이터안심구역 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-86ced7ebf5",
+      "kind": "contest_series",
+      "name": "데이터·AI 혁신 챌린지 통합경진대회 <데이터 문제해결 부문>",
+      "official_url": null
+    },
+    {
+      "slug": "s-24e35a6e2d",
+      "kind": "contest_series",
+      "name": "대학생 프로그래밍 경시대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-1064030267",
+      "kind": "contest_series",
+      "name": "AI 활용 아이디어 공모전",
+      "official_url": null
+    },
+    {
+      "slug": "s-cb61b53d89",
+      "kind": "contest_series",
+      "name": "PAC 2026 (Physical AI Challenge)",
+      "official_url": null
+    },
+    {
+      "slug": "s-af98a374a9",
+      "kind": "contest_series",
+      "name": "ZYXCAD AX 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-1446a59a57",
+      "kind": "contest_series",
+      "name": "미래 개발자를 위한 안전한 소프트웨어 개발 대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-fa20846dbe",
+      "kind": "contest_series",
+      "name": "해운·항만·물류 AX 아이디어 공모전",
+      "official_url": null
+    },
+    {
+      "slug": "s-b67f21a638",
+      "kind": "contest_series",
+      "name": "한국식품안전관리인증원 공공데이터 분석·활용 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-cff505bd8f",
+      "kind": "contest_series",
+      "name": "안양시 공공데이터·AI 활용 대학생 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-c6e7f3a1d3",
+      "kind": "contest_series",
+      "name": "(iM뱅크) 2026 AI Blockchain 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-6d518e80d2",
+      "kind": "hackathon_series",
+      "name": "K-조선 해커톤",
+      "official_url": null
+    },
+    {
+      "slug": "s-e64ded4368",
+      "kind": "contest_series",
+      "name": "미래융합인재 발굴 소프트웨어 챌린지",
+      "official_url": null
+    },
+    {
+      "slug": "s-38779042b8",
+      "kind": "contest_series",
+      "name": "DATA·AI 분석 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-9b6358bece",
+      "kind": "contest_series",
+      "name": "하이멕 AI 활용 아이디어 공모전",
+      "official_url": null
+    },
+    {
+      "slug": "s-791472b34a",
+      "kind": "contest_series",
+      "name": "D-Robotics Innovation Contest",
+      "official_url": null
+    },
+    {
+      "slug": "s-30761f4944",
+      "kind": "contest_series",
+      "name": "국민체육진흥공단 공공데이터 활용 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-d41e5c2b40",
+      "kind": "contest_series",
+      "name": "창원시 AI·데이터 활용 공모전",
+      "official_url": null
+    },
+    {
+      "slug": "s-ae507b1fe7",
+      "kind": "program",
+      "name": "하반기 SK하이닉스 청년 Hy-Po 10기 모집",
+      "official_url": null
+    },
+    {
+      "slug": "s-13b5bb0f0a",
+      "kind": "program",
+      "name": "DB그룹 제121회 NEW 대학생 기업경영 체험스쿨",
+      "official_url": null
+    },
+    {
+      "slug": "s-54195a99c6",
+      "kind": "program",
+      "name": "Global Model UN New York 2027 한국 청년 대표단 모집",
+      "official_url": null
+    },
+    {
+      "slug": "s-46559c127b",
+      "kind": "program",
+      "name": "Nobel Prize Dialogue Seoul 2026 서포터즈",
+      "official_url": null
+    },
+    {
+      "slug": "s-4d09c5cfca",
+      "kind": "program",
+      "name": "SBS D포럼 서포터즈",
+      "official_url": null
+    },
+    {
+      "slug": "s-158ca7b3bc",
+      "kind": "program",
+      "name": "바이오미래포럼 대학생 서포터즈",
+      "official_url": null
+    },
+    {
+      "slug": "s-15466a5d62",
+      "kind": "program",
+      "name": "AI 안전 지킴이",
+      "official_url": null
+    },
+    {
+      "slug": "s-1b303a0c14",
+      "kind": "program",
+      "name": "KOTRA AI 무역인재 양성과정 26년 2기",
+      "official_url": null
+    },
+    {
+      "slug": "s-feeac50245",
+      "kind": "program",
+      "name": "청소년 AI 게임 창작 프로젝트 청년 멘토",
+      "official_url": null
+    },
+    {
+      "slug": "s-98d999f1a6",
+      "kind": "program",
+      "name": "AI 에이전트 업무 자동화 부트캠프",
+      "official_url": null
+    },
+    {
+      "slug": "s-8614d660c4",
+      "kind": "program",
+      "name": "피지컬AI 제조 AX 캠퍼스 4기",
+      "official_url": null
+    },
+    {
+      "slug": "s-02bff01158",
+      "kind": "program",
+      "name": "한미 첨단분야 청년교류 지원사업 제6기 장학생",
+      "official_url": null
+    },
+    {
+      "slug": "s-bda04c461a",
+      "kind": "company",
+      "name": "버킷플레이스(오늘의집)",
+      "official_url": null
+    },
+    {
+      "slug": "s-d9123089cb",
+      "kind": "company",
+      "name": "스캐터랩",
+      "official_url": null
+    },
+    {
+      "slug": "s-0df1b0d036",
+      "kind": "company",
+      "name": "현대자동차",
+      "official_url": null
+    },
+    {
+      "slug": "s-79bf37c456",
+      "kind": "company",
+      "name": "111퍼센트",
+      "official_url": null
+    },
+    {
+      "slug": "s-f8be091942",
+      "kind": "company",
+      "name": "노타",
+      "official_url": null
+    },
+    {
+      "slug": "s-4907bb0fa0",
+      "kind": "company",
+      "name": "레브잇",
+      "official_url": null
+    },
+    {
+      "slug": "s-43112a0139",
+      "kind": "company",
+      "name": "LG AI연구원",
+      "official_url": null
+    },
+    {
+      "slug": "s-1eef35df02",
+      "kind": "company",
+      "name": "한국마이크로소프트",
+      "official_url": null
+    },
+    {
+      "slug": "s-32746bc82a",
+      "kind": "company",
+      "name": "지멘스",
+      "official_url": null
+    },
+    {
+      "slug": "s-9d7686478b",
+      "kind": "company",
+      "name": "하이퍼엑셀",
+      "official_url": null
+    },
+    {
+      "slug": "s-03408184a9",
+      "kind": "company",
+      "name": "컬리",
+      "official_url": null
+    },
+    {
+      "slug": "s-6c17219f5d",
+      "kind": "company",
+      "name": "마음AI",
+      "official_url": null
+    },
+    {
+      "slug": "s-96b7840514",
+      "kind": "company",
+      "name": "애커튼파트너스",
+      "official_url": null
+    },
+    {
+      "slug": "s-6595ade547",
+      "kind": "company",
+      "name": "네이버웹툰",
+      "official_url": null
+    },
+    {
+      "slug": "s-841673fd88",
+      "kind": "company",
+      "name": "네이버클라우드",
+      "official_url": null
+    },
+    {
+      "slug": "s-e95a12b920",
+      "kind": "company",
+      "name": "네오위즈",
+      "official_url": null
+    },
+    {
+      "slug": "s-0ca6a627aa",
+      "kind": "company",
+      "name": "당근",
+      "official_url": null
+    },
+    {
+      "slug": "s-04eb7f3e56",
+      "kind": "company",
+      "name": "농협정보시스템",
+      "official_url": null
+    },
+    {
+      "slug": "s-760948b91d",
+      "kind": "company",
+      "name": "클래스101",
+      "official_url": null
+    },
+    {
+      "slug": "s-b603caf542",
+      "kind": "company",
+      "name": "네이버랩스",
+      "official_url": null
+    },
+    {
+      "slug": "s-4abdb34ff6",
+      "kind": "company",
+      "name": "NHN",
+      "official_url": null
+    },
+    {
+      "slug": "s-e9a43b81f2",
+      "kind": "company",
+      "name": "코스콤",
+      "official_url": null
+    },
+    {
+      "slug": "s-da6b75c24e",
+      "kind": "company",
+      "name": "한화솔루션",
+      "official_url": null
+    },
+    {
+      "slug": "s-c5559e1c42",
+      "kind": "company",
+      "name": "NHN Cloud",
+      "official_url": null
+    },
+    {
+      "slug": "s-462583c8c9",
+      "kind": "company",
+      "name": "한국전력기술",
+      "official_url": null
+    },
+    {
+      "slug": "s-54764067dd",
+      "kind": "company",
+      "name": "SK오션플랜트",
+      "official_url": null
+    },
+    {
+      "slug": "s-9fc7742ba6",
+      "kind": "company",
+      "name": "금융보안원",
+      "official_url": null
+    },
+    {
+      "slug": "s-38838232ec",
+      "kind": "company",
+      "name": "IBK기업은행",
+      "official_url": null
+    },
+    {
+      "slug": "s-6232cc365f",
+      "kind": "company",
+      "name": "LG유플러스",
+      "official_url": null
+    },
+    {
+      "slug": "s-4aeccce129",
+      "kind": "company",
+      "name": "하나은행",
+      "official_url": null
+    },
+    {
+      "slug": "s-943a3f24c3",
+      "kind": "company",
+      "name": "기아",
+      "official_url": null
+    },
+    {
+      "slug": "s-79c3238b62",
+      "kind": "company",
+      "name": "CJ올리브네트웍스",
+      "official_url": null
+    },
+    {
+      "slug": "s-0edf0b21af",
+      "kind": "company",
+      "name": "신세계아이앤씨",
+      "official_url": null
+    },
+    {
+      "slug": "s-150430fdcb",
+      "kind": "contest_series",
+      "name": "KU-AI 비즈니스 모델 경진대회 및 데모데이",
+      "official_url": null
+    },
+    {
+      "slug": "s-cdbc4985ba",
+      "kind": "company",
+      "name": "NC문화재단",
+      "official_url": null
+    },
+    {
+      "slug": "s-58a776b7eb",
+      "kind": "company",
+      "name": "LX인터내셔널",
+      "official_url": null
+    },
+    {
+      "slug": "s-a57883a0fa",
+      "kind": "company",
+      "name": "고려대학교 글로벌리더십센터",
+      "official_url": null
+    },
+    {
+      "slug": "s-59d407df52",
+      "kind": "program",
+      "name": "학년도 겨울 WFUNA 유엔본부 한국대학생 대표단 (19기)",
+      "official_url": null
+    },
+    {
+      "slug": "s-f61ffc521a",
+      "kind": "company",
+      "name": "현대그룹",
+      "official_url": null
+    },
+    {
+      "slug": "s-340fb58b23",
+      "kind": "company",
+      "name": "현대모비스",
+      "official_url": null
+    },
+    {
+      "slug": "s-4a67f09a16",
+      "kind": "company",
+      "name": "HD현대",
+      "official_url": null
+    },
+    {
+      "slug": "s-41ed069816",
+      "kind": "company",
+      "name": "뷰웍스",
+      "official_url": null
+    },
+    {
+      "slug": "s-1ee4022e89",
+      "kind": "company",
+      "name": "한화에너지",
+      "official_url": null
+    },
+    {
+      "slug": "s-644cc15ce3",
+      "kind": "company",
+      "name": "두산그룹",
+      "official_url": null
+    },
+    {
+      "slug": "s-3d2d8517b9",
+      "kind": "company",
+      "name": "티맥스티베로",
+      "official_url": null
+    },
+    {
+      "slug": "s-9855a3e606",
+      "kind": "company",
+      "name": "NC AI",
+      "official_url": null
+    },
+    {
+      "slug": "s-24130211e4",
+      "kind": "company",
+      "name": "팔란티어 테크놀로지스 코리아",
+      "official_url": null
+    },
+    {
+      "slug": "s-ba157b7be2",
+      "kind": "contest_series",
+      "name": "딥보이스 범죄 대응을 위한 AI 탐지 모델 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-7d8e34166a",
+      "kind": "contest_series",
+      "name": "블랙박스 영상 기반 지능형 고의사고 분석 모델 AI 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-9652df7b1d",
+      "kind": "contest_series",
+      "name": "나라장터 자체입찰 공고 법령 위반사항 모니터링 AI 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-2768318af3",
+      "kind": "contest_series",
+      "name": "공공 웹사이트 불법광고 탐지 도구 개발 공모전",
+      "official_url": null
+    },
+    {
+      "slug": "s-db1687a814",
+      "kind": "contest_series",
+      "name": "추계학술대회 대학생 ERP 아이디어 공모전",
+      "official_url": null
+    },
+    {
+      "slug": "s-5d15c2244a",
+      "kind": "contest_series",
+      "name": "AI 달인 100 챌린지",
+      "official_url": null
+    },
+    {
+      "slug": "s-1fd2e7436a",
+      "kind": "program",
+      "name": "AI 서비스 기획자 교육 과정 (L.L.M. 아카데미)",
+      "official_url": null
+    },
+    {
+      "slug": "s-4ecc44d0bd",
+      "kind": "contest_series",
+      "name": "국방 AI 경진대회",
+      "official_url": null
+    },
+    {
+      "slug": "s-325bc74fd3",
+      "kind": "contest_series",
+      "name": "AI·디지털 기반 사회문제 해결 챌린지",
+      "official_url": null
+    },
+    {
+      "slug": "s-7fb3aa93fa",
+      "kind": "hackathon_series",
+      "name": "GWDC 2026 해커톤",
+      "official_url": null
+    },
+    {
+      "slug": "s-65dd78adf0",
+      "kind": "hackathon_series",
+      "name": "「제6회 그린리모델링 챌린지」 대학생 해커톤",
+      "official_url": null
+    }
   ],
   "opportunities": [
     {
-      "slug": "korea-tourism-datalab-contest-2026",
+      "slug": "s-b41e67def2",
+      "subject_slug": "s-362c2969b7",
+      "category": "contest",
+      "title": "제4회 경남AI·SW 경진대회",
+      "organization": "(사)경남인공ICT협회",
+      "tags": [
+        "AI",
+        "SW"
+      ],
+      "deadline": "2026-09-30T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351294",
+      "ingestion_method": "manual",
+      "description": "(사)경남인공ICT협회 공모전 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-1f86bcf6e0",
+      "subject_slug": "s-077fdb9f38",
+      "category": "hackathon",
+      "title": "[한국농수산식품유통공사] 2026 AI 농산물 가격예측 온라인 해커톤",
+      "organization": "한국농수산식품유통공사",
+      "tags": [
+        "AI",
+        "해커톤"
+      ],
+      "deadline": "2026-10-14T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351263",
+      "ingestion_method": "manual",
+      "description": "한국농수산식품유통공사 해커톤 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-f9fc29cd29",
+      "subject_slug": "s-b8ce8de7aa",
+      "category": "contest",
+      "title": "KoMaP AI 경진대회",
+      "organization": "산업통상자원부",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-16T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350422",
+      "ingestion_method": "manual",
+      "description": "산업통상자원부 공모전 공고. 모집 2026.09.03 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-6f7995d652",
+      "subject_slug": "s-1c7dde0fa7",
+      "category": "hackathon",
+      "title": "2026 스페이스 해커톤",
+      "organization": "마이스피플",
+      "tags": [
+        "해커톤"
+      ],
+      "deadline": "2026-11-06T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350800",
+      "ingestion_method": "manual",
+      "description": "마이스피플 해커톤 공고. 모집 2026.09.14 시작. 대학생·직장인·일반인 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-68514e1679",
+      "subject_slug": "s-afb5c03ce5",
+      "category": "contest",
+      "title": "[호서대학교] 2026 충남권역 모빌리티 자율주행 경진대회",
+      "organization": "호서대학교",
+      "tags": [
+        "자율주행"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350192",
+      "ingestion_method": "manual",
+      "description": "호서대학교 공모전 공고. 모집 2026.09.10 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-c7b15c58a2",
+      "subject_slug": "s-c9aea939b4",
+      "category": "contest",
+      "title": "2026 데이터+AI 혁신챌린지 데이터안심구역 경진대회",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "AI",
+        "데이터"
+      ],
+      "deadline": "2026-10-23T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/347448",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 공모전 공고. 모집 2026.09.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-76e37ba128",
+      "subject_slug": "s-86ced7ebf5",
+      "category": "contest",
+      "title": "2026 데이터·AI 혁신 챌린지 통합경진대회 <데이터 문제해결 부문>",
+      "organization": "AI데이터문제해결은행홍보사무국",
+      "tags": [
+        "AI",
+        "데이터"
+      ],
+      "deadline": "2026-10-23T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349636",
+      "ingestion_method": "manual",
+      "description": "AI데이터문제해결은행홍보사무국 공모전 공고. 모집 2026.09.08 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-a38238cdbb",
+      "subject_slug": "s-24e35a6e2d",
+      "category": "contest",
+      "title": "2026 대학생 프로그래밍 경시대회",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "SW",
+        "알고리즘"
+      ],
+      "deadline": "2026-09-23T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349550",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 공모전 공고. 모집 2026.09.09 시작. 대학생 3인 1팀. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-55ef54866d",
+      "subject_slug": "s-1064030267",
+      "category": "contest",
+      "title": "[과학기술정보통신부] 2026 AI 활용 아이디어 공모전",
+      "organization": "한국정보방송통신대연합",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-03T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349388",
+      "ingestion_method": "manual",
+      "description": "한국정보방송통신대연합 공모전 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-750c8ec585",
+      "subject_slug": "s-cb61b53d89",
+      "category": "contest",
+      "title": "PAC 2026 (Physical AI Challenge)",
+      "organization": "스마트크리에이터",
+      "tags": [
+        "AI",
+        "로봇"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349120",
+      "ingestion_method": "manual",
+      "description": "스마트크리에이터 공모전 공고. 모집 2026.08.17 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-7f984dfd8d",
+      "subject_slug": "s-af98a374a9",
+      "category": "contest",
+      "title": "제2회 ZYXCAD AX 경진대회",
+      "organization": "직스테크놀로지",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-19T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349058",
+      "ingestion_method": "manual",
+      "description": "직스테크놀로지 공모전 공고. 모집 2026.08.31 시작. 청소년·대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-c16c0bbdf9",
+      "subject_slug": "s-1446a59a57",
+      "category": "contest",
+      "title": "[SDU COSS] 미래 개발자를 위한 안전한 소프트웨어 개발 대회",
+      "organization": "(주)컬처메이커스",
+      "tags": [
+        "SW",
+        "보안"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349050",
+      "ingestion_method": "manual",
+      "description": "(주)컬처메이커스 공모전 공고. 모집 2026.09.01 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-7ddbdf1e45",
+      "subject_slug": "s-fa20846dbe",
+      "category": "contest",
+      "title": "2026 해운·항만·물류 AX 아이디어 공모전",
+      "organization": "한국해양진흥공사",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-31T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349024",
+      "ingestion_method": "manual",
+      "description": "한국해양진흥공사 공모전 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-ee1fe9e7a0",
+      "subject_slug": "s-b67f21a638",
+      "category": "contest",
+      "title": "2026년 한국식품안전관리인증원 공공데이터 분석·활용 경진대회",
+      "organization": "한국식품안전관리인증원",
+      "tags": [
+        "데이터",
+        "공공데이터"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/346681",
+      "ingestion_method": "manual",
+      "description": "한국식품안전관리인증원 공모전 공고. 모집 2026.08.31 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-7ecab10ea6",
+      "subject_slug": "s-cff505bd8f",
+      "category": "contest",
+      "title": "[안양시] 2026년 안양시 공공데이터·AI 활용 대학생 경진대회",
+      "organization": "안양시",
+      "tags": [
+        "AI",
+        "공공데이터"
+      ],
+      "deadline": "2026-09-22T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/344237",
+      "ingestion_method": "manual",
+      "description": "안양시 공모전 공고. 모집 2026.08.10 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-ad7be7cb50",
+      "subject_slug": "s-c6e7f3a1d3",
+      "category": "contest",
+      "title": "(iM뱅크) 2026 AI Blockchain 경진대회",
+      "organization": "아이엠뱅크",
+      "tags": [
+        "AI",
+        "블록체인"
+      ],
+      "deadline": "2026-09-21T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343841",
+      "ingestion_method": "manual",
+      "description": "아이엠뱅크 공모전 공고. 모집 2026.08.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-5b1c90bc6a",
+      "subject_slug": "s-6d518e80d2",
+      "category": "hackathon",
+      "title": "2026 K-조선 해커톤",
+      "organization": "산업통상부",
+      "tags": [
+        "해커톤",
+        "AI"
+      ],
+      "deadline": "2026-09-22T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343799",
+      "ingestion_method": "manual",
+      "description": "산업통상부 해커톤 공고. 모집 2026.08.24 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-d9e7f4bd42",
+      "subject_slug": "s-e64ded4368",
+      "category": "contest",
+      "title": "제3회 미래융합인재 발굴 소프트웨어 챌린지",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "SW"
+      ],
+      "deadline": "2026-10-08T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343089",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 공모전 공고. 모집 2026.08.15 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-c434d699bc",
+      "subject_slug": "s-38779042b8",
+      "category": "contest",
+      "title": "[한국과학기술정보연구원] 2026 DATA·AI 분석 경진대회",
+      "organization": "한국과학기술정보연구원",
+      "tags": [
+        "AI",
+        "데이터"
+      ],
+      "deadline": "2026-11-26T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/342034",
+      "ingestion_method": "manual",
+      "description": "한국과학기술정보연구원 공모전 공고. 모집 2026.08.11 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-bb65f3658b",
+      "subject_slug": "s-9b6358bece",
+      "category": "contest",
+      "title": "[하이멕] 제1회 하이멕 AI 활용 아이디어 공모전",
+      "organization": "하이멕",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/340878",
+      "ingestion_method": "manual",
+      "description": "하이멕 공모전 공고. 모집 2026.08.10 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-3354bf25e4",
+      "subject_slug": "s-791472b34a",
+      "category": "contest",
+      "title": "2026 D-Robotics Innovation Contest",
+      "organization": "엔티렉스-디바이스마트",
+      "tags": [
+        "로봇",
+        "임베디드"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/333591",
+      "ingestion_method": "manual",
+      "description": "엔티렉스-디바이스마트 공모전 공고. 모집 2026.07.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b26d73c415",
+      "subject_slug": "s-30761f4944",
+      "category": "contest",
+      "title": "2026년 국민체육진흥공단 공공데이터 활용 경진대회",
+      "organization": "서울올림픽기념국민체육진흥공단",
+      "tags": [
+        "데이터",
+        "공공데이터"
+      ],
+      "deadline": "2026-10-03T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/328330",
+      "ingestion_method": "manual",
+      "description": "서울올림픽기념국민체육진흥공단 공모전 공고. 모집 2026.06.08 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-9873823e1e",
+      "subject_slug": "s-d41e5c2b40",
+      "category": "contest",
+      "title": "2026년 창원시 AI·데이터 활용 공모전",
+      "organization": "창원특례시",
+      "tags": [
+        "AI",
+        "데이터"
+      ],
+      "deadline": "2026-09-30T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/325360",
+      "ingestion_method": "manual",
+      "description": "창원특례시 공모전 공고. 모집 2026.06.01 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-80e36bee44",
+      "subject_slug": "s-ae507b1fe7",
+      "category": "extracurricular",
+      "title": "2026 하반기 SK하이닉스 청년 Hy-Po 10기 모집",
+      "organization": "SK하이닉스",
+      "tags": [
+        "반도체"
+      ],
+      "deadline": "2026-09-28T15:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349091",
+      "ingestion_method": "manual",
+      "description": "SK하이닉스 대외활동 공고. 모집 2026.09.15 시작. 대한상공회의소·고용노동부 공동 운영. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-74aa3ab7a5",
+      "subject_slug": "s-13b5bb0f0a",
+      "category": "extracurricular",
+      "title": "DB그룹 제121회 NEW 대학생 기업경영 체험스쿨",
+      "organization": "DB그룹 인재개발원",
+      "tags": [
+        "경영"
+      ],
+      "deadline": "2026-10-17T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350072",
+      "ingestion_method": "manual",
+      "description": "DB그룹 인재개발원 대외활동 공고. 모집 2026.09.14 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-25605a7b1d",
+      "subject_slug": "s-54195a99c6",
+      "category": "extracurricular",
+      "title": "Global Model UN New York 2027 한국 청년 대표단 모집",
+      "organization": "유엔협회세계연맹",
+      "tags": [
+        "국제"
+      ],
+      "deadline": "2026-10-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351929",
+      "ingestion_method": "manual",
+      "description": "유엔협회세계연맹 대외활동 공고. 모집 2026.09.16 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-8ddeb4c30f",
+      "subject_slug": "s-46559c127b",
+      "category": "extracurricular",
+      "title": "Nobel Prize Dialogue Seoul 2026 서포터즈",
+      "organization": "한국과학기술한림원",
+      "tags": [
+        "AI",
+        "과학"
+      ],
+      "deadline": "2026-10-27T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/338719",
+      "ingestion_method": "manual",
+      "description": "한국과학기술한림원 대외활동 공고. 모집 2026.07.28 시작. 노벨프라이즈 아웃리치 공동 행사. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-324ec9224c",
+      "subject_slug": "s-4d09c5cfca",
+      "category": "extracurricular",
+      "title": "2026 SBS D포럼 서포터즈",
+      "organization": "SBS",
+      "tags": [
+        "포럼"
+      ],
+      "deadline": "2026-09-23T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349312",
+      "ingestion_method": "manual",
+      "description": "SBS 대외활동 공고. 모집 2026.09.09 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-62f5427426",
+      "subject_slug": "s-158ca7b3bc",
+      "category": "extracurricular",
+      "title": "2026 바이오미래포럼 대학생 서포터즈",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "AI",
+        "바이오"
+      ],
+      "deadline": "2026-10-12T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351614",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 대외활동 공고. 모집 2026.09.16 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-ac5f127d17",
+      "subject_slug": "s-15466a5d62",
+      "category": "extracurricular",
+      "title": "[과학기술정보통신부] 2026 AI 안전 지킴이",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-21T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350938",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 대외활동 공고. 모집 2026.09.11 시작. 생성형 AI 위험·오류 사례 발굴 참여. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-8a9f0e9d8a",
+      "subject_slug": "s-1b303a0c14",
+      "category": "extracurricular",
+      "title": "KOTRA AI 무역인재 양성과정 26년 2기",
+      "organization": "KOTRA",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-21T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343716",
+      "ingestion_method": "manual",
+      "description": "KOTRA 대외활동 공고. 모집 2026.08.14 시작. 접수 9/20까지 연장. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-00e6247134",
+      "subject_slug": "s-feeac50245",
+      "category": "extracurricular",
+      "title": "[스마일게이트 희망스튜디오] 청소년 AI 게임 창작 프로젝트 청년 멘토",
+      "organization": "스마일게이트 희망스튜디오",
+      "tags": [
+        "AI",
+        "게임"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351856",
+      "ingestion_method": "manual",
+      "description": "스마일게이트 희망스튜디오 대외활동 공고. 모집 2026.09.16 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b7db34e229",
+      "subject_slug": "s-98d999f1a6",
+      "category": "extracurricular",
+      "title": "[서울시×동국대 청년취업사관학교] AI 에이전트 업무 자동화 부트캠프",
+      "organization": "청년취업사관학교",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-15T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351895",
+      "ingestion_method": "manual",
+      "description": "청년취업사관학교 대외활동 공고. 모집 2026.08.10 시작. 대학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-5915041996",
+      "subject_slug": "s-8614d660c4",
+      "category": "extracurricular",
+      "title": "[KG] 피지컬AI 제조 AX 캠퍼스 4기",
+      "organization": "KG ICT",
+      "tags": [
+        "AI",
+        "로봇"
+      ],
+      "deadline": "2026-10-06T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349804",
+      "ingestion_method": "manual",
+      "description": "KG ICT 대외활동 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-3fd8bd945c",
+      "subject_slug": "s-02bff01158",
+      "category": "extracurricular",
+      "title": "2026 한미 첨단분야 청년교류 지원사업 제6기 장학생",
+      "organization": "한국산업기술진흥원",
+      "tags": [
+        "해외"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/340971",
+      "ingestion_method": "manual",
+      "description": "한국산업기술진흥원 대외활동 공고. 모집 2026.07.24 시작. 미국 대학 교환학생 파견 예정 이공계 학생 대상. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-3d7106b13f",
+      "subject_slug": "s-bda04c461a",
+      "category": "internship",
+      "title": "[버킷플레이스] 개인정보보호 및 정보보안 담당자 (인턴)",
+      "organization": "버킷플레이스(오늘의집)",
+      "tags": [
+        "보안"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/337337",
+      "ingestion_method": "manual",
+      "description": "버킷플레이스(오늘의집) 인턴 공고. 모집 2026.07.22 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b810a8f1f3",
+      "subject_slug": "s-d9123089cb",
+      "category": "internship",
+      "title": "[스캐터랩] ML Research Intern",
+      "organization": "스캐터랩",
+      "tags": [
+        "AI"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/337517",
+      "ingestion_method": "manual",
+      "description": "스캐터랩 인턴 공고. 모집 2026.07.23 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-9bc986698e",
+      "subject_slug": "s-0df1b0d036",
+      "category": "internship",
+      "title": "[현대자동차] 글로벌 채용전환형 인턴십 (제조솔루션)",
+      "organization": "현대자동차",
+      "tags": [
+        "AI",
+        "제조"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/337586",
+      "ingestion_method": "manual",
+      "description": "현대자동차 인턴 공고. 모집 2026.07.20 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-c84c7969df",
+      "subject_slug": "s-79bf37c456",
+      "category": "internship",
+      "title": "[111퍼센트] 플레이어블 애즈 개발자 (인턴)",
+      "organization": "111퍼센트",
+      "tags": [
+        "게임",
+        "프론트엔드"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/337711",
+      "ingestion_method": "manual",
+      "description": "111퍼센트 인턴 공고. 모집 2026.07.23 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-312a8a2c4e",
+      "subject_slug": "s-f8be091942",
+      "category": "internship",
+      "title": "[노타] Software Engineer Intern (체험형, Solution)",
+      "organization": "노타",
+      "tags": [
+        "AI",
+        "SW"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/338729",
+      "ingestion_method": "manual",
+      "description": "노타 인턴 공고. 모집 2026.07.28 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b5a48d8cca",
+      "subject_slug": "s-4907bb0fa0",
+      "category": "internship",
+      "title": "[레브잇·쇼포트] Product Engineer Internship (AI & Data)",
+      "organization": "레브잇",
+      "tags": [
+        "AI",
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/341409",
+      "ingestion_method": "manual",
+      "description": "레브잇 인턴 공고. 모집 2026.08.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-e03202eb73",
+      "subject_slug": "s-43112a0139",
+      "category": "internship",
+      "title": "[LG AI연구원] Platform Engineer Internship",
+      "organization": "LG AI연구원",
+      "tags": [
+        "AI",
+        "클라우드"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343345",
+      "ingestion_method": "manual",
+      "description": "LG AI연구원 인턴 공고. 모집 2026.08.18 시작. LG경영개발원 채용. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-dee8ad9fde",
+      "subject_slug": "s-43112a0139",
+      "category": "internship",
+      "title": "[LG AI연구원] Protein Design Research Engineer Internship",
+      "organization": "LG AI연구원",
+      "tags": [
+        "AI"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343347",
+      "ingestion_method": "manual",
+      "description": "LG AI연구원 인턴 공고. 모집 2026.08.18 시작. LG경영개발원 채용. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-1f841bb310",
+      "subject_slug": "s-43112a0139",
+      "category": "internship",
+      "title": "[LG AI연구원] NLP Research Engineer Internship",
+      "organization": "LG AI연구원",
+      "tags": [
+        "AI"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343352",
+      "ingestion_method": "manual",
+      "description": "LG AI연구원 인턴 공고. 모집 2026.08.18 시작. LG경영개발원 채용. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b11e948431",
+      "subject_slug": "s-43112a0139",
+      "category": "internship",
+      "title": "[LG AI연구원] Backend Engineer Internship",
+      "organization": "LG AI연구원",
+      "tags": [
+        "백엔드"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/343359",
+      "ingestion_method": "manual",
+      "description": "LG AI연구원 인턴 공고. 모집 2026.08.18 시작. LG경영개발원 채용. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-daeed00fc7",
+      "subject_slug": "s-43112a0139",
+      "category": "internship",
+      "title": "[LG AI연구원] Research Internship - Physical AI",
+      "organization": "LG AI연구원",
+      "tags": [
+        "AI",
+        "로봇"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/344459",
+      "ingestion_method": "manual",
+      "description": "LG AI연구원 인턴 공고. 모집 2026.08.21 시작. LG경영개발원 채용. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-a2ac8f1608",
+      "subject_slug": "s-43112a0139",
+      "category": "internship",
+      "title": "[LG AI연구원] Data Engineer Internship - Physical AI",
+      "organization": "LG AI연구원",
+      "tags": [
+        "AI",
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/344461",
+      "ingestion_method": "manual",
+      "description": "LG AI연구원 인턴 공고. 모집 2026.08.21 시작. LG경영개발원 채용. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-690d2f034c",
+      "subject_slug": "s-1eef35df02",
+      "category": "internship",
+      "title": "[한국마이크로소프트] Data Center Technicians Intern",
+      "organization": "한국마이크로소프트",
+      "tags": [
+        "클라우드",
+        "인프라"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/345521",
+      "ingestion_method": "manual",
+      "description": "한국마이크로소프트 인턴 공고. 모집 2026.08.21 시작. 부산 데이터센터 근무. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-fefc4903a9",
+      "subject_slug": "s-32746bc82a",
+      "category": "internship",
+      "title": "[지멘스] IT 업무지원 인턴",
+      "organization": "지멘스",
+      "tags": [
+        "IT"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/346061",
+      "ingestion_method": "manual",
+      "description": "지멘스 인턴 공고. 모집 2026.08.24 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b98746f68a",
+      "subject_slug": "s-9d7686478b",
+      "category": "internship",
+      "title": "[하이퍼엑셀] Compiler Engineer (인턴)",
+      "organization": "하이퍼엑셀",
+      "tags": [
+        "컴파일러",
+        "AI"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/346651",
+      "ingestion_method": "manual",
+      "description": "하이퍼엑셀 인턴 공고. 모집 2026.08.31 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b6d3b7485a",
+      "subject_slug": "s-4907bb0fa0",
+      "category": "internship",
+      "title": "[레브잇·쇼포트] Product Engineer Internship (Vision)",
+      "organization": "레브잇",
+      "tags": [
+        "AI"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/347225",
+      "ingestion_method": "manual",
+      "description": "레브잇 인턴 공고. 모집 2026.09.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-f02a29f1f1",
+      "subject_slug": "s-03408184a9",
+      "category": "internship",
+      "title": "[컬리] AI·검색 운영지원 (체험형 인턴)",
+      "organization": "컬리",
+      "tags": [
+        "AI",
+        "검색"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/347410",
+      "ingestion_method": "manual",
+      "description": "컬리 인턴 공고. 모집 2026.09.02 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-cb25e35b98",
+      "subject_slug": "s-6c17219f5d",
+      "category": "internship",
+      "title": "[마음AI] Inference Optimization Engineer (Intern)",
+      "organization": "마음AI",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/347556",
+      "ingestion_method": "manual",
+      "description": "마음AI 인턴 공고. 모집 2026.09.02 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-23f16f63c0",
+      "subject_slug": "s-96b7840514",
+      "category": "internship",
+      "title": "[SK AX 애커튼파트너스] Cyber Security 컨설턴트 (인턴)",
+      "organization": "애커튼파트너스",
+      "tags": [
+        "보안"
+      ],
+      "deadline": "2026-09-21T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/348739",
+      "ingestion_method": "manual",
+      "description": "애커튼파트너스 인턴 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-0a682436b2",
+      "subject_slug": "s-6595ade547",
+      "category": "internship",
+      "title": "[네이버웹툰] AI 서비스 기획 (체험형 인턴)",
+      "organization": "네이버웹툰",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349574",
+      "ingestion_method": "manual",
+      "description": "네이버웹툰 인턴 공고. 모집 2026.09.09 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-431a269bfc",
+      "subject_slug": "s-841673fd88",
+      "category": "internship",
+      "title": "[NAVER Cloud] 통합 Open API·AI 플랫폼 기획 (체험형 인턴)",
+      "organization": "네이버클라우드",
+      "tags": [
+        "AI",
+        "클라우드"
+      ],
+      "deadline": "2026-09-23T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350439",
+      "ingestion_method": "manual",
+      "description": "네이버클라우드 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-c94f23a680",
+      "subject_slug": "s-e95a12b920",
+      "category": "internship",
+      "title": "[네오위즈] ASTRA9 Studio QA 담당자 (인턴)",
+      "organization": "네오위즈",
+      "tags": [
+        "게임",
+        "QA"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350459",
+      "ingestion_method": "manual",
+      "description": "네오위즈 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-d3b7d05a5c",
+      "subject_slug": "s-841673fd88",
+      "category": "internship",
+      "title": "[NAVER Cloud] Audio Foundation Model Research Engineer (체험형 인턴)",
+      "organization": "네이버클라우드",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-23T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350507",
+      "ingestion_method": "manual",
+      "description": "네이버클라우드 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-e1689c04b7",
+      "subject_slug": "s-841673fd88",
+      "category": "internship",
+      "title": "[NAVER Cloud] HyperCLOVA X Omni-modal LLM Post-Training (체험형 인턴)",
+      "organization": "네이버클라우드",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-23T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350509",
+      "ingestion_method": "manual",
+      "description": "네이버클라우드 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-ff4a48f6e9",
+      "subject_slug": "s-841673fd88",
+      "category": "internship",
+      "title": "[NAVER Cloud] Multimodal MLOps (체험형 인턴)",
+      "organization": "네이버클라우드",
+      "tags": [
+        "AI",
+        "클라우드"
+      ],
+      "deadline": "2026-09-23T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350510",
+      "ingestion_method": "manual",
+      "description": "네이버클라우드 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-5d5335f107",
+      "subject_slug": "s-0ca6a627aa",
+      "category": "internship",
+      "title": "[당근] Software Engineer, Frontend (인턴) - 로컬 비즈니스",
+      "organization": "당근",
+      "tags": [
+        "프론트엔드"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350517",
+      "ingestion_method": "manual",
+      "description": "당근 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-eab40b98ab",
+      "subject_slug": "s-4907bb0fa0",
+      "category": "internship",
+      "title": "[레브잇·쇼포트] Product Engineer Internship (Data)",
+      "organization": "레브잇",
+      "tags": [
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350618",
+      "ingestion_method": "manual",
+      "description": "레브잇 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-5e30fc03a7",
+      "subject_slug": "s-04eb7f3e56",
+      "category": "internship",
+      "title": "[농협정보시스템] 2026년 신규직원 (채용연계형 인턴)",
+      "organization": "농협정보시스템",
+      "tags": [
+        "IT",
+        "보안"
+      ],
+      "deadline": "2026-09-24T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350647",
+      "ingestion_method": "manual",
+      "description": "농협정보시스템 인턴 공고. 모집 2026.09.14 시작. 개발/운영·정보보안 분야. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-34739c6dba",
+      "subject_slug": "s-f8be091942",
+      "category": "internship",
+      "title": "[노타] QA Engineer Intern (체험형)",
+      "organization": "노타",
+      "tags": [
+        "AI",
+        "QA"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351120",
+      "ingestion_method": "manual",
+      "description": "노타 인턴 공고. 모집 2026.09.16 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-9ad2d389c5",
+      "subject_slug": "s-760948b91d",
+      "category": "internship",
+      "title": "[클래스101] Data Analyst (전환형 인턴)",
+      "organization": "클래스101",
+      "tags": [
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351220",
+      "ingestion_method": "manual",
+      "description": "클래스101 인턴 공고. 모집 2026.09.16 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-6fa8ebfc69",
+      "subject_slug": "s-b603caf542",
+      "category": "internship",
+      "title": "[네이버랩스] 로봇 임베디드 시스템 개발 (인턴십)",
+      "organization": "네이버랩스",
+      "tags": [
+        "로봇",
+        "임베디드"
+      ],
+      "deadline": "2026-09-24T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351261",
+      "ingestion_method": "manual",
+      "description": "네이버랩스 인턴 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-731746784d",
+      "subject_slug": "s-6595ade547",
+      "category": "internship",
+      "title": "[네이버웹툰] 캐릭터 AI 모델 기획 및 테스트 (체험형 인턴)",
+      "organization": "네이버웹툰",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351275",
+      "ingestion_method": "manual",
+      "description": "네이버웹툰 인턴 공고. 모집 2026.09.15 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-fdf8142204",
+      "subject_slug": "s-4abdb34ff6",
+      "category": "internship",
+      "title": "[NHN] 백엔드 개발 인턴 (체험형)",
+      "organization": "NHN",
+      "tags": [
+        "백엔드"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351292",
+      "ingestion_method": "manual",
+      "description": "NHN 인턴 공고. 모집 2026.09.16 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-0ac2445aac",
+      "subject_slug": "s-e9a43b81f2",
+      "category": "employment",
+      "title": "[코스콤] 2026년 하반기 신입/경력/기술직 채용",
+      "organization": "코스콤",
+      "tags": [
+        "IT",
+        "금융"
+      ],
+      "deadline": "2026-09-22T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/348583",
+      "ingestion_method": "manual",
+      "description": "코스콤 채용 공고. 모집 2026.09.07 시작. IT·데이터센터 분야 포함. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-981eaa3b72",
+      "subject_slug": "s-da6b75c24e",
+      "category": "employment",
+      "title": "[한화큐셀] AI 플랫폼 엔지니어",
+      "organization": "한화솔루션",
+      "tags": [
+        "AI",
+        "클라우드"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/348659",
+      "ingestion_method": "manual",
+      "description": "한화솔루션 채용 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-ad609abcc3",
+      "subject_slug": "s-da6b75c24e",
+      "category": "employment",
+      "title": "[한화큐셀] 데이터 엔지니어",
+      "organization": "한화솔루션",
+      "tags": [
+        "데이터"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/348665",
+      "ingestion_method": "manual",
+      "description": "한화솔루션 채용 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-ec0355de72",
+      "subject_slug": "s-da6b75c24e",
+      "category": "employment",
+      "title": "[한화큐셀] 생성형 AI 애플리케이션 엔지니어",
+      "organization": "한화솔루션",
+      "tags": [
+        "AI",
+        "백엔드"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/348669",
+      "ingestion_method": "manual",
+      "description": "한화솔루션 채용 공고. 모집 2026.09.07 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-d49917ae94",
+      "subject_slug": "s-b603caf542",
+      "category": "employment",
+      "title": "[네이버랩스] Embedded System Hardware Engineer",
+      "organization": "네이버랩스",
+      "tags": [
+        "임베디드"
+      ],
+      "deadline": "2026-09-22T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349685",
+      "ingestion_method": "manual",
+      "description": "네이버랩스 채용 공고. 모집 2026.09.08 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-5b8485a4a9",
+      "subject_slug": "s-c5559e1c42",
+      "category": "employment",
+      "title": "[NHN Cloud] 컨테이너 인프라 서비스 개발",
+      "organization": "NHN Cloud",
+      "tags": [
+        "클라우드"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349751",
+      "ingestion_method": "manual",
+      "description": "NHN Cloud 채용 공고. 모집 2026.09.10 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-2c701c03fd",
+      "subject_slug": "s-0df1b0d036",
+      "category": "employment",
+      "title": "[현대자동차 로보틱스랩] 모바일로봇 위치 추정 및 주행 제어",
+      "organization": "현대자동차",
+      "tags": [
+        "로봇",
+        "자율주행"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349790",
+      "ingestion_method": "manual",
+      "description": "현대자동차 채용 공고. 모집 2026.09.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-25e7714a2c",
+      "subject_slug": "s-0df1b0d036",
+      "category": "employment",
+      "title": "[현대자동차 로보틱스랩] 관절로봇 SW 검증/평가",
+      "organization": "현대자동차",
+      "tags": [
+        "로봇",
+        "SW"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349836",
+      "ingestion_method": "manual",
+      "description": "현대자동차 채용 공고. 모집 2026.09.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-66c8759abb",
+      "subject_slug": "s-0df1b0d036",
+      "category": "employment",
+      "title": "[현대자동차 로보틱스랩] Perceptive AI 개발",
+      "organization": "현대자동차",
+      "tags": [
+        "AI",
+        "로봇"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349839",
+      "ingestion_method": "manual",
+      "description": "현대자동차 채용 공고. 모집 2026.09.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-7b1fa6d413",
+      "subject_slug": "s-0df1b0d036",
+      "category": "employment",
+      "title": "[현대자동차 로보틱스랩] 관절로봇 시스템 SW 개발",
+      "organization": "현대자동차",
+      "tags": [
+        "로봇",
+        "SW"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349841",
+      "ingestion_method": "manual",
+      "description": "현대자동차 채용 공고. 모집 2026.09.01 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-f16adaf113",
+      "subject_slug": "s-0ca6a627aa",
+      "category": "employment",
+      "title": "[당근] Software Engineer, Backend (신입) - 피드 ML Data Platform",
+      "organization": "당근",
+      "tags": [
+        "백엔드",
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/349893",
+      "ingestion_method": "manual",
+      "description": "당근 채용 공고. 모집 2026.09.10 시작. 신입. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b99cec13c2",
+      "subject_slug": "s-4907bb0fa0",
+      "category": "employment",
+      "title": "[레브잇·쇼포트] Product Engineer (Data)",
+      "organization": "레브잇",
+      "tags": [
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350060",
+      "ingestion_method": "manual",
+      "description": "레브잇 채용 공고. 모집 2026.09.11 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-5ece799405",
+      "subject_slug": "s-462583c8c9",
+      "category": "employment",
+      "title": "[한국전력기술] 2026년도 하반기 정규직 (대졸수준)",
+      "organization": "한국전력기술",
+      "tags": [
+        "공기업",
+        "전산"
+      ],
+      "deadline": "2026-09-22T11:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350641",
+      "ingestion_method": "manual",
+      "description": "한국전력기술 채용 공고. 모집 2026.09.14 시작. 전산 분야 포함. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-d9fb6ef315",
+      "subject_slug": "s-54764067dd",
+      "category": "employment",
+      "title": "[SK오션플랜트] 정보보안 담당 (경력/신입)",
+      "organization": "SK오션플랜트",
+      "tags": [
+        "보안"
+      ],
+      "deadline": "2026-09-29T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351236",
+      "ingestion_method": "manual",
+      "description": "SK오션플랜트 채용 공고. 모집 2026.09.14 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-962eb25374",
+      "subject_slug": "s-c5559e1c42",
+      "category": "employment",
+      "title": "[NHN Cloud] 제로트러스트 보안 서비스 개발",
+      "organization": "NHN Cloud",
+      "tags": [
+        "보안",
+        "클라우드"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351254",
+      "ingestion_method": "manual",
+      "description": "NHN Cloud 채용 공고. 모집 2026.09.16 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-21cb41d97b",
+      "subject_slug": "s-b603caf542",
+      "category": "employment",
+      "title": "[네이버랩스] Generative AI Engineer (2D/3D)",
+      "organization": "네이버랩스",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-09-30T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351269",
+      "ingestion_method": "manual",
+      "description": "네이버랩스 채용 공고. 모집 2026.09.15 시작. 경력 무관. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-725a60a747",
+      "subject_slug": "s-9fc7742ba6",
+      "category": "employment",
+      "title": "[금융보안원] 2027년도 신입직원 채용",
+      "organization": "금융보안원",
+      "tags": [
+        "보안"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351423",
+      "ingestion_method": "manual",
+      "description": "금융보안원 채용 공고. 모집 2026.09.17 시작. Tech·Security, Offensive Security 분야. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-48c84ae34c",
+      "subject_slug": "s-c5559e1c42",
+      "category": "employment",
+      "title": "[NHN Cloud] 플랫폼 운영",
+      "organization": "NHN Cloud",
+      "tags": [
+        "클라우드"
+      ],
+      "deadline": null,
+      "deadline_type": "rolling",
+      "deadline_precision": null,
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351584",
+      "ingestion_method": "manual",
+      "description": "NHN Cloud 채용 공고. 모집 2026.09.17 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-de2604e92c",
+      "subject_slug": "s-38838232ec",
+      "category": "employment",
+      "title": "[IBK기업은행] 2026년 하반기 일반직원 수시채용",
+      "organization": "IBK기업은행",
+      "tags": [
+        "IT",
+        "금융"
+      ],
+      "deadline": "2026-09-22T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/348549",
+      "ingestion_method": "manual",
+      "description": "IBK기업은행 채용 공고. 모집 2026.09.04 시작. IT 사업관리·플랫폼 아키텍처·사이버위협 분야 포함. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-e3b7b8cc8e",
+      "subject_slug": "s-6232cc365f",
+      "category": "employment",
+      "title": "[LG유플러스] 2026년 하반기 신입사원 채용",
+      "organization": "LG유플러스",
+      "tags": [
+        "네트워크"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350166",
+      "ingestion_method": "manual",
+      "description": "LG유플러스 채용 공고. 모집 2026.09.11 시작. NW기술·AIDC 분야 포함. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-43bb324298",
+      "subject_slug": "s-4aeccce129",
+      "category": "employment",
+      "title": "[하나은행] 2026년 하반기 신입행원 채용",
+      "organization": "하나은행",
+      "tags": [
+        "AI",
+        "데이터",
+        "금융"
+      ],
+      "deadline": "2026-09-28T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350707",
+      "ingestion_method": "manual",
+      "description": "하나은행 채용 공고. 모집 2026.09.14 시작. AI/데이터 금융 분야 포함. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-8418ba8ffd",
+      "subject_slug": "s-943a3f24c3",
+      "category": "employment",
+      "title": "[기아] 2026 하반기 신입 채용",
+      "organization": "기아",
+      "tags": [
+        "제조"
+      ],
+      "deadline": "2026-09-30T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/350817",
+      "ingestion_method": "manual",
+      "description": "기아 채용 공고. 모집 2026.09.15 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-e4406bdbc5",
+      "subject_slug": "s-79c3238b62",
+      "category": "employment",
+      "title": "[CJ올리브네트웍스] 2026년 하반기 신입사원",
+      "organization": "CJ올리브네트웍스",
+      "tags": [
+        "IT"
+      ],
+      "deadline": "2026-09-30T17:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351094",
+      "ingestion_method": "manual",
+      "description": "CJ올리브네트웍스 채용 공고. 모집 2026.09.16 시작. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-46a1247c41",
+      "subject_slug": "s-0edf0b21af",
+      "category": "employment",
+      "title": "[신세계아이앤씨] 2027 신입사원 채용",
+      "organization": "신세계아이앤씨",
+      "tags": [
+        "IT",
+        "SW",
+        "보안"
+      ],
+      "deadline": "2026-10-12T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "링커리어",
+      "source_url": "https://linkareer.com/activity/351725",
+      "ingestion_method": "manual",
+      "description": "신세계아이앤씨 채용 공고. 모집 2026.09.18 시작. 프로그래머·SAP·정보보호·클라우드 분야. 상세 요건은 원문 참고.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-431113d2a7",
       "subject_slug": "korea-tourism-datalab-contest",
       "category": "contest",
       "title": "2026 한국관광 데이터랩 활용 경진대회",
       "organization": "한국관광공사",
-      "tags": ["데이터", "AI"],
+      "tags": [
+        "데이터",
+        "AI"
+      ],
       "deadline": "2026-09-30T14:00:00+09:00",
       "deadline_type": "fixed",
       "deadline_precision": "time",
       "source_name": "고려대학교 정보대학 진로정보(공모전)",
       "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=824515",
       "ingestion_method": "manual",
-      "description": "'한국관광 데이터랩' 데이터를 활용한 성과 창출 사례 경진대회. 온라인 신청 폼으로 참가 서류 제출. 총 상금 2천만원.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
+      "description": "한국관광 데이터랩 데이터를 활용한 성과 사례 경진대회. 정보대학 게시글 기준 9/30 14시 마감.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
     },
     {
-      "slug": "k-cure-data-competition-4th-2026",
-      "subject_slug": "k-cure-data-competition",
+      "slug": "s-5b0a8fd924",
+      "subject_slug": "s-150430fdcb",
       "category": "contest",
-      "title": "제4차 K-CURE 데이터 경진대회",
-      "organization": "한국보건의료정보원",
-      "tags": ["데이터", "AI", "헬스케어"],
-      "deadline": "2026-08-24T15:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(공모전)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=814101",
-      "ingestion_method": "manual",
-      "description": "국립암센터 암 임상·공공 라이브러리 데이터를 활용하는 경진대회. 국내 거주 국민 누구나 개인 또는 팀으로 참가, 홈페이지에서 활용계획서 온라인 접수.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
-    },
-    {
-      "slug": "modu-ai-lab-ai-service-contest-2026",
-      "subject_slug": "modu-ai-lab-ai-service-contest",
-      "category": "contest",
-      "title": "2026 모두의 AI 실험실 AI 서비스 경진대회",
-      "organization": "과학기술정보통신부 / 한국지능정보사회진흥원",
-      "tags": ["AI"],
-      "deadline": "2026-09-06T18:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(공모전)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=1577841",
-      "ingestion_method": "manual",
-      "description": "모두의 AI 실험실 온라인 플랫폼을 활용한 현안 해결 아이디어 제안 및 AI 서비스 개발 경진대회. 5대 권역별 예선 후 본선 10팀 선정.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
-    },
-    {
-      "slug": "bto-public-data-ai-idea-contest-2026",
-      "subject_slug": "bto-public-data-ai-idea-contest",
-      "category": "contest",
-      "title": "2026년 부산관광공사 공공데이터·AI 활용 아이디어 공모전",
-      "organization": "부산관광공사",
-      "tags": ["데이터", "AI"],
-      "deadline": "2026-09-09T18:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(공모전)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=1578189",
-      "ingestion_method": "manual",
-      "description": "부산관광공사 공공데이터 1종 이상을 활용한 부산여행 아이디어 기획 공모전. 개인 또는 3인 이내 팀, 이메일 제출.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
-    },
-    {
-      "slug": "nais-ai-hackathon-2026",
-      "subject_slug": "nais-ai-hackathon",
-      "category": "hackathon",
-      "title": "대한민국 AI Native R&D를 함께 만드는 NAIS AI 해커톤",
-      "organization": "국가과학기술연구회 국가과학AI연구센터(NAIS)",
-      "tags": ["AI"],
-      "deadline": "2026-09-07T17:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(공모전)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=1582402",
-      "ingestion_method": "manual",
-      "description": "대한민국 국민 누구나 개인 또는 최대 5인 팀으로 참가하는 AI 해커톤. 본선은 2026.9.30~10.1 서울드래곤시티 호텔.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
-    },
-    {
-      "slug": "naeilro-hackathon-2026",
-      "subject_slug": "naeilro-hackathon",
-      "category": "hackathon",
-      "title": "내일路 해커톤 2026",
-      "organization": "내일路 해커톤 2026 운영사무국",
-      "tags": ["AI", "데이터"],
-      "deadline": "2026-08-05T14:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(공모전)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=814106",
-      "ingestion_method": "manual",
-      "description": "철도·항공 데이터를 활용한 AI 서비스 아이디어 해커톤. 대학(원)생·일반인 대상 개인 또는 4인 이하 팀, 온오프믹스로 신청.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
-    },
-    {
-      "slug": "openai-game-builders-seoul-2026",
-      "subject_slug": "openai-game-builders-seoul",
-      "category": "hackathon",
-      "title": "오픈AI 게임 빌더스 서울 (OpenAI Game Builders Seoul)",
-      "organization": "오픈AI (주관: 컴투스)",
-      "tags": ["AI", "게임"],
-      "deadline": "2026-08-27T00:00:00+09:00",
+      "title": "KU-AI 비즈니스 모델 경진대회 및 데모데이",
+      "organization": "고려대학교 AI중심대학사업단",
+      "tags": [
+        "AI",
+        "창업"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
       "deadline_type": "fixed",
       "deadline_precision": "date",
-      "source_name": "고려대학교 정보대학 진로정보(공모전)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_competition.do?mode=view&articleNo=1582399",
+      "source_name": "고려대학교 AI중심대학사업단 행사",
+      "source_url": "https://ku-ai.korea.ac.kr/swuniv/community/event.do?mode=view&articleNo=1583784",
       "ingestion_method": "manual",
-      "description": "Codex로 게임을 제작하는 게임 해커톤. 개인 또는 최대 3인 팀, 온라인 예선 접수 2026년 8월 26일까지, 오프라인 본선 8월 31일(서울).",
-      "last_checked_at": "2026-09-18T11:50:34Z"
+      "description": "고려대 AI중심대학사업단 주관 AI 비즈니스 모델 경진대회와 데모데이. 참가 신청 9/30까지.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
     },
     {
-      "slug": "ku-sw-centered-univ-industry-urp-2025-1",
-      "subject_slug": "ku-sw-centered-univ-industry-urp",
-      "category": "undergraduate_research",
-      "title": "[SW중심대학] 산학협력 프로젝트 학부연구생 모집 (2025년 1학기)",
-      "organization": "고려대학교 SW중심대학사업단 / 정보대학",
-      "tags": ["연구실", "AI"],
-      "deadline": "2025-03-27T17:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 공지사항(학부)",
-      "source_url": "https://info.korea.ac.kr/info/board/notice_under.do?mode=view&articleNo=769727",
-      "ingestion_method": "manual",
-      "description": "컴퓨터학과·데이터과학과 학부 재학생 대상, 지정 5개 연구실 중 하나에서 2025.4.1~6.30 활동. 지도교수 서명 신청서 제출, 월 30만원 지원.",
-      "last_checked_at": "2026-09-18T11:51:29Z"
-    },
-    {
-      "slug": "ku-sw-centered-univ-industry-urp-2024-2",
-      "subject_slug": "ku-sw-centered-univ-industry-urp",
-      "category": "undergraduate_research",
-      "title": "[SW중심대학사업] 산학협력 프로젝트 학부연구생 모집 (2024년 2학기)",
-      "organization": "고려대학교 SW중심대학사업단 / 정보대학",
-      "tags": ["연구실", "AI"],
-      "deadline": "2024-09-26T16:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 공지사항(학부)",
-      "source_url": "https://info.korea.ac.kr/info/board/notice_under.do?mode=view&articleNo=514225",
-      "ingestion_method": "manual",
-      "description": "컴퓨터학과·데이터과학과 학부 재학생 대상, 지정 5개 연구실 중 하나에서 2024.10.1~12.31 활동. TOPCIT 정기평가 응시 필수, 월 30만원 지원.",
-      "last_checked_at": "2026-09-18T11:51:29Z"
-    },
-    {
-      "slug": "ku-oslab-urp-2024",
-      "subject_slug": "ku-oslab",
-      "category": "undergraduate_research",
-      "title": "운영체제연구실(OsLab) 학부연구생 모집",
-      "organization": "고려대학교 운영체제연구실",
-      "tags": ["연구실", "AI", "클라우드"],
-      "deadline": null,
-      "deadline_type": "unknown",
-      "deadline_precision": null,
-      "source_name": "고려대학교 정보대학 공지사항(학부)",
-      "source_url": "https://info.korea.ac.kr/info/board/notice_under.do?mode=view&articleNo=604991",
-      "ingestion_method": "manual",
-      "description": "분산 딥러닝 시스템, 클라우드·컨테이너 가상화, 소프트웨어 정의 네트워킹 등 연구 분야 학부연구생 모집. CV 포함 이메일 연락. 원문에 마감일 없음.",
-      "last_checked_at": "2026-09-18T11:51:29Z"
-    },
-    {
-      "slug": "ku-hvcl-urp-2023",
-      "subject_slug": "ku-hvcl",
-      "category": "undergraduate_research",
-      "title": "[학부연구생 모집] 고성능비주얼컴퓨팅 연구실(정원기 교수님)",
-      "organization": "고려대학교 고성능비주얼컴퓨팅 연구실",
-      "tags": ["연구실", "AI", "데이터"],
-      "deadline": null,
-      "deadline_type": "rolling",
-      "deadline_precision": null,
-      "source_name": "고려대학교 정보대학 공지사항(학부)",
-      "source_url": "https://info.korea.ac.kr/info/board/notice_under.do?mode=view&articleNo=338631",
-      "ingestion_method": "manual",
-      "description": "영상처리(의료영상분할) 1명, 시각화(AR 데이터 시각화) 1명 학부연구생 모집, 연구활동비 지급. 모집기간 '채용 시까지'(2023.12.11 게시, 현재 모집 여부 미확인).",
-      "last_checked_at": "2026-09-18T11:51:29Z"
-    },
-    {
-      "slug": "nexon-nextorial-2026",
-      "subject_slug": "nexon",
+      "slug": "s-81e39eb234",
+      "subject_slug": "s-cdbc4985ba",
       "category": "internship",
-      "title": "2026 넥토리얼 For Game Programmer",
-      "organization": "넥슨",
-      "tags": ["게임", "백엔드"],
-      "deadline": "2026-09-07T16:00:00+09:00",
+      "title": "2026 NC문화재단 프로젝토리 크루 (인턴)",
+      "organization": "NC문화재단",
+      "tags": [
+        "교육",
+        "코딩"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
       "deadline_type": "fixed",
-      "deadline_precision": "time",
+      "deadline_precision": "date",
       "source_name": "고려대학교 정보대학 진로정보(인턴)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_intern.do?mode=view&articleNo=1582984",
+      "source_url": "https://info.korea.ac.kr/info/board/course_intern.do?mode=view&articleNo=1585175",
       "ingestion_method": "manual",
-      "description": "게임 프로그래머 대상 6개월 채용형 인턴십(2026.12.7 입사), 수료 결과에 따라 정규직 전환. 기졸업자 및 2027년 2월 졸업예정자 대상.",
-      "last_checked_at": "2026-09-18T11:50:35Z"
+      "description": "NC문화재단 프로젝토리 교육 운영 인턴. 서류 접수 9/16~9/30, 근무 2026.11~2027.2.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
     },
     {
-      "slug": "naver-z-zepeto-world-intern-2026",
-      "subject_slug": "naver-z",
+      "slug": "s-72b467b6d2",
+      "subject_slug": "s-58a776b7eb",
       "category": "internship",
-      "title": "[NAVER Z] AI 기반 제페토 월드 콘텐츠 제작 체험형 인턴",
-      "organization": "NAVER Z",
-      "tags": ["AI", "게임"],
-      "deadline": "2026-09-06T23:59:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(인턴)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_intern.do?mode=view&articleNo=1583195",
-      "ingestion_method": "manual",
-      "description": "AI 도구를 활용한 Unity 기반 제페토 월드 제작 체험형 인턴(약 3개월, 입과 예정 2026.9.21). 정규직 전환 연계 없음.",
-      "last_checked_at": "2026-09-18T11:50:35Z"
-    },
-    {
-      "slug": "lx-international-2026h2-intern",
-      "subject_slug": "lx-international",
-      "category": "internship",
-      "title": "[LX인터내셔널] 2026년 하반기 신입사원 채용(채용연계형 인턴십)",
+      "title": "[LX인터내셔널] 2026년 하반기 신입사원 채용 (채용연계형 인턴십)",
       "organization": "LX인터내셔널",
-      "tags": ["채용연계형"],
+      "tags": [
+        "대기업"
+      ],
       "deadline": "2026-09-21T00:00:00+09:00",
       "deadline_type": "fixed",
       "deadline_precision": "date",
       "source_name": "고려대학교 정보대학 진로정보(인턴)",
       "source_url": "https://info.korea.ac.kr/info/board/course_intern.do?mode=view&articleNo=1583864",
       "ingestion_method": "manual",
-      "description": "사업개발·운영, 기술지원, 해외영업, 사업기획, 신사업개발, 재경, ESG, HR 분야 채용연계형 인턴십. 접수 9.1~9.20, LX Careers로 지원.",
-      "last_checked_at": "2026-09-18T11:50:34Z"
+      "description": "LX인터내셔널 채용연계형 인턴십. 접수 9/1~9/20.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
     },
     {
-      "slug": "bioresearch-ai-data-engineer-intern-2026",
-      "subject_slug": "bioresearch-ai",
+      "slug": "s-cca6a3ef2f",
+      "subject_slug": "s-a57883a0fa",
       "category": "internship",
-      "title": "[바이오리서치에이아이] 데이터엔지니어(인턴십) 채용공고",
-      "organization": "바이오리서치에이아이",
-      "tags": ["데이터", "백엔드"],
-      "deadline": null,
-      "deadline_type": "unknown",
-      "deadline_precision": null,
-      "source_name": "고려대학교 정보대학 진로정보(인턴)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_intern.do?mode=view&articleNo=1582796",
-      "ingestion_method": "manual",
-      "description": "제약·바이오 데이터 수집·파이프라인 개발 지원 인턴(2026년 9월 채용일~11월 30일). 서울 강남구 주민등록 만 19~39세 대학생 대상. 게시글 본문에 접수 마감일 없음.",
-      "last_checked_at": "2026-09-18T11:50:35Z"
-    },
-    {
-      "slug": "hyundai-mobis-robotics-2026h2",
-      "subject_slug": "hyundai-mobis",
-      "category": "employment",
-      "title": "[현대모비스] 26년 하반기 로보틱스 집중 채용",
-      "organization": "현대모비스",
-      "tags": ["로보틱스", "AI"],
-      "deadline": "2026-09-29T10:00:00+09:00",
-      "deadline_type": "fixed",
-      "deadline_precision": "time",
-      "source_name": "고려대학교 정보대학 진로정보(채용)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584964",
-      "ingestion_method": "manual",
-      "description": "현대모비스 로보틱스 분야 하반기 채용. 채용사이트 온라인 접수, 서류→인/적성→1차 면접→2차 면접(영어 면접 포함)→채용 검진.",
-      "last_checked_at": "2026-09-18T11:52:28Z"
-    },
-    {
-      "slug": "sc-bio-ai-drug-discovery-researcher",
-      "subject_slug": "sc-bio",
-      "category": "employment",
-      "title": "[에스씨바이오] AI 신약개발 연구원(이미지/영상/데이터 분석) 채용 공고",
-      "organization": "에스씨바이오",
-      "tags": ["AI", "데이터"],
-      "deadline": null,
-      "deadline_type": "unknown",
-      "deadline_precision": null,
-      "source_name": "고려대학교 정보대학 진로정보(채용)",
-      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584963",
-      "ingestion_method": "manual",
-      "description": "AI 기반 바이오마커 분석, 조직 이미지·행동 영상 분석 알고리즘 개발 연구원(신입~경력 3년). 이메일 이력서 접수, 수시 진행. 원문에 마감일 미기재.",
-      "last_checked_at": "2026-09-18T11:52:28Z"
-    },
-    {
-      "slug": "gldc-kist-europe-internship-2027-1",
-      "subject_slug": "gldc-kist-europe-internship",
-      "category": "internship",
-      "title": "2027학년도 1학기 KIST 유럽연구소 글로벌 인턴십 프로그램 참가자 모집",
-      "organization": "고려대학교 국제처 국제교류팀",
-      "tags": ["해외인턴", "연구"],
+      "title": "2027학년도 1학기 KIST 유럽연구소 글로벌 인턴십 프로그램",
+      "organization": "고려대학교 글로벌리더십센터",
+      "tags": [
+        "연구",
+        "해외"
+      ],
       "deadline": "2026-09-28T23:59:00+09:00",
       "deadline_type": "fixed",
       "deadline_precision": "time",
       "source_name": "고려대학교 글로벌리더십센터(GLDC) 공지사항",
       "source_url": "https://gldc.korea.ac.kr/gldc/community/notice.do?mode=view&articleNo=1585181",
       "ingestion_method": "manual",
-      "description": "독일 자르브뤼켄 소재 KIST 유럽연구소에서 6개월(2027.2.15~8.13) 글로벌 인턴십. 2026년 2학기 기준 4학기 초과 수료한 서울캠퍼스 재학·휴학생(8학기 이내) 대상. 본교 지원금 200만원 + KIST 활동장려금 월 600유로, 왕복 항공료 등은 개인 부담. 쿠카이브에서 신청.",
-      "last_checked_at": "2026-09-18T16:41:26Z"
+      "description": "KIST 유럽연구소(독일) 6개월 인턴십, 2027.2~8. 고려대 GLDC 선발.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
     },
     {
-      "slug": "ku-glp-2026-summer",
-      "subject_slug": "ku-glp",
+      "slug": "s-f9851abbb8",
+      "subject_slug": "s-59d407df52",
       "category": "extracurricular",
-      "title": "2026학년도 여름 KU-GLP (Germany, UK, Australia, Denmark, USA, France) 참가자 모집",
+      "title": "2026학년도 겨울 WFUNA 유엔본부 한국대학생 대표단 (19기)",
       "organization": "고려대학교 글로벌리더십센터",
-      "tags": ["교환", "해외파견"],
+      "tags": [
+        "국제",
+        "해외"
+      ],
+      "deadline": "2026-09-21T23:59:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "고려대학교 글로벌리더십센터(GLDC) 공지사항",
+      "source_url": "https://gldc.korea.ac.kr/gldc/community/notice.do?mode=view&articleNo=1584036",
+      "ingestion_method": "manual",
+      "description": "WFUNA 연계 유엔본부 한국대학생 대표단. 고려대 7명 선발, 2027년 겨울 뉴욕 파견. 서류는 쿠카이브로 접수.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-94af7fb23e",
+      "subject_slug": "s-f61ffc521a",
+      "category": "employment",
+      "title": "[현대그룹] 2026 하반기 신입 매니저 채용",
+      "organization": "현대그룹",
+      "tags": [
+        "대기업"
+      ],
+      "deadline": "2026-09-23T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1585337",
+      "ingestion_method": "manual",
+      "description": "현대그룹 하반기 신입 공채. 접수 9/1~9/22.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-42733854bd",
+      "subject_slug": "s-340fb58b23",
+      "category": "employment",
+      "title": "[현대모비스] 26년 하반기 로보틱스 집중 채용",
+      "organization": "현대모비스",
+      "tags": [
+        "로봇",
+        "SW"
+      ],
+      "deadline": "2026-09-29T10:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584964",
+      "ingestion_method": "manual",
+      "description": "현대모비스 로보틱스 분야 집중 채용. 접수 9/11~9/29 오전 10시.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-e0a708ca33",
+      "subject_slug": "s-340fb58b23",
+      "category": "employment",
+      "title": "[현대모비스] 26년 하반기 연구장학생 모집",
+      "organization": "현대모비스",
+      "tags": [
+        "연구",
+        "장학"
+      ],
+      "deadline": "2026-09-29T10:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584965",
+      "ingestion_method": "manual",
+      "description": "현대모비스 채용연계 연구장학생. 접수 9/11~9/29 오전 10시.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-33c929436e",
+      "subject_slug": "s-4a67f09a16",
+      "category": "employment",
+      "title": "[HD현대] 2026 하반기 신입사원 모집",
+      "organization": "HD현대",
+      "tags": [
+        "대기업",
+        "SW"
+      ],
+      "deadline": "2026-09-27T23:59:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584141",
+      "ingestion_method": "manual",
+      "description": "HD현대 하반기 신입 공채. 접수 9/1~9/27 23:59.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b9098b8e12",
+      "subject_slug": "s-41ed069816",
+      "category": "employment",
+      "title": "[뷰웍스] 2027 대졸 신입사원 공개채용",
+      "organization": "뷰웍스",
+      "tags": [
+        "SW",
+        "영상"
+      ],
+      "deadline": "2026-09-22T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1583717",
+      "ingestion_method": "manual",
+      "description": "의료·산업용 영상 장비 기업 뷰웍스 대졸 신입 공채. 접수 9/1~9/21.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-52d943cea2",
+      "subject_slug": "s-1ee4022e89",
+      "category": "employment",
+      "title": "[한화에너지] 2026 하반기 신입사원 공개채용",
+      "organization": "한화에너지",
+      "tags": [
+        "대기업"
+      ],
+      "deadline": "2026-09-21T23:59:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1583714",
+      "ingestion_method": "manual",
+      "description": "한화에너지 하반기 신입 공채. 접수 9/1~9/21 23:59.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-b275e3016f",
+      "subject_slug": "s-644cc15ce3",
+      "category": "employment",
+      "title": "[두산그룹] 2026년 신입사원 채용",
+      "organization": "두산그룹",
+      "tags": [
+        "AI",
+        "보안",
+        "로봇"
+      ],
+      "deadline": "2026-09-21T18:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1583866",
+      "ingestion_method": "manual",
+      "description": "두산그룹 신입 공채. 디지털이노베이션BU AI·보안, 두산로보틱스 R&D 등 포함. 접수 9/1~9/21 18시.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-f3e533ccf9",
+      "subject_slug": "s-3d2d8517b9",
+      "category": "employment",
+      "title": "[티맥스티베로] 신입 채용 (SysMasterDB 프론트엔드 개발 등)",
+      "organization": "티맥스티베로",
+      "tags": [
+        "DB",
+        "프론트엔드"
+      ],
       "deadline": null,
       "deadline_type": "unknown",
       "deadline_precision": null,
-      "source_name": "고려대학교 글로벌리더십센터(GLDC) 공지사항",
-      "source_url": "https://gldc.korea.ac.kr/gldc/community/notice.do?mode=view&articleNo=804404",
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584577",
       "ingestion_method": "manual",
-      "description": "7~8주 해외대학 통합 언어·문화 교육과정(어학교육·특별강연·문화체험·기업탐방). 파견국: 독일, 영국, 호주, 덴마크, 미국, 프랑스. 모집 대상·활동 기간·마감일은 이미지 공고문에만 있어 텍스트로 확인하지 못했다. 문의: 02-3290-2694 / gldc@korea.ac.kr.",
-      "last_checked_at": "2026-09-18T16:41:26Z"
+      "description": "DBMS 기업 티맥스티베로 신입 개발 채용(전문연구요원 가능 포지션 포함). 원문에 마감일이 없어 2026-09-10 게시일 기준으로 수록.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-99149b1792",
+      "subject_slug": "s-9855a3e606",
+      "category": "employment",
+      "title": "[NC AI] 디지털트윈 R&D 연구원 채용",
+      "organization": "NC AI",
+      "tags": [
+        "AI",
+        "비전"
+      ],
+      "deadline": null,
+      "deadline_type": "unknown",
+      "deadline_precision": null,
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1584581",
+      "ingestion_method": "manual",
+      "description": "컴퓨터 비전·머신러닝 석·박사 대상 정규직(전문연구요원 가능). 원문에 마감일이 없어 2026-09-10 게시일 기준으로 수록.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-cef3fdb63c",
+      "subject_slug": "s-24130211e4",
+      "category": "employment",
+      "title": "[팔란티어 코리아] FDE / Deployment Strategist 채용 (인턴/신입/경력)",
+      "organization": "팔란티어 테크놀로지스 코리아",
+      "tags": [
+        "SW",
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "unknown",
+      "deadline_precision": null,
+      "source_name": "고려대학교 정보대학 진로정보(채용)",
+      "source_url": "https://info.korea.ac.kr/info/board/course_job.do?mode=view&articleNo=1396335",
+      "ingestion_method": "manual",
+      "description": "팔란티어 Commercial 부문 Forward Deployed Software Engineer·Deployment Strategist 채용. 원문에 마감일이 없어 2026-08-13 게시일 기준으로 수록.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-cbbbc07c6d",
+      "subject_slug": "s-ba157b7be2",
+      "category": "contest",
+      "title": "딥보이스 범죄 대응을 위한 AI 탐지 모델 경진대회",
+      "organization": "DACON",
+      "tags": [
+        "AI",
+        "오디오"
+      ],
+      "deadline": "2026-09-30T10:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "DACON",
+      "source_url": "https://dacon.io/competitions/official/236749/overview/description",
+      "ingestion_method": "manual",
+      "description": "딥보이스 음성 탐지 AI 코드 제출형 경진대회. 대회 기간 8/26~9/30 10시.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-cd8e185c69",
+      "subject_slug": "s-7d8e34166a",
+      "category": "contest",
+      "title": "블랙박스 영상 기반 지능형 고의사고 분석 모델 AI 경진대회",
+      "organization": "DACON",
+      "tags": [
+        "AI",
+        "비전"
+      ],
+      "deadline": "2026-09-30T10:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "DACON",
+      "source_url": "https://dacon.io/competitions/official/236753/overview/description",
+      "ingestion_method": "manual",
+      "description": "블랙박스 영상으로 고의 교통사고를 분석하는 컴퓨터비전 경진대회. 대회 기간 8/26~9/30 10시.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-8bae7f8658",
+      "subject_slug": "s-9652df7b1d",
+      "category": "contest",
+      "title": "나라장터 자체입찰 공고 법령 위반사항 모니터링 AI 경진대회",
+      "organization": "DACON",
+      "tags": [
+        "AI",
+        "NLP"
+      ],
+      "deadline": "2026-09-30T10:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "time",
+      "source_name": "DACON",
+      "source_url": "https://dacon.io/competitions/official/236754/overview/description",
+      "ingestion_method": "manual",
+      "description": "입찰 공고문 법령 위반사항을 찾는 자연어처리 경진대회. 대회 기간 8/26~9/30 10시.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-82f7b62440",
+      "subject_slug": "s-2768318af3",
+      "category": "contest",
+      "title": "공공 웹사이트 불법광고 탐지 도구 개발 공모전",
+      "organization": "행정안전부",
+      "tags": [
+        "보안",
+        "SW"
+      ],
+      "deadline": "2026-10-24T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "위비티",
+      "source_url": "https://www.wevity.com/?c=find&s=1&gbn=view&ix=110998",
+      "ingestion_method": "manual",
+      "description": "행정안전부·한국지능정보사회진흥원 주관. 공공 웹사이트 불법광고 탐지 도구 개발. 접수 9/14~10/23.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-a473fbcb42",
+      "subject_slug": "s-db1687a814",
+      "category": "contest",
+      "title": "2026 추계학술대회 대학생 ERP 아이디어 공모전",
+      "organization": "한국경영정보학회",
+      "tags": [
+        "ERP",
+        "SW"
+      ],
+      "deadline": "2026-10-07T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "위비티",
+      "source_url": "https://www.wevity.com/?c=find&s=1&gbn=view&ix=110710",
+      "ingestion_method": "manual",
+      "description": "한국경영정보학회·영림원 주관 대학생 ERP 아이디어 공모전. 접수 9/1~10/6.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-57ea3608de",
+      "subject_slug": "s-5d15c2244a",
+      "category": "contest",
+      "title": "AI 달인 100 챌린지",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-11-06T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "위비티",
+      "source_url": "https://www.wevity.com/?c=find&s=1&gbn=view&ix=110273",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 주최 AI 활용 챌린지. 접수 8/12~11/5.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-bd57351879",
+      "subject_slug": "s-1fd2e7436a",
+      "category": "extracurricular",
+      "title": "[CJ올리브네트웍스] AI 서비스 기획자 교육 과정 (L.L.M. 아카데미)",
+      "organization": "CJ올리브네트웍스",
+      "tags": [
+        "AI",
+        "교육"
+      ],
+      "deadline": "2026-09-23T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "위비티",
+      "source_url": "https://www.wevity.com/?c=find&s=1&gbn=view&ix=110623",
+      "ingestion_method": "manual",
+      "description": "CJ올리브네트웍스 무료 AI 서비스 기획 교육 과정. 접수 8/31~9/22.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-bc1b3edd26",
+      "subject_slug": "s-4ecc44d0bd",
+      "category": "contest",
+      "title": "2026 국방 AI 경진대회",
+      "organization": "국방부",
+      "tags": [
+        "AI"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "캠퍼스픽",
+      "source_url": "https://www.campuspick.com/contest/view?id=35999",
+      "ingestion_method": "manual",
+      "description": "국방부 주최, 정보통신기획평가원·한국오픈소스협회 주관. 접수 9/1~9/30. 참가 자격은 원문에서 확인.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-0e7cb96d3d",
+      "subject_slug": "s-325bc74fd3",
+      "category": "contest",
+      "title": "2026 AI·디지털 기반 사회문제 해결 챌린지",
+      "organization": "과학기술정보통신부",
+      "tags": [
+        "AI",
+        "SW"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "캠퍼스픽",
+      "source_url": "https://www.campuspick.com/contest/view?id=35962",
+      "ingestion_method": "manual",
+      "description": "과학기술정보통신부 주최, 한국지능정보사회진흥원 주관 서비스 개발 챌린지. 접수 8/21~9/30.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-d134570149",
+      "subject_slug": "s-7fb3aa93fa",
+      "category": "hackathon",
+      "title": "GWDC 2026 해커톤",
+      "organization": "Web3Labs",
+      "tags": [
+        "해커톤",
+        "AI",
+        "블록체인"
+      ],
+      "deadline": "2026-09-28T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "캠퍼스픽",
+      "source_url": "https://www.campuspick.com/contest/view?id=35837",
+      "ingestion_method": "manual",
+      "description": "글로벌 AI×Web3 해커톤, 참가비 무료·개인 신청 가능. 접수 8/28~9/27.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-074d256fd3",
+      "subject_slug": "s-65dd78adf0",
+      "category": "hackathon",
+      "title": "「제6회 그린리모델링 챌린지」 대학생 해커톤",
+      "organization": "국토교통부",
+      "tags": [
+        "해커톤"
+      ],
+      "deadline": "2026-10-01T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "캠퍼스픽",
+      "source_url": "https://www.campuspick.com/contest/view?id=35694",
+      "ingestion_method": "manual",
+      "description": "국토교통부 주최, 국토안전관리원 주관 대학(원)생 해커톤. 접수 8/12~9/30.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
     }
   ],
   "demo_review_templates": [
@@ -367,7 +2846,9 @@
       "pros": null,
       "challenges": null,
       "tips": "(가상 예시) 지원 전 관심 논문을 골라 질문을 준비하면 면담에 도움이 될 수 있습니다.",
-      "skills": ["Python"],
+      "skills": [
+        "Python"
+      ],
       "details": {},
       "is_anonymous": true
     },
@@ -388,8 +2869,13 @@
       "pros": null,
       "challenges": null,
       "tips": "(가상 예시) 공모요강의 제출 형식과 마감 시각을 먼저 확인하세요.",
-      "skills": ["Python", "데이터 시각화"],
-      "details": { "team_size": 4 },
+      "skills": [
+        "Python",
+        "데이터 시각화"
+      ],
+      "details": {
+        "team_size": 4
+      },
       "is_anonymous": true
     },
     {
@@ -409,7 +2895,10 @@
       "pros": null,
       "challenges": null,
       "tips": "(가상 예시) 포트폴리오에는 본인이 맡은 부분과 결정 이유를 적으세요.",
-      "skills": ["C++", "Unity"],
+      "skills": [
+        "C++",
+        "Unity"
+      ],
       "details": {},
       "is_anonymous": true
     }

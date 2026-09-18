@@ -34,7 +34,7 @@ describe('opportunity deadlines', () => {
   });
 
   it('preserves rolling and tbd labels without asserting that they are open', () => {
-    expect(classifyDeadline(fixed({ deadline_type: 'rolling', deadline: null, deadline_precision: null }))).toEqual({ kind: 'rolling', label: '상시' });
+    expect(classifyDeadline(fixed({ deadline_type: 'rolling', deadline: null, deadline_precision: null }))).toEqual({ kind: 'rolling', label: '모집시 마감' });
     expect(classifyDeadline(fixed({ deadline_type: 'tbd', deadline: null, deadline_precision: null }))).toEqual({ kind: 'tbd', label: '마감일 미정' });
   });
 

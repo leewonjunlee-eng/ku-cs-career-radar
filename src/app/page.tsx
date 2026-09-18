@@ -37,14 +37,25 @@ export default async function HomePage({
   // 그 외 오류는 그대로 던져서 error.tsx가 실패 상태로 처리하게 둔다.
   let items: Awaited<ReturnType<typeof listPublicOpportunities>>['items'] = [];
   let queryError: string | null = null;
+  let page = 1;
+  let pageCount = 1;
   try {
     const filters = parseOpportunityQuery(rawParams);
     const pagination = parseOpportunityPagination(rawParams);
-    ({ items } = await listPublicOpportunities(filters, pagination));
+    const result = await listPublicOpportunities(filters, pagination);
+    items = result.items;
+    page = result.page;
+    pageCount = Math.max(1, Math.ceil(result.total / result.limit));
   } catch (error) {
     if (!(error instanceof ValidationError)) throw error;
     queryError = error.message;
   }
+  // 현재 탭·검색 조건을 유지한 채 page만 바꾼 링크.
+  const pageHref = (target: number) => {
+    const params = new URLSearchParams(rawParams);
+    params.set('page', String(target));
+    return `/?${params.toString()}`;
+  };
 
   return (
     <div className="space-y-8">
@@ -95,7 +106,7 @@ export default async function HomePage({
             <option value="">마감 전체</option>
             <option value="this-week">이번 주 마감</option>
             <option value="fixed">마감일 확정</option>
-            <option value="rolling">상시 모집</option>
+            <option value="rolling">모집시 마감</option>
             <option value="tbd">마감일 미정</option>
           </select>
           <label className="flex items-center gap-1 text-sm text-slate-600"><input type="checkbox" name="includeExpired" value="true" defaultChecked={includeExpired} /> 마감된 공고 포함</label>
@@ -118,6 +129,21 @@ export default async function HomePage({
               <OpportunityCard key={opportunity.id} opportunity={opportunity} />
             ))}
           </div>
+        )}
+        {!queryError && pageCount > 1 && (
+          <nav aria-label="공고 페이지" className="flex items-center justify-center gap-3 pt-2 text-sm">
+            {page > 1 ? (
+              <a href={pageHref(page - 1)} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-100">이전</a>
+            ) : (
+              <span className="rounded-md border border-slate-200 px-3 py-1.5 text-slate-400">이전</span>
+            )}
+            <span className="text-slate-600">{page} / {pageCount}</span>
+            {page < pageCount ? (
+              <a href={pageHref(page + 1)} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-100">다음</a>
+            ) : (
+              <span className="rounded-md border border-slate-200 px-3 py-1.5 text-slate-400">다음</span>
+            )}
+          </nav>
         )}
       </section>
 

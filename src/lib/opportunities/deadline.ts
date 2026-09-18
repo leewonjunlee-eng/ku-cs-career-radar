@@ -11,7 +11,7 @@ export type OpportunityDeadline = Pick<
 >;
 
 export type DeadlineClassification =
-  | { kind: 'rolling'; label: '상시' }
+  | { kind: 'rolling'; label: '모집시 마감' }
   | { kind: 'tbd'; label: '마감일 미정' }
   | {
       kind: 'open' | 'expired';
@@ -87,7 +87,7 @@ export function isExpired(deadline: OpportunityDeadline, now = new Date()): bool
 }
 
 export function classifyDeadline(deadline: OpportunityDeadline, now = new Date()): DeadlineClassification {
-  if (deadline.deadline_type === 'rolling') return { kind: 'rolling', label: '상시' };
+  if (deadline.deadline_type === 'rolling') return { kind: 'rolling', label: '모집시 마감' };
   if (deadline.deadline_type === 'tbd') return { kind: 'tbd', label: '마감일 미정' };
   if (deadline.deadline === null || deadline.deadline_precision === null) {
     throw new TypeError('fixed deadlines require a timestamp and precision');
