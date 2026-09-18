@@ -158,7 +158,7 @@ export async function getPublicOpportunity(id: string, now = new Date()): Promis
     .maybeSingle();
 
   if (error) throw error;
-  if (!data) throw new HttpError(404, 'NOT_FOUND', 'Opportunity not found');
+  if (!data) throw new HttpError(404, 'NOT_FOUND', '공고를 찾을 수 없습니다.');
 
   const row = data as OpportunityRow;
   return {

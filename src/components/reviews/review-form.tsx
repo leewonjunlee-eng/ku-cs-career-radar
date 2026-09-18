@@ -91,14 +91,14 @@ export function ReviewForm({
       });
       if (!response.ok) {
         const body = (await response.json().catch(() => null)) as { error?: { message?: string } } | null;
-        setError(body?.error?.message ?? 'The review could not be saved.');
+        setError(body?.error?.message ?? '후기를 저장하지 못했습니다.');
         return;
       }
       if (mode === 'create') setValues(emptyValues({ subjectId: defaultSubjectId, opportunityId: defaultOpportunityId }));
       onSaved?.();
       router.refresh();
     } catch {
-      setError('A network error prevented saving this review.');
+      setError('네트워크 오류로 후기를 저장하지 못했습니다.');
     } finally {
       setSubmitting(false);
     }
@@ -107,39 +107,39 @@ export function ReviewForm({
   const detailSchema = reviewDetailSchemas[values.reviewType];
   return (
     <form onSubmit={handleSubmit} className="space-y-4 rounded-lg border border-slate-200 p-4">
-      <p className="text-xs text-slate-500">Do not include personal information, confidential information, or secrets. Employment reviews describe personal experience and never guarantee an outcome.</p>
+      <p className="text-xs text-slate-500">개인정보, 회사 기밀, 비밀 유지 대상 내용은 적지 마세요. 채용 후기는 개인 경험이며 결과를 보장하지 않습니다.</p>
       <div className="grid gap-3 sm:grid-cols-2">
-        <label className="block text-sm">Subject
+        <label className="block text-sm">후기 대상
           <select required value={values.subjectId} onChange={(event) => {
             const subjectId = event.target.value;
             setValues((previous) => ({ ...previous, subjectId, opportunityId: subjectId === previous.subjectId ? previous.opportunityId : null }));
           }} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
-            <option value="">Select a subject</option>
+            <option value="">대상을 선택하세요</option>
             {subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.name}</option>)}
           </select>
         </label>
-        <label className="block text-sm">Experience type
+        <label className="block text-sm">경험 유형
           <select required value={values.reviewType} onChange={(event) => update('reviewType', event.target.value as Enums<'review_kind'>)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
             {reviewTypes.map((type) => <option key={type} value={type}>{reviewTypeLabels[type]}</option>)}
           </select>
         </label>
       </div>
-      <label className="block text-sm">Title<input required maxLength={100} value={values.title} onChange={(event) => update('title', event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
-      <label className="block text-sm">Experience year<input required type="number" min={2000} max={2100} value={values.experienceYear} onChange={(event) => update('experienceYear', Number(event.target.value))} className="mt-1 w-32 rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
-      <label className="block text-sm">Review<textarea required maxLength={5000} rows={5} value={values.body} onChange={(event) => update('body', event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
+      <label className="block text-sm">제목<input required maxLength={100} value={values.title} onChange={(event) => update('title', event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
+      <label className="block text-sm">참여 연도<input required type="number" min={2000} max={2100} value={values.experienceYear} onChange={(event) => update('experienceYear', Number(event.target.value))} className="mt-1 w-32 rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
+      <label className="block text-sm">후기 내용<textarea required maxLength={5000} rows={5} value={values.body} onChange={(event) => update('body', event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
       <div className="grid gap-3 sm:grid-cols-2">
-        {([['period', 'Period'], ['role', 'Role'], ['result', 'Result'], ['skills', 'Skills (comma-separated)']] as const).map(([key, label]) => (
+        {([['period', '활동 기간'], ['role', '맡은 역할'], ['result', '결과'], ['skills', '사용 기술 (쉼표로 구분)']] as const).map(([key, label]) => (
           <label key={key} className="block text-sm">{label}<input value={values[key]} onChange={(event) => update(key, event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>
         ))}
       </div>
       {Object.keys(detailSchema).length > 0 && <fieldset className="space-y-2 rounded-md border border-slate-200 p-3">
-        <legend className="px-1 text-xs font-medium text-slate-600">{reviewTypeLabels[values.reviewType]} details (optional)</legend>
+        <legend className="px-1 text-xs font-medium text-slate-600">{reviewTypeLabels[values.reviewType]} 상세 정보 (선택)</legend>
         {Object.entries(detailSchema).map(([key, spec]) => <label key={key} className="block text-sm">{spec.label}<input type={spec.type === 'int' ? 'number' : 'text'} value={values.details[key] ?? ''} onChange={(event) => setValues((previous) => ({ ...previous, details: { ...previous.details, [key]: event.target.value } }))} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>)}
       </fieldset>}
-      {([['preparation', 'Preparation'], ['pros', 'What went well'], ['challenges', 'Challenges'], ['tips', 'Tips']] as const).map(([key, label]) => <label key={key} className="block text-sm">{label}<textarea rows={2} value={values[key]} onChange={(event) => update(key, event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>)}
-      <label className="flex items-start gap-2 text-sm"><input type="checkbox" checked={values.isAnonymous} onChange={(event) => update('isAnonymous', event.target.checked)} className="mt-1" /><span>Display anonymously<span className="block text-xs text-slate-500">Only the display name is hidden. Review text is never automatically anonymized.</span></span></label>
+      {([['preparation', '준비 과정'], ['pros', '좋았던 점'], ['challenges', '어려웠던 점'], ['tips', '팁']] as const).map(([key, label]) => <label key={key} className="block text-sm">{label}<textarea rows={2} value={values[key]} onChange={(event) => update(key, event.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></label>)}
+      <label className="flex items-start gap-2 text-sm"><input type="checkbox" checked={values.isAnonymous} onChange={(event) => update('isAnonymous', event.target.checked)} className="mt-1" /><span>익명으로 게시<span className="block text-xs text-slate-500">닉네임만 가려집니다. 본문 내용은 자동으로 익명 처리되지 않습니다.</span></span></label>
       {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
-      <div className="flex gap-2"><button type="submit" disabled={submitting} className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-50">{submitting ? 'Saving…' : mode === 'create' ? 'Submit review' : 'Save changes'}</button>{mode === 'edit' && onCancel && <button type="button" disabled={submitting} onClick={onCancel} className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100 disabled:opacity-50">Cancel</button>}</div>
+      <div className="flex gap-2"><button type="submit" disabled={submitting} className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-50">{submitting ? '저장 중…' : mode === 'create' ? '후기 등록' : '수정 저장'}</button>{mode === 'edit' && onCancel && <button type="button" disabled={submitting} onClick={onCancel} className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100 disabled:opacity-50">취소</button>}</div>
     </form>
   );
 }

@@ -22,10 +22,10 @@ function detailEntries(review: PublicReview) {
 export function ReviewCard({ review }: { review: PublicReview }) {
   const details = detailEntries(review);
   const optionalSections = [
-    ['Preparation', review.preparation],
-    ['What went well', review.pros],
-    ['Challenges', review.challenges],
-    ['Tips', review.tips],
+    ['준비 과정', review.preparation],
+    ['좋았던 점', review.pros],
+    ['어려웠던 점', review.challenges],
+    ['팁', review.tips],
   ] as const;
 
   return (
@@ -36,15 +36,15 @@ export function ReviewCard({ review }: { review: PublicReview }) {
       </div>
       <p className="text-xs text-slate-600">
         {review.experienceYear} · {reviewTypeLabels[review.reviewType]} · {review.authorDisplayName}
-        {review.isAnonymous && !review.isDemo && ' (anonymous)'}
+        {review.isAnonymous && !review.isDemo && ' (익명)'}
       </p>
       <p className="whitespace-pre-wrap text-sm text-slate-800">{review.body}</p>
 
       {(review.period || review.role || review.result || details.length > 0) && (
         <dl className="grid gap-1 text-xs text-slate-600 sm:grid-cols-2">
-          {review.period && <div><dt className="inline font-medium">Period: </dt><dd className="inline">{review.period}</dd></div>}
-          {review.role && <div><dt className="inline font-medium">Role: </dt><dd className="inline">{review.role}</dd></div>}
-          {review.result && <div><dt className="inline font-medium">Result: </dt><dd className="inline">{review.result}</dd></div>}
+          {review.period && <div><dt className="inline font-medium">활동 기간: </dt><dd className="inline">{review.period}</dd></div>}
+          {review.role && <div><dt className="inline font-medium">맡은 역할: </dt><dd className="inline">{review.role}</dd></div>}
+          {review.result && <div><dt className="inline font-medium">결과: </dt><dd className="inline">{review.result}</dd></div>}
           {details.map(([label, value]) => <div key={label}><dt className="inline font-medium">{label}: </dt><dd className="inline">{value}</dd></div>)}
         </dl>
       )}

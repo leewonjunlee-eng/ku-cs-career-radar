@@ -65,8 +65,13 @@ export default async function OpportunityDetailPage({
         >
           원문 보기 ({opportunity.sourceName})
         </a>
-        <p className="text-xs text-slate-400">마지막 확인: {formatSeoulDateTime(opportunity.lastCheckedAt)} (KST)</p>
+        <p className="text-xs text-slate-400">원문 마지막 확인: {formatSeoulDateTime(opportunity.lastCheckedAt)} (한국 시간)</p>
         <BookmarkButton opportunityId={id} signedIn={Boolean(userData.user)} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">팀원 모집</h2>
+        <TeamSection opportunityId={id} signedIn={Boolean(userData.user)} canRecruit={opportunity.category === 'contest' || opportunity.category === 'hackathon'} closed={opportunity.deadline.kind === 'expired'} />
       </section>
 
       <section className="space-y-3">
@@ -85,8 +90,10 @@ export default async function OpportunityDetailPage({
             ))}
           </div>
         )}
+      </section>
 
-        <h3 className="text-base font-semibold">후기 작성</h3>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">후기 작성</h2>
         {userData.user ? (
           <ReviewForm subjects={subjects} mode="create" defaultSubjectId={opportunity.subjectId} defaultOpportunityId={id} />
         ) : (
@@ -98,11 +105,6 @@ export default async function OpportunityDetailPage({
             이 필요합니다.
           </p>
         )}
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold">팀원 모집</h2>
-        <TeamSection opportunityId={id} signedIn={Boolean(userData.user)} canRecruit={opportunity.category === 'contest' || opportunity.category === 'hackathon'} closed={opportunity.deadline.kind === 'expired'} />
       </section>
 
       <Link href="/" className="inline-block text-sm text-slate-600 underline">

@@ -14,6 +14,6 @@ export async function GET() {
     const subjects = await listPublicSubjects();
     return NextResponse.json({ items: subjects }, { headers: publicCacheHeaders });
   } catch (error) {
-    return jsonError(error, 'Unable to load subjects');
+    return jsonError(error, '후기 대상 목록을 불러올 수 없습니다.');
   }
 }

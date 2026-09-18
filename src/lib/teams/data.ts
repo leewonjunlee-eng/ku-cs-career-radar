@@ -57,7 +57,7 @@ export async function listManagedRequests(userId: string, teamId: string): Promi
   const admin = createAdminClient();
   const { data: team, error: teamError } = await admin.from('teams').select('owner_id').eq('id', teamId).maybeSingle();
   if (teamError) throw teamError;
-  if (!team || team.owner_id !== userId) throw new HttpError(404, 'NOT_FOUND', 'Team not found');
+  if (!team || team.owner_id !== userId) throw new HttpError(404, 'NOT_FOUND', '팀을 찾을 수 없습니다.');
   const { data, error } = await admin.from('team_requests').select('id,user_id,message,status,created_at,profiles!inner(display_name)').eq('team_id', teamId).order('created_at', { ascending: false });
   if (error) throw error;
   return (data ?? []).map((row) => ({ id: row.id, userId: row.user_id, displayName: (row.profiles as unknown as { display_name: string }).display_name, message: row.message, status: row.status, createdAt: row.created_at }));
@@ -67,9 +67,9 @@ export async function getTeamContact(userId: string, teamId: string): Promise<st
   const admin = createAdminClient();
   const { data: membership, error } = await admin.from('team_members').select('id').eq('team_id', teamId).eq('user_id', userId).maybeSingle();
   if (error) throw error;
-  if (!membership) throw new HttpError(404, 'NOT_FOUND', 'Team not found');
+  if (!membership) throw new HttpError(404, 'NOT_FOUND', '팀을 찾을 수 없습니다.');
   const { data, error: contactError } = await admin.from('team_contacts').select('contact_link').eq('team_id', teamId).maybeSingle();
   if (contactError) throw contactError;
-  if (!data) throw new HttpError(404, 'NOT_FOUND', 'Contact not found');
+  if (!data) throw new HttpError(404, 'NOT_FOUND', '팀 연락 링크를 볼 수 없습니다.');
   return data.contact_link;
 }

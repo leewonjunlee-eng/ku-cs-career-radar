@@ -27,7 +27,7 @@ export async function setBookmark(userId: string, opportunityId: string, bookmar
     // Existence is checked so a bad UUID cannot silently create a misleading bookmark state.
     const { data: opportunity, error: opportunityError } = await admin.from('opportunities').select('id').eq('id', opportunityId).maybeSingle();
     if (opportunityError) throw opportunityError;
-    if (!opportunity) throw new HttpError(404, 'NOT_FOUND', 'Opportunity not found');
+    if (!opportunity) throw new HttpError(404, 'NOT_FOUND', '공고를 찾을 수 없습니다.');
     const { error } = await admin.from('bookmarks').upsert({ user_id: userId, opportunity_id: opportunityId }, { onConflict: 'user_id,opportunity_id', ignoreDuplicates: true });
     if (error) throw error;
   } else {
@@ -44,13 +44,13 @@ export async function getMyActivity(userId: string) {
 export async function getProfile(userId: string) {
   const { data, error } = await createAdminClient().from('profiles').select('display_name').eq('id', userId).maybeSingle();
   if (error) throw error;
-  if (!data) throw new HttpError(404, 'NOT_FOUND', 'Profile not found');
+  if (!data) throw new HttpError(404, 'NOT_FOUND', '프로필을 찾을 수 없습니다.');
   return { displayName: data.display_name };
 }
 
 export async function updateProfile(userId: string, displayName: string) {
   const { data, error } = await createAdminClient().from('profiles').update({ display_name: displayName }).eq('id', userId).select('display_name').maybeSingle();
   if (error) throw error;
-  if (!data) throw new HttpError(404, 'NOT_FOUND', 'Profile not found');
+  if (!data) throw new HttpError(404, 'NOT_FOUND', '프로필을 찾을 수 없습니다.');
   return { displayName: data.display_name };
 }

@@ -17,7 +17,7 @@ function optionalText(value: unknown, field: string, maximum: number) {
 
 function object(value: unknown): Record<string, unknown> {
   if (value === null || typeof value !== 'object' || Array.isArray(value)) {
-    throw new ValidationError('Request body must be an object');
+    throw new ValidationError('요청 본문은 JSON 객체여야 합니다.');
   }
   return value as Record<string, unknown>;
 }
@@ -26,7 +26,7 @@ export function validateTeamCreate(value: unknown): TeamCreateInput {
   const body = object(value);
   const maxMembers = body.max_members;
   if (!Number.isInteger(maxMembers) || (maxMembers as number) < 2 || (maxMembers as number) > 10) {
-    throw new ValidationError('max_members must be an integer between 2 and 10', 'max_members');
+    throw new ValidationError('최대 인원은 2~10명이어야 합니다.', 'max_members');
   }
   return {
     opportunityId: requireUuid(body.opportunity_id, 'opportunity_id'),
@@ -52,12 +52,12 @@ export function validateTeamEdit(value: unknown) {
   if ('roles' in body) result.roles = requireTextArray(body.roles, 'roles', 10, 30);
   if ('skills' in body) result.skills = requireTextArray(body.skills, 'skills', 20, 30);
   if ('contact_link' in body) result.contactLink = requireHttpUrl(body.contact_link, 'contact_link');
-  if (Object.keys(result).length === 0) throw new ValidationError('At least one editable field is required');
+  if (Object.keys(result).length === 0) throw new ValidationError('수정할 값이 없습니다.');
   return result;
 }
 
 export function validateRequestAction(value: unknown): 'accept' | 'reject' {
   const body = object(value);
-  if (body.action !== 'accept' && body.action !== 'reject') throw new ValidationError('action must be accept or reject', 'action');
+  if (body.action !== 'accept' && body.action !== 'reject') throw new ValidationError('처리 방식은 수락 또는 거절이어야 합니다.', 'action');
   return body.action;
 }

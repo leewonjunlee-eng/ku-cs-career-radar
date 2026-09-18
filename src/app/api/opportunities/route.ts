@@ -18,6 +18,6 @@ export async function GET(request: Request) {
     const result = await listPublicOpportunities(filters, pagination);
     return NextResponse.json(result, { headers: publicCacheHeaders });
   } catch (error) {
-    return jsonError(error, 'Unable to load opportunities');
+    return jsonError(error, '공고 목록을 불러올 수 없습니다.');
   }
 }

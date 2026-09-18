@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     const result = await listPublicReviews(filters, pagination);
     return NextResponse.json(result, { headers: publicCacheHeaders });
   } catch (error) {
-    return jsonError(error, 'Unable to load reviews');
+    return jsonError(error, '후기 목록을 불러올 수 없습니다.');
   }
 }
 

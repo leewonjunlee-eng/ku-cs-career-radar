@@ -10,11 +10,11 @@ export async function PATCH(request: Request, context: RouteContext<'/api/teams/
     assertSameOrigin(request); const user = await requireUser(); const { id } = await context.params;
     await editTeam(user.id, requireUuid(id, 'id'), validateTeamEdit(await readJsonBody(request)));
     return jsonNoStore({ ok: true });
-  } catch (error) { return jsonError(error, 'Unable to update team.'); }
+  } catch (error) { return jsonError(error, '팀 정보를 수정할 수 없습니다.'); }
 }
 export async function DELETE(request: Request, context: RouteContext<'/api/teams/[id]'>) {
   try {
     assertSameOrigin(request); const user = await requireUser(); const { id } = await context.params;
     await closeTeam(user.id, requireUuid(id, 'id')); return jsonNoStore({ ok: true });
-  } catch (error) { return jsonError(error, 'Unable to close team.'); }
+  } catch (error) { return jsonError(error, '모집을 마감할 수 없습니다.'); }
 }

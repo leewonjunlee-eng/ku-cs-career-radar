@@ -17,7 +17,7 @@ export default async function MyActivityPage() {
       <p className="text-sm text-slate-600">
         로그인과 이메일 확인은 사용할 수 있습니다. 저장·팀 활동 조회는 다음 기능 단계에서 연결됩니다.
       </p>
-      {user && <><section className="space-y-3"><h2 className="text-lg font-semibold">Profile</h2><ProfileForm /></section><MyActivity /></>}
+      {user && <><section className="space-y-3"><h2 className="text-lg font-semibold">프로필</h2><ProfileForm /></section><MyActivity /></>}
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">내가 쓴 후기</h2>

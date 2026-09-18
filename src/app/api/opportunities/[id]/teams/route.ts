@@ -10,5 +10,5 @@ export async function GET(_request: Request, context: RouteContext<'/api/opportu
   try {
     const { id } = await context.params;
     return NextResponse.json({ items: await listPublicTeams(requireUuid(id, 'id')) }, { headers: cacheHeaders });
-  } catch (error) { return jsonError(error, 'Unable to load teams.'); }
+  } catch (error) { return jsonError(error, '팀 목록을 불러올 수 없습니다.'); }
 }

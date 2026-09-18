@@ -5,7 +5,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'KU CS Career Radar',
-  description: 'A directory of career opportunities, experience reviews, and team recruitment for Korea University CS students.',
+  description: '고려대 컴퓨터 관련 학생을 위한 공고·후기·팀원 모집 모음',
 };
 
 export const viewport: Viewport = {
@@ -21,14 +21,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="#main"
           className="sr-only focus:not-sr-only focus:block focus:bg-slate-900 focus:p-3 focus:text-white"
         >
-          Skip to content
+          본문으로 건너뛰기
         </a>
         <SiteNav />
         <main id="main" className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-8">
           {children}
         </main>
         <footer className="mx-auto max-w-screen-2xl px-4 pb-10 sm:px-8 text-xs text-slate-500">
-          Opportunity discovery, experience reviews, and team recruitment for Korea University CS students.
+          고려대 컴퓨터 관련 학생을 위한 공고 탐색 · 경험 후기 · 팀원 모집
         </footer>
       </body>
     </html>

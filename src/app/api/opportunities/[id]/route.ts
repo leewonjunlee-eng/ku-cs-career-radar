@@ -16,6 +16,6 @@ export async function GET(_request: Request, context: RouteContext<'/api/opportu
     const opportunity = await getPublicOpportunity(requireUuid(id, 'id'));
     return NextResponse.json(opportunity, { headers: publicCacheHeaders });
   } catch (error) {
-    return jsonError(error, 'Unable to load opportunity');
+    return jsonError(error, '공고를 불러올 수 없습니다.');
   }
 }

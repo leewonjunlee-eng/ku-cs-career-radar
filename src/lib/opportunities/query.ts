@@ -83,19 +83,19 @@ export function parseOpportunityQuery(searchParams: URLSearchParams): Opportunit
   const tags = [...new Set(searchParams.getAll('tag').map((tag) => tag.trim()).filter(Boolean))];
 
   if (keyword && Array.from(keyword).length > 200) {
-    throw new ValidationError('Search query must be 200 characters or fewer', 'q');
+    throw new ValidationError('검색어는 200자 이하로 입력해 주세요.', 'q');
   }
   if (categories.some((category) => !opportunityCategories.includes(category as Enums<'opp_category'>))) {
-    throw new ValidationError('Invalid opportunity category', 'category');
+    throw new ValidationError('알 수 없는 공고 분야입니다.', 'category');
   }
   if (tags.length > 10 || tags.some((tag) => Array.from(tag).length > 30)) {
-    throw new ValidationError('Tags must contain at most 10 values of 30 characters or fewer', 'tag');
+    throw new ValidationError('태그는 최대 10개, 각 30자 이하로 입력해 주세요.', 'tag');
   }
   if (includeExpired !== null && includeExpired !== TRUE && includeExpired !== FALSE) {
-    throw new ValidationError('includeExpired must be true or false', 'includeExpired');
+    throw new ValidationError('마감 공고 포함 여부 값이 올바르지 않습니다.', 'includeExpired');
   }
   if (deadline !== null && deadline !== 'fixed' && deadline !== 'rolling' && deadline !== 'tbd' && deadline !== 'this-week') {
-    throw new ValidationError('Invalid deadline filter', 'deadline');
+    throw new ValidationError('알 수 없는 마감 조건입니다.', 'deadline');
   }
 
   return {
@@ -109,10 +109,10 @@ export function parseOpportunityQuery(searchParams: URLSearchParams): Opportunit
 
 function parsePositiveInteger(value: string | null, field: string, fallback: number, maximum: number): number {
   if (value === null) return fallback;
-  if (!/^[1-9]\d*$/.test(value)) throw new ValidationError(`${field} must be a positive integer`, field);
+  if (!/^[1-9]\d*$/.test(value)) throw new ValidationError(`${field}은(는) 1 이상의 정수여야 합니다.`, field);
   const parsed = Number(value);
   if (!Number.isSafeInteger(parsed) || parsed > maximum) {
-    throw new ValidationError(`${field} must be at most ${maximum}`, field);
+    throw new ValidationError(`${field}은(는) ${maximum} 이하여야 합니다.`, field);
   }
   return parsed;
 }

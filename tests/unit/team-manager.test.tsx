@@ -19,7 +19,7 @@ describe('TeamManager 수정 폼', () => {
     const reload = vi.fn(async () => {});
     render(<TeamManager teams={[team]} reload={reload} />);
 
-    fireEvent.click(screen.getByRole('button', { name: 'Edit' }));
+    fireEvent.click(screen.getByRole('button', { name: '팀 정보 수정' }));
     const name = screen.getByLabelText('팀 이름') as HTMLInputElement;
     expect(name.value).toBe('원래 팀');
     expect((screen.getByLabelText('모집 역할 (쉼표로 구분)') as HTMLInputElement).value).toBe('FE');
@@ -40,7 +40,7 @@ describe('TeamManager 수정 폼', () => {
     vi.stubGlobal('fetch', vi.fn(async () => new Response('{"error":{"message":"name is required"}}', { status: 400 })));
     render(<TeamManager teams={[team]} reload={vi.fn(async () => {})} />);
 
-    fireEvent.click(screen.getByRole('button', { name: 'Edit' }));
+    fireEvent.click(screen.getByRole('button', { name: '팀 정보 수정' }));
     fireEvent.click(screen.getByRole('button', { name: '저장' }));
 
     expect((await screen.findByRole('alert')).textContent).toContain('name is required');

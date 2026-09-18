@@ -90,15 +90,15 @@ export default async function HomePage({
           {selectedCategories.map((category) => (
             <input key={category} type="hidden" name="category" value={category} />
           ))}
-          <input name="tag" defaultValue={selectedTag} placeholder="Tag" className="min-w-28 rounded-md border border-slate-300 px-3 py-2 text-sm" />
+          <input name="tag" defaultValue={selectedTag} placeholder="태그 (예: AI)" className="min-w-28 rounded-md border border-slate-300 px-3 py-2 text-sm" />
           <select name="deadline" defaultValue={selectedDeadline} className="rounded-md border border-slate-300 px-3 py-2 text-sm">
-            <option value="">All deadlines</option>
-            <option value="this-week">This week</option>
-            <option value="fixed">Fixed date</option>
-            <option value="rolling">Rolling</option>
-            <option value="tbd">TBD</option>
+            <option value="">마감 전체</option>
+            <option value="this-week">이번 주 마감</option>
+            <option value="fixed">마감일 확정</option>
+            <option value="rolling">상시 모집</option>
+            <option value="tbd">마감일 미정</option>
           </select>
-          <label className="flex items-center gap-1 text-sm text-slate-600"><input type="checkbox" name="includeExpired" value="true" defaultChecked={includeExpired} /> Include expired</label>
+          <label className="flex items-center gap-1 text-sm text-slate-600"><input type="checkbox" name="includeExpired" value="true" defaultChecked={includeExpired} /> 마감된 공고 포함</label>
           <button type="submit" className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100">
             검색
           </button>
