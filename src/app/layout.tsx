@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 import { SiteNav } from '@/components/site-nav';
 import './globals.css';
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="mx-auto max-w-screen-2xl px-4 pb-10 sm:px-8 text-xs text-slate-500">
           고려대 컴퓨터 관련 학생을 위한 공고 탐색 · 경험 후기 · 팀원 모집
         </footer>
+        <Analytics />
       </body>
     </html>
   );
