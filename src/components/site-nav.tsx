@@ -37,17 +37,44 @@ function TabsWithParams() {
   return <Tabs current={match?.label ?? null} />;
 }
 
-function LabLinks() {
+function LabMenu() {
   const pathname = usePathname();
   const params = useSearchParams();
+  const [open, setOpen] = useState(false);
   const labNoticesActive = pathname === '/' && params.getAll('category').length === 1 && params.get('category') === 'lab';
+  const active = labNoticesActive || pathname === '/labs';
+
   return (
-    <li className="flex flex-col gap-0.5 border-l border-slate-200 pl-2" aria-label="연구실">
-      <span className="px-3 text-xs font-semibold text-slate-500">연구실</span>
-      <div className="flex flex-col">
-        <Link href="/?category=lab" aria-current={labNoticesActive ? 'page' : undefined} className={itemClass(labNoticesActive)}>연구실 공고</Link>
-        <Link href="/labs" aria-current={pathname === '/labs' ? 'page' : undefined} className={itemClass(pathname === '/labs')}>연구실 정보</Link>
-      </div>
+    <li className="relative">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        className={itemClass(active)}
+        onClick={() => setOpen((current) => !current)}
+      >
+        연구실
+      </button>
+      {open ? (
+        <div aria-label="연구실 메뉴" className="absolute left-0 top-full z-30 mt-1 w-36 rounded-md border border-slate-200 bg-white p-1 shadow-lg">
+          <Link
+            href="/?category=lab"
+            aria-current={labNoticesActive ? 'page' : undefined}
+            className={itemClass(labNoticesActive)}
+            onClick={() => setOpen(false)}
+          >
+            연구실 공고
+          </Link>
+          <Link
+            href="/labs"
+            aria-current={pathname === '/labs' ? 'page' : undefined}
+            className={itemClass(pathname === '/labs')}
+            onClick={() => setOpen(false)}
+          >
+            연구실 정보
+          </Link>
+        </div>
+      ) : null}
     </li>
   );
 }
@@ -97,7 +124,7 @@ export function SiteNav() {
         <Suspense fallback={<Tabs current={null} />}>
           <TabsWithParams />
         </Suspense>
-        <Suspense fallback={null}><LabLinks /></Suspense>
+        <Suspense fallback={null}><LabMenu /></Suspense>
         {SECONDARY.map((item, i) => (
           <li key={item.href} className={i === 0 ? 'ml-auto' : undefined}>
             <Link href={item.href} aria-current={item.href === pathname ? 'page' : undefined} className={itemClass(item.href === pathname)}>
