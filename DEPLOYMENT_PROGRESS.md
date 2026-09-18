@@ -1,65 +1,47 @@
-# 배포 준비 작업 기록 (2026-09-19)
+# 배포 작업 기록
 
-## 진행 상황 요약
+## 현재 상태 (2026-09-19, 배포 완료)
 
-### 1. Vercel 인증 및 연결
-- `VERCEL_TOKEN` 발급 및 `.env.local`에 저장 완료
-- Vercel CLI 인증 확인: `leewonjunlee-6464` 계정
-- `.vercel` 폴더 및 프로젝트 연결 없음 (신규 배포)
+- **공개 URL**: https://bypp-one.vercel.app (Vercel 프로젝트 `wonjun1/bypp`, 고정 도메인)
+- **Production 배포**: `dpl_Fhmr9yHiGjF572gUW8n8mrbyK4K9` (커밋 `859d6f2` 기준 CLI 배포, `vercel promote`로 승격)
+- **운영 Supabase**: `czvmstrpzaikclvrrcnf` (ap-northeast-2)
+  - 마이그레이션 0001~0010 적용 (`supabase db push --db-url <session pooler>`)
+  - 운영 seed 적용: subjects 18, opportunities 19, 예시 후기 3
+  - Auth Site URL `https://bypp-one.vercel.app`, Redirect URL `https://bypp-one.vercel.app/auth/confirm`
+- **Vercel Production 환경변수**: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+  `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL=https://bypp-one.vercel.app`, `NEXT_PUBLIC_ALLOWED_ORIGINS=` (빈 값)
 
-### 2. 빌드 오류 수정 (타입스크립트)
+### 배포 후 확인한 것
+- `/`, `/reviews`, `/login`, `/signup`, `/me`, 공고 상세 페이지 200, 홈에 운영 DB 공고 표시
+- `/me` 응답 `Cache-Control: private, no-store`
+- 배포별 URL(`bypp-*-wonjun1.vercel.app`)은 Vercel Deployment Protection으로 302 → 공개 주소는 `bypp-one.vercel.app`만 사용
 
-#### 수정된 파일:
-- **src/components/me/activity.tsx**: `await`가 동기 콜백 내부에서 사용되던 문제 수정 (response.json() 분리)
-- **src/components/me/team-manager.tsx**: 동일하게 `await` 문제 수정
-- **src/app/page.tsx**: `UnavailableNotice` import 누락 추가
-- **src/lib/teams/data.ts**: 
-  - `contact` 변수명 오류 → `data`로 수정
-  - `team_id` nullable 처리 추가
-- **src/lib/teams/mutations.ts**:
-  - RPC 파라미터에 `?? null` 및 `as string` 캐스트 추가로 nullable 처리
+### 아직 확인하지 않은 것
+- 실제 메일 가입 → 확인 → 로그인, 팀 생성·요청·수락·연락처 권한, 북마크/프로필 격리, Origin 거부 (docs/deployment.md 배포 후 체크리스트)
 
-#### 잔존 타입 오류 (2개):
-1. `src/lib/teams/data.ts:43` - `row.id` (public_teams view의 nullable id)
-2. `src/lib/teams/mutations.ts:21` - `create_team_request`의 `p_message` 파라미터
+### 알려진 제한
+- 무료 플랜 + 기본 메일러라 확인 메일 템플릿 변경 불가(`supabase/templates/confirmation.html` 미적용).
+  기본 템플릿 링크는 이메일 인증 후 사이트 홈으로 이동하며, 사용자는 이어서 직접 로그인한다.
+  기본 메일러는 시간당 발송 한도가 매우 낮으므로 공개 데모 전 SMTP(Resend 등) 설정 권장.
+- DB 비밀번호와 Supabase access token이 작업 중 대화에 노출됨 → 재설정/폐기 필요.
 
-### 3. 환경변수 정리
-- `.env.local` 복원 완료 (로컬 Supabase 설정 + VERCEL_TOKEN)
-- `.env.production.example` 템플릿 확인됨
+## 해결 경위
 
-### 4. 배포 시도 결과
-- `vercel deploy --prod` 실행했으나 타입스크립트 오류로 빌드 실패
-- 오류 3개 중 1개는 수정 완료, 2개 잔존
+1. 이전 배포 실패 원인은 타입 오류가 아니라 Vercel에 `NEXT_PUBLIC_SUPABASE_ANON_KEY` 누락(`/me` prerender에서 중단).
+   `NEXT_PUBLIC_SITE_URL`이 일회성 배포 URL로, `SUPABASE_SERVICE_ROLE_KEY`가 잘못된 값으로 들어가 있던 것도 교정.
+2. `.vercelignore` 추가: CLI 배포 시 `.env*` 비밀 파일이 업로드되지 않게 함.
+3. `scripts/seed-content.ts`에 운영 대상 모드 추가 (`SEED_DB_URL` 설정 시 hosted DB 사용, 로컬 fallback 금지, 프로젝트 ref 불일치 시 중단).
+4. Hobby 플랜 빌드 대기열에 걸린 배포 2건(Queued/Initializing)은 삭제하고 Ready 빌드를 승격.
 
-### 5. 남은 작업
-1. 잔존 타입 오류 2개 완전 해결
-2. `vercel deploy` 재시도 → 공개 URL 확보
-3. 확보된 URL로 `.env.production` 작성 및 Vercel 환경변수 설정
-4. 호스팅된 Supabase 프로젝트 생성 및 마이그레이션 적용 (10개 SQL 파일)
-5. Supabase Auth 설정 (Site URL, Redirect URLs, SMTP)
-6. 시드 데이터 적용
-7. 배포 후 검증
+## 재배포·운영 명령
 
-## 실행 명령어 참고
-```bash
-# 타입 체크
-npm run typecheck
-
-# 빌드 테스트
-npm run build
-
-# Vercel 배포 (토큰 설정 후)
-export VERCEL_TOKEN='...'
+```powershell
+# 앱 재배포 (환경변수는 Vercel에 저장돼 있음)
 npx vercel deploy --prod
 
-# 로컬 개발 DB 시작
-npm run db:dev:start
+# 신규 마이그레이션 적용 (Session pooler 연결 문자열)
+npx supabase db push --db-url "<SESSION_POOLER_URL>"
 
-# 마이그레이션 적용 (운영 DB 연결 후)
-supabase db push
+# 운영 seed (재실행해도 중복 없음)
+$env:SEED_DB_URL="<SESSION_POOLER_URL>"; $env:NEXT_PUBLIC_SUPABASE_URL="https://czvmstrpzaikclvrrcnf.supabase.co"; $env:SUPABASE_SERVICE_ROLE_KEY="<service role key>"; node scripts/seed-content.ts
 ```
-
-## 참고 문서
-- `docs/deployment.md` - 배포 체크리스트
-- `docs/stage8-10-verification.md` - 검증 현황 (컴파일 실패 기록)
-- `supabase/migrations/` - 10개 마이그레이션 파일

@@ -78,13 +78,26 @@ async function ensureDemoAuthor(apiUrl: string, serviceRoleKey: string): Promise
 
 async function main() {
   const content = JSON.parse(readFileSync('content/initial-content.json', 'utf8')) as Content;
-  const status = JSON.parse(supabase(['status', '-o', 'json'])) as {
-    API_URL: string;
-    DB_URL: string;
-    SERVICE_ROLE_KEY: string;
-  };
+  // SEED_DB_URL이 있으면 운영(hosted) 대상: 로컬 status로 fallback하지 않는다.
+  const remote = process.env.SEED_DB_URL;
+  const status = remote
+    ? {
+        API_URL: process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
+        DB_URL: remote,
+        SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY ?? '',
+      }
+    : (JSON.parse(supabase(['status', '-o', 'json'])) as { API_URL: string; DB_URL: string; SERVICE_ROLE_KEY: string });
+  if (remote) {
+    if (!status.API_URL.startsWith('https://') || !status.SERVICE_ROLE_KEY)
+      throw new Error('운영 seed에는 https NEXT_PUBLIC_SUPABASE_URL과 SUPABASE_SERVICE_ROLE_KEY가 필요합니다.');
+    const ref = new URL(status.API_URL).hostname.split('.')[0];
+    if (!remote.includes(ref)) throw new Error('SEED_DB_URL과 NEXT_PUBLIC_SUPABASE_URL의 프로젝트가 다릅니다.');
+  }
 
-  const db = new pg.Client({ connectionString: status.DB_URL });
+  const db = new pg.Client({
+    connectionString: status.DB_URL,
+    ssl: remote ? { rejectUnauthorized: false } : undefined,
+  });
   await db.connect();
   try {
     const subjectIdBySlug = new Map<string, string>();

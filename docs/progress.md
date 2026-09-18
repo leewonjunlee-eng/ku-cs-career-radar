@@ -2,8 +2,9 @@
 
 Last updated: 2026-09-19
 
-This is an implementation status record, not a deployment record. The project
-has no public deployment URL or configured production email provider.
+This is an implementation status record. Deployment details live in
+[DEPLOYMENT_PROGRESS.md](../DEPLOYMENT_PROGRESS.md). Public URL:
+https://bypp-one.vercel.app (no custom SMTP provider yet).
 
 | Stage | Status | Delivered scope |
 | --- | --- | --- |
@@ -16,7 +17,7 @@ has no public deployment URL or configured production email provider.
 | P1-7 | Implemented and locally verified | Public and personal review APIs, review pages/forms/cards, anonymized/demo handling, validation, ownership boundaries, and Stage 7 remediation. |
 | P1-8 | Implemented, unverified | Team list/create/request/decision/cancel/close APIs and UI, private contact endpoint, and owner request management. |
 | P2-9 | Implemented, unverified | Bookmarks, personal activity, profile display-name editing, recruitment-copy/contact editing API, and tag/category/deadline/expired filters. |
-| 10: release/deploy | Deployment preparation complete, unverified | Production env template and deployment/migration/seed/post-deploy checklists. No deployment has been made. |
+| 10: release/deploy | Deployed, smoke-checked only | Vercel production at https://bypp-one.vercel.app on hosted Supabase with migrations 0001-0010 and reviewed seed. Post-deploy user-flow checklist not yet executed. |
 
 ## Hackathon deployment snapshot
 
@@ -31,9 +32,9 @@ As of 2026-09-19, implementation through the planned Stage 9 is complete:
 
 These items are recorded as **implemented, unverified** because the hackathon
 fast-track intentionally deferred all new test/build/browser verification until
-after deployment. They must not be treated as a release approval. Actual
-deployment remains blocked on selecting a hosted Supabase/Vercel target and
-configuring the external production settings listed in the deployment checklist.
+after deployment. They must not be treated as a release approval. The app was
+deployed on 2026-09-19; the post-deploy checklist in
+[the deployment checklist](deployment.md) is the remaining verification step.
 
 ## P1-7 current state
 

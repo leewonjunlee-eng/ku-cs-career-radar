@@ -1,9 +1,8 @@
 # Production deployment checklist
 
-This project is prepared for a standard Next.js host such as Vercel and a
-hosted Supabase project. This document is preparation only: no production
-project, domain, SMTP provider, migration, seed, or public URL has been
-created by the repository.
+This project is deployed on Vercel (https://bypp-one.vercel.app) with a hosted
+Supabase project. See [DEPLOYMENT_PROGRESS.md](../DEPLOYMENT_PROGRESS.md) for
+the live configuration. No custom SMTP provider is configured yet.
 
 ## Current handoff status (2026-09-19)
 
@@ -22,10 +21,12 @@ for the exact implemented-versus-verified boundary.
    order. With a linked Supabase CLI project this is normally `supabase db
    push`; use the provider's migration workflow if the project is managed
    elsewhere. Do not use `db reset` against production.
-3. Seed only reviewed opportunity/subject/demo-review content. Configure the
-   production Supabase URL and service-role key in the command environment,
-   then run the repository seed command once. It is designed to be idempotent,
-   but inspect the target project and the source-content evidence first.
+3. Seed only reviewed opportunity/subject/demo-review content. Set
+   `SEED_DB_URL` (session pooler connection string), `NEXT_PUBLIC_SUPABASE_URL`
+   and `SUPABASE_SERVICE_ROLE_KEY` for the hosted project, then run
+   `node scripts/seed-content.ts`. Without `SEED_DB_URL` the script targets the
+   local stack only. It is idempotent, but inspect the target project and the
+   source-content evidence first.
 4. In Supabase Auth, set Site URL to the final HTTPS origin and add the exact
    `https://YOUR_DOMAIN/auth/confirm` redirect path (and only deliberate
    preview origins) to Redirect URLs. Configure a real SMTP sender such as
