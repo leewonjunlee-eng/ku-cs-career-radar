@@ -24,10 +24,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           Skip to content
         </a>
         <SiteNav />
-        <main id="main" className="mx-auto max-w-3xl px-4 py-8">
+        <main id="main" className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-8">
           {children}
         </main>
-        <footer className="mx-auto max-w-3xl px-4 pb-10 text-xs text-slate-500">
+        <footer className="mx-auto max-w-screen-2xl px-4 pb-10 sm:px-8 text-xs text-slate-500">
           Opportunity discovery, experience reviews, and team recruitment for Korea University CS students.
         </footer>
       </body>

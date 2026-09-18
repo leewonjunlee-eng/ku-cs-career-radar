@@ -4,17 +4,28 @@ import { SiteNav } from '@/components/site-nav';
 import { UnavailableNotice } from '@/components/unavailable-notice';
 
 let pathname = '/';
-vi.mock('next/navigation', () => ({ usePathname: () => pathname }));
+let search = '';
+let session: object | null = null;
+vi.mock('next/navigation', () => ({
+  usePathname: () => pathname,
+  useSearchParams: () => new URLSearchParams(search),
+}));
+vi.mock('@/lib/supabase/browser', () => ({
+  createBrowserClient: () => ({ auth: { getSession: async () => ({ data: { session } }) } }),
+}));
 
 afterEach(() => {
   pathname = '/';
+  search = '';
+  session = null;
   cleanup();
   vi.unstubAllGlobals();
 });
 
 describe('SiteNav', () => {
-  it('주요 화면으로 이동하는 링크를 접근 가능한 이름과 함께 제공한다', () => {
+  it('주요 화면으로 이동하는 링크를 접근 가능한 이름과 함께 제공한다', async () => {
     render(<SiteNav />);
+    await screen.findByRole('link', { name: '로그인' });
 
     const nav = screen.getByRole('navigation', { name: '주요 메뉴' });
     const expected: Array<[string, string]> = [
@@ -32,6 +43,17 @@ describe('SiteNav', () => {
     }
   });
 
+  it('공고 탭은 카테고리로 연결되고 공모전 탭은 해커톤을 포함한다', () => {
+    search = 'category=hackathon&category=contest';
+    render(<SiteNav />);
+
+    const contest = screen.getByRole('link', { name: '공모전' });
+    expect(contest.getAttribute('href')).toBe('/?category=contest&category=hackathon');
+    expect(contest.getAttribute('aria-current')).toBe('page');
+    expect(screen.getByRole('link', { name: '인턴' }).getAttribute('href')).toBe('/?category=internship');
+    expect(screen.getByRole('link', { name: '홈' }).getAttribute('aria-current')).toBeNull();
+  });
+
   it('현재 화면 링크에 aria-current 를 표시한다', () => {
     pathname = '/me';
     render(<SiteNav />);
@@ -44,12 +66,26 @@ describe('SiteNav', () => {
     ).toBeNull();
   });
 
+  it('로그인 상태에 따라 계정 메뉴를 바꿔 보여준다', async () => {
+    render(<SiteNav />);
+    await screen.findByRole('link', { name: '가입' });
+    expect(screen.queryByRole('button', { name: '로그아웃' })).toBeNull();
+    cleanup();
+
+    session = { user: { id: 'u1' } };
+    render(<SiteNav />);
+    await screen.findByRole('button', { name: '로그아웃' });
+    expect(screen.queryByRole('link', { name: '로그인' })).toBeNull();
+    expect(screen.queryByRole('link', { name: '가입' })).toBeNull();
+  });
+
   it('로그아웃 실패 시 이동하지 않고 오류를 표시한다', async () => {
     const fetchMock = vi.fn(async () => new Response(null, { status: 500 }));
     vi.stubGlobal('fetch', fetchMock);
+    session = { user: { id: 'u1' } };
     render(<SiteNav />);
 
-    fireEvent.click(screen.getByRole('button', { name: '로그아웃' }));
+    fireEvent.click(await screen.findByRole('button', { name: '로그아웃' }));
     expect((await screen.findByRole('alert')).textContent).toContain('로그아웃에 실패했습니다');
     expect(fetchMock).toHaveBeenCalledWith('/auth/logout', { method: 'POST' });
   });

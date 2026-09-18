@@ -21,7 +21,7 @@ export function KoreaUniversityBadge() {
 export function OpportunityCard({ opportunity }: { opportunity: PublicOpportunityListItem }) {
   const { deadline } = opportunity;
   return (
-    <article className="space-y-3 rounded-lg border border-slate-200 p-4">
+    <article className="space-y-3 rounded-lg border border-slate-200 bg-white p-5 transition-shadow hover:shadow-[0_12px_32px_rgba(27,29,31,0.07)]">
       <div className="flex items-start justify-between gap-3">
         <div className="space-y-1">
           <h3 className="font-semibold text-slate-900">
@@ -52,7 +52,7 @@ export function OpportunityCard({ opportunity }: { opportunity: PublicOpportunit
         href={opportunity.sourceUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block text-sm text-sky-700 underline"
+        className="inline-block text-sm font-medium text-primary hover:underline"
       >
         원문 보기 ({opportunity.sourceName})
       </a>

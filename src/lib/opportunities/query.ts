@@ -19,9 +19,22 @@ export const opportunityCategoryLabels: Record<Enums<'opp_category'>, string> = 
   extracurricular: '대외활동',
 };
 
+/** 상단 메뉴 탭. 공모전 탭은 해커톤까지 함께 보여준다. */
+export const opportunityTabs: { label: string; categories: Enums<'opp_category'>[] }[] = [
+  { label: '인턴', categories: ['internship'] },
+  { label: '채용', categories: ['hiring'] },
+  { label: '공모전', categories: ['contest', 'hackathon'] },
+  { label: '대외활동', categories: ['extracurricular'] },
+  { label: '연구실', categories: ['lab'] },
+];
+
+export function opportunityTabHref(categories: readonly string[]) {
+  return categories.length ? `/?${categories.map((c) => `category=${c}`).join('&')}` : '/';
+}
+
 export type OpportunityQuery = {
   keyword?: string;
-  category?: Enums<'opp_category'>;
+  categories: Enums<'opp_category'>[];
   tags: string[];
   includeExpired: boolean;
   deadline?: 'fixed' | 'rolling' | 'tbd' | 'this-week';
@@ -64,7 +77,7 @@ export function quotePostgrestValue(value: string): string {
  */
 export function parseOpportunityQuery(searchParams: URLSearchParams): OpportunityQuery {
   const keyword = searchParams.get('q')?.trim();
-  const rawCategory = searchParams.get('category');
+  const categories = [...new Set(searchParams.getAll('category').filter(Boolean))];
   const includeExpired = searchParams.get('includeExpired');
   const deadline = searchParams.get('deadline');
   const tags = [...new Set(searchParams.getAll('tag').map((tag) => tag.trim()).filter(Boolean))];
@@ -72,7 +85,7 @@ export function parseOpportunityQuery(searchParams: URLSearchParams): Opportunit
   if (keyword && Array.from(keyword).length > 200) {
     throw new ValidationError('Search query must be 200 characters or fewer', 'q');
   }
-  if (rawCategory !== null && !opportunityCategories.includes(rawCategory as Enums<'opp_category'>)) {
+  if (categories.some((category) => !opportunityCategories.includes(category as Enums<'opp_category'>))) {
     throw new ValidationError('Invalid opportunity category', 'category');
   }
   if (tags.length > 10 || tags.some((tag) => Array.from(tag).length > 30)) {
@@ -87,7 +100,7 @@ export function parseOpportunityQuery(searchParams: URLSearchParams): Opportunit
 
   return {
     ...(keyword ? { keyword } : {}),
-    ...(rawCategory ? { category: rawCategory as Enums<'opp_category'> } : {}),
+    categories: categories as Enums<'opp_category'>[],
     tags,
     includeExpired: includeExpired === TRUE,
     ...(deadline ? { deadline: deadline as OpportunityQuery['deadline'] } : {}),

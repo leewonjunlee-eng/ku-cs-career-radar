@@ -35,19 +35,19 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-md space-y-6">
       <h1 className="text-2xl font-bold">로그인</h1>
       <form onSubmit={submit} className="space-y-4" noValidate>
         <label className="block space-y-1 text-sm">
           <span>이메일</span>
-          <input required type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} className="w-full rounded border p-2" />
+          <input required type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} className="w-full rounded-md border p-2" />
         </label>
         <label className="block space-y-1 text-sm">
           <span>비밀번호</span>
-          <input required type="password" minLength={8} autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} className="w-full rounded border p-2" />
+          <input required type="password" minLength={8} autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} className="w-full rounded-md border p-2" />
         </label>
         {message && <p role="alert" className="text-sm text-red-700">{message}</p>}
-        <button disabled={busy} className="rounded bg-slate-900 px-4 py-2 text-sm text-white disabled:opacity-50" type="submit">
+        <button disabled={busy} className="rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-50" type="submit">
           {busy ? '로그인 중…' : '로그인'}
         </button>
       </form>

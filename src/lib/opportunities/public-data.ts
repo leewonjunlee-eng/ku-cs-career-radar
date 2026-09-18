@@ -92,7 +92,7 @@ export async function listPublicOpportunities(
     const pattern = quotePostgrestValue(`%${escapeIlikePattern(filters.keyword)}%`);
     query = query.or(`title.ilike.${pattern},organization.ilike.${pattern},description.ilike.${pattern}`);
   }
-  if (filters.category) query = query.eq('category', filters.category);
+  if (filters.categories.length > 0) query = query.in('category', filters.categories);
   if (filters.deadline === 'fixed') query = query.eq('deadline_type', 'fixed');
   if (filters.deadline === 'rolling') query = query.eq('deadline_type', 'rolling');
   if (filters.deadline === 'tbd') query = query.eq('deadline_type', 'tbd');

@@ -1,8 +1,7 @@
 import { OpportunityCard } from '@/components/opportunity-card';
 import { listPublicOpportunities, listThisWeekOpportunities } from '@/lib/opportunities/public-data';
 import {
-  opportunityCategories,
-  opportunityCategoryLabels,
+  opportunityTabs,
   parseOpportunityPagination,
   parseOpportunityQuery,
 } from '@/lib/opportunities/query';
@@ -25,7 +24,9 @@ export default async function HomePage({
 }) {
   const rawParams = toSearchParams(await searchParams);
   const q = rawParams.get('q') ?? '';
-  const selectedCategory = rawParams.get('category') ?? '';
+  const selectedCategories = rawParams.getAll('category');
+  const selectedKey = [...selectedCategories].sort().join(',');
+  const tab = opportunityTabs.find((t) => [...t.categories].sort().join(',') === selectedKey);
   const selectedDeadline = rawParams.get('deadline') ?? '';
   const selectedTag = rawParams.get('tag') ?? '';
   const includeExpired = rawParams.get('includeExpired') === 'true';
@@ -47,16 +48,19 @@ export default async function HomePage({
 
   return (
     <div className="space-y-8">
-      <section className="space-y-3">
-        <h1 className="text-2xl font-bold sm:text-3xl">KU CS Career Radar</h1>
-        <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+      <section className="space-y-4 pt-4">
+        <span className="inline-block rounded-full bg-sky-100 px-3 py-1.5 text-xs font-bold text-primary">
+          고려대 컴퓨터 관련 학생을 위한 커리어 레이더
+        </span>
+        <h1 className="text-3xl leading-tight tracking-tight sm:text-4xl">KU CS Career Radar</h1>
+        <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
           고려대학교 컴퓨터 관련 학생이 흩어진 커리어 정보를 한곳에서 찾고,
           경험 후기로 판단하고, 함께 도전할 팀까지 구성하는 서비스입니다.
         </p>
       </section>
 
-      <section className="rounded-lg border border-sky-200 bg-sky-50 p-4">
-        <h2 className="text-sm font-semibold text-sky-900">이번 주 마감</h2>
+      <section className="rounded-lg border border-sky-200 bg-sky-50 p-5">
+        <h2 className="text-sm font-bold text-primary">이번 주 마감</h2>
         {thisWeek.length === 0 ? (
           <p className="mt-1 text-sm text-sky-800">이번 주 마감인 공고가 없습니다.</p>
         ) : (
@@ -72,7 +76,7 @@ export default async function HomePage({
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold">기회 탐색</h2>
+        <h2 className="text-lg font-semibold">{tab ? `${tab.label} 공고` : '기회 탐색'}</h2>
 
         <form className="flex flex-wrap gap-2" role="search">
           <input
@@ -80,20 +84,12 @@ export default async function HomePage({
             name="q"
             defaultValue={q}
             placeholder="제목, 기관, 설명 검색"
-            className="min-w-0 flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="min-w-56 flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm"
           />
-          <select
-            name="category"
-            defaultValue={selectedCategory}
-            className="rounded-md border border-slate-300 px-3 py-2 text-sm"
-          >
-            <option value="">전체 카테고리</option>
-            {opportunityCategories.map((category) => (
-              <option key={category} value={category}>
-                {opportunityCategoryLabels[category]}
-              </option>
-            ))}
-          </select>
+          {/* 카테고리는 상단 탭이 고른다. 검색해도 현재 탭을 유지한다. */}
+          {selectedCategories.map((category) => (
+            <input key={category} type="hidden" name="category" value={category} />
+          ))}
           <input name="tag" defaultValue={selectedTag} placeholder="Tag" className="min-w-28 rounded-md border border-slate-300 px-3 py-2 text-sm" />
           <select name="deadline" defaultValue={selectedDeadline} className="rounded-md border border-slate-300 px-3 py-2 text-sm">
             <option value="">All deadlines</option>
@@ -117,7 +113,7 @@ export default async function HomePage({
         ) : items.length === 0 ? (
           <p className="text-sm text-slate-500">조건에 맞는 공고가 없습니다.</p>
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {items.map((opportunity) => (
               <OpportunityCard key={opportunity.id} opportunity={opportunity} />
             ))}

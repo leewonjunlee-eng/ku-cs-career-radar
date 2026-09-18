@@ -64,8 +64,14 @@ describe('opportunity deadlines', () => {
 describe('opportunity query parsing', () => {
   it('retains keyword/category/repeated tags and defaults to hiding expired fixed deadlines', () => {
     const query = parseOpportunityQuery(new URLSearchParams('q=%20AI%25_%20&category=hackathon&tag=AI&tag=%EC%9B%B9'));
-    expect(query).toEqual({ keyword: 'AI%_', category: 'hackathon', tags: ['AI', '웹'], includeExpired: false });
+    expect(query).toEqual({ keyword: 'AI%_', categories: ['hackathon'], tags: ['AI', '웹'], includeExpired: false });
     expect(escapeIlikePattern(query.keyword!)).toBe('AI\\%\\_');
+  });
+
+  it('accepts several categories so one tab can cover contest and hackathon', () => {
+    expect(parseOpportunityQuery(new URLSearchParams('category=contest&category=hackathon')).categories).toEqual(['contest', 'hackathon']);
+    expect(parseOpportunityQuery(new URLSearchParams('')).categories).toEqual([]);
+    expect(() => parseOpportunityQuery(new URLSearchParams('category=contest&category=party'))).toThrow(ValidationError);
   });
 
   it('allows expired inclusion only as an explicit boolean and rejects unknown categories', () => {
