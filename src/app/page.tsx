@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { OpportunityCard } from '@/components/opportunity-card';
 import { listPublicOpportunities, listThisWeekOpportunities } from '@/lib/opportunities/public-data';
 import {
@@ -79,7 +80,9 @@ export default async function HomePage({
           <ul className="mt-2 space-y-1 text-sm text-sky-900">
             {thisWeek.map((opportunity) => (
               <li key={opportunity.id} className="flex justify-between gap-2">
-                <span>{opportunity.title}</span>
+                <Link href={`/opportunities/${opportunity.id}`} className="font-medium hover:underline">
+                  {opportunity.title}
+                </Link>
                 <span className="shrink-0 font-medium">{opportunity.deadline.label}</span>
               </li>
             ))}
