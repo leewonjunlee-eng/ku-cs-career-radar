@@ -19,6 +19,8 @@ create table operator_review_queue_rollback (
   source_url text not null,
   backed_up_at timestamptz not null default now()
 );
+alter table operator_review_queue_rollback enable row level security;
+revoke all on operator_review_queue_rollback from public, anon, authenticated;
 
 -- 이미 공개 중인 기존 데이터는 그대로 유지하고, 운영자가 처음 검수할 예비 공고 여섯 건만 대기열로 옮긴다.
 update opportunities set review_status = 'approved';
