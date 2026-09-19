@@ -587,6 +587,18 @@
       "official_url": null
     },
     {
+      "slug": "s-faec93e4f8",
+      "kind": "hackathon_series",
+      "name": "NASA International Space Apps Challenge Seoul 2026",
+      "official_url": null
+    },
+    {
+      "slug": "s-8112cdacba",
+      "kind": "hackathon_series",
+      "name": "World Bank Group Small AI for Development Hackathon Challenge 2026",
+      "official_url": null
+    },
+    {
       "slug": "s-4ecc44d0bd",
       "kind": "contest_series",
       "name": "국방 AI 경진대회",
@@ -2750,6 +2762,45 @@
       "source_url": "https://www.wevity.com/?c=find&s=1&gbn=view&ix=110623",
       "ingestion_method": "manual",
       "description": "CJ올리브네트웍스 무료 AI 서비스 기획 교육 과정. 접수 8/31~9/22.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-105115ec24",
+      "subject_slug": "s-faec93e4f8",
+      "category": "hackathon",
+      "title": "NASA International Space Apps Challenge Seoul 2026",
+      "organization": "NASA Space Apps Seoul",
+      "tags": [
+        "해커톤",
+        "AI",
+        "데이터"
+      ],
+      "deadline": null,
+      "deadline_type": "unknown",
+      "deadline_precision": null,
+      "source_name": "NASA Space Apps Challenge",
+      "source_url": "https://www.spaceappschallenge.org/2026/local-events/seoul/",
+      "ingestion_method": "manual",
+      "description": "NASA 글로벌 해커톤 서울 로컬 이벤트(온라인 중심, 일부 오프라인). 해커톤 11/14~15, 제출 11/15 12:59 KST. 공식 일정상 최종 등록 마감은 없고, 9/30 09:00 얼리 등록 혜택·10/15 09:00 팀 합류 혜택 마감. 참가 무료.",
+      "last_checked_at": "2026-09-18T22:40:00Z"
+    },
+    {
+      "slug": "s-2af6b3b469",
+      "subject_slug": "s-8112cdacba",
+      "category": "hackathon",
+      "title": "World Bank Group Small AI for Development Hackathon Challenge 2026",
+      "organization": "World Bank Group",
+      "tags": [
+        "해커톤",
+        "AI"
+      ],
+      "deadline": "2026-09-27T00:00:00+09:00",
+      "deadline_type": "fixed",
+      "deadline_precision": "date",
+      "source_name": "World Bank Group",
+      "source_url": "https://www.worldbank.org/en/events/2026/10/19/global-ai-and-digital-summit-2026",
+      "ingestion_method": "manual",
+      "description": "World Bank Group 주최, Hack-Nation 운영 온라인 해커톤(10/3~4). 18~35세 개인 또는 4인 이하 팀, 농업·보건·관광 분야 소형 AI 솔루션. 우승 3팀은 10월 서울 Global AI & Digital Summit 발표 경비 지원. Hack-Nation 신청 폼에서 추천 코드 WBGSmallAIGADS로 9/26까지 신청(시간대 미표기).",
       "last_checked_at": "2026-09-18T22:40:00Z"
     },
     {

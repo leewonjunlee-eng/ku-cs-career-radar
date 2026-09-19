@@ -73,7 +73,7 @@
 | 검사 | 결과 |
 | --- | --- |
 | `tsc --noEmit --incremental false` | 통과 |
-| `npm run test:unit` | 통과: 8개 파일, 73개 |
+| `npm run test:unit` | 통과: 9개 파일, 75개 (팀 수정 폼·상단 탭·목록 정렬 테스트 포함, `ebcdd78` 기준) |
 | 통합 테스트(`--no-file-parallelism`) | 통과: 6개 파일, 123개 (이번 주 필터 경계 테스트 추가) |
 | `npm run build` | 통과 |
 | 로컬 HTTP E2E (계정 4개) | 40/41 통과. 실패 1건은 `next dev`의 페이지 Cache-Control 덮어쓰기(운영에서 `private, no-store` 확인) |

@@ -159,6 +159,27 @@ export default async function HomePage({
         </p>
       </section>
 
+      {/* 방학 준비 가이드로 가는 동그란 이미지 버튼 */}
+      <Link
+        href="/vacation"
+        aria-label="이번 방학 때 뭐할까? 방학 준비 가이드 보기"
+        className="group fixed bottom-4 right-4 z-30 flex h-20 w-20 flex-col items-center justify-center rounded-full bg-primary text-white shadow-[0_12px_32px_rgba(51,102,255,0.35)] transition-transform hover:scale-105 hover:bg-primary-hover sm:bottom-6 sm:right-6 sm:h-32 sm:w-32"
+      >
+        <svg aria-hidden="true" viewBox="0 0 48 48" className="h-7 w-7 sm:h-12 sm:w-12">
+          <circle cx="18" cy="20" r="8" fill="#FFD54A" />
+          <g stroke="#FFD54A" strokeWidth="2.5" strokeLinecap="round">
+            <path d="M18 6v4M18 30v4M4 20h4M28 20h4M8 10l3 3M25 27l3 3M8 30l3-3M25 13l3-3" />
+          </g>
+          <g stroke="#fff" strokeWidth="2" strokeLinecap="round">
+            <path d="M36 26v14M29 33h14M31 28l10 10M41 28l-10 10" />
+          </g>
+        </svg>
+        <span className="mt-0.5 text-center text-[10px] font-bold leading-tight sm:mt-1 sm:text-sm">
+          이번 방학 때
+          <br />
+          뭐할까?
+        </span>
+      </Link>
     </div>
   );
 }

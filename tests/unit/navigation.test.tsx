@@ -33,7 +33,7 @@ describe('SiteNav', () => {
       ['후기 모아보기', '/reviews'],
       ['로그인', '/login'],
       ['가입', '/signup'],
-      ['내 활동', '/me'],
+      ['마이페이지', '/me'],
     ];
 
     for (const [name, href] of expected) {
@@ -59,7 +59,7 @@ describe('SiteNav', () => {
     render(<SiteNav />);
 
     expect(
-      screen.getByRole('link', { name: '내 활동' }).getAttribute('aria-current'),
+      screen.getByRole('link', { name: '마이페이지' }).getAttribute('aria-current'),
     ).toBe('page');
     expect(
       screen.getByRole('link', { name: '홈' }).getAttribute('aria-current'),

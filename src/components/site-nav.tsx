@@ -94,10 +94,16 @@ export function SiteNav() {
         const loggedIn = Boolean(data.session);
         setSignedIn(loggedIn);
         if (!loggedIn) return;
+      } catch {
+        setSignedIn(false);
+        return;
+      }
+      // 운영자 확인 실패는 로그인 표시에 영향을 주지 않는다(운영자 메뉴만 숨김).
+      try {
         const response = await fetch('/api/admin/session', { cache: 'no-store' });
         if (response.ok) setOperator((await response.json() as { operator: boolean }).operator);
       } catch {
-        setSignedIn(false);
+        setOperator(false);
       }
     })();
   }, []);

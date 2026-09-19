@@ -46,6 +46,14 @@
 | LinkedIn Jobs | 개인 로그인 세션으로만 열려 수집하지 않음 |
 | 청년포털 | 정책 안내 위주로 개별 모집 공고 출처가 아님 |
 
+## 사용자 요청 추가분 (2026-09-19)
+
+| 항목 | 확인 결과 |
+| --- | --- |
+| NASA Space Apps Challenge Seoul 2026 | 공식 서울 이벤트 페이지 일정 확인. 9/30 09:00은 얼리 등록 혜택 마감이며 최종 등록 마감 표기가 없어 `unknown`으로 수록. 해커톤 11/14~15 |
+| World Bank Small AI for Development Hackathon 2026 | World Bank 공식 Global AI & Digital Summit 이벤트 페이지의 Key Dates에서 지원 마감 2026-09-26 확인(시간대 미표기 → 날짜 마감). 대회 10/3~4 |
+| TOKEN2049 NEXUS Startup Competition 2026 | 공식 페이지(`token2049.com/singapore/nexus-startup-competition`)에 "NEXUS 2026 APPLICATIONS ARE CLOSED" 표기. 모집 종료로 제외 |
+
 ## 제외한 항목 (이유 기록)
 
 - 미래에셋 해외교환 장학생: 원문 마감이 2027-10-06으로 표기돼 확인 불가.

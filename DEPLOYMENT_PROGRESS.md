@@ -3,10 +3,10 @@
 ## 현재 상태 (2026-09-19, 배포 완료)
 
 - **공개 URL**: https://bypp-one.vercel.app (Vercel 프로젝트 `wonjun1/bypp`, 고정 도메인)
-- **Production 배포**: `dpl_Fhmr9yHiGjF572gUW8n8mrbyK4K9` (커밋 `859d6f2` 기준 CLI 배포, `vercel promote`로 승격)
+- **Production 배포**: GitHub `leewonjunlee-eng/ku-cs-career-radar`의 `main` push 시 Vercel 자동 배포 (최신 확인: 커밋 `ebcdd78`, Ready). 최초 배포는 CLI(`dpl_Fhmr…`, `859d6f2`)
 - **운영 Supabase**: `czvmstrpzaikclvrrcnf` (ap-northeast-2)
   - 마이그레이션 0001~0010 적용 (`supabase db push --db-url <session pooler>`)
-  - 운영 seed 적용: subjects 18, opportunities 19, 예시 후기 3
+  - 운영 seed: 2026-09-19 전체 출처 재수집으로 교체 → opportunities 121, subjects 98, 예시 후기 3 (근거: `content/source-evidence.md`)
   - Auth Site URL `https://bypp-one.vercel.app`, Redirect URL `https://bypp-one.vercel.app/auth/confirm`
 - **Vercel Production 환경변수**: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
   `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL=https://bypp-one.vercel.app`, `NEXT_PUBLIC_ALLOWED_ORIGINS=` (빈 값)
@@ -17,7 +17,7 @@
 - 배포별 URL(`bypp-*-wonjun1.vercel.app`)은 Vercel Deployment Protection으로 302 → 공개 주소는 `bypp-one.vercel.app`만 사용
 
 ### 배포 후 검증 (2026-09-19, 상세: docs/stage8-10-verification.md 재검증 절)
-- 로컬 전체: `tsc --noEmit --incremental false`, 단위 71, 통합 123(실제 PostgreSQL), `next build` 통과
+- 로컬 전체: `tsc --noEmit --incremental false`, 단위 75, 통합 123(실제 PostgreSQL), `next build` 통과
 - 로컬 HTTP E2E(계정 4개, next dev + 로컬 Supabase): 팀 생성→요청→수락→연락처, 거절·취소·재요청 불가,
   정원 초과·종료·마감 공고 거부, 연락처/요청 목록 권한 격리, 공개 팀 응답에 연락처·식별자 없음,
   북마크·프로필 저장/재조회 및 사용자 간 격리, Origin 누락·외부 Origin 403 — 40/41 통과
