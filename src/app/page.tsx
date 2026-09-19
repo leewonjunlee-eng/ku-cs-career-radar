@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { OpportunityCard } from '@/components/opportunity-card';
+import { OpportunityTagFilter } from '@/components/opportunity-tag-filter';
 import { listPublicOpportunities, listThisWeekOpportunities } from '@/lib/opportunities/public-data';
 import {
   opportunityTabs,
@@ -112,17 +113,7 @@ export default async function HomePage({
           {selectedCategories.map((category) => (
             <input key={category} type="hidden" name="category" value={category} />
           ))}
-          <fieldset>
-            <legend className="text-sm font-medium text-slate-700">태그</legend>
-            <div className="mt-1 flex flex-wrap gap-2">
-              {opportunitySearchTags.map((tag) => (
-                <label key={tag} className="cursor-pointer rounded-full border border-slate-300 px-3 py-1.5 text-sm text-slate-700 has-[:checked]:border-primary has-[:checked]:bg-sky-50 has-[:checked]:font-medium has-[:checked]:text-primary">
-                  <input type="checkbox" name="tag" value={tag} defaultChecked={selectedTags.includes(tag)} className="sr-only" />
-                  {tag}
-                </label>
-              ))}
-            </div>
-          </fieldset>
+          <OpportunityTagFilter tags={opportunitySearchTags} selectedTags={selectedTags} />
           <button type="submit" className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100">검색</button>
         </form>
 
