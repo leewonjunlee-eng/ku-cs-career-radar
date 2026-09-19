@@ -60,6 +60,10 @@ export type Database = {
           is_korea_university_source: boolean
           last_checked_at: string
           organization: string
+          review_note: string | null
+          review_status: Database["public"]["Enums"]["opportunity_review_status"]
+          reviewed_at: string | null
+          reviewed_by: string | null
           source_name: string
           source_url: string
           subject_id: string
@@ -81,6 +85,10 @@ export type Database = {
           is_korea_university_source?: boolean
           last_checked_at?: string
           organization: string
+          review_note?: string | null
+          review_status?: Database["public"]["Enums"]["opportunity_review_status"]
+          reviewed_at?: string | null
+          reviewed_by?: string | null
           source_name: string
           source_url: string
           subject_id: string
@@ -102,6 +110,10 @@ export type Database = {
           is_korea_university_source?: boolean
           last_checked_at?: string
           organization?: string
+          review_note?: string | null
+          review_status?: Database["public"]["Enums"]["opportunity_review_status"]
+          reviewed_at?: string | null
+          reviewed_by?: string | null
           source_name?: string
           source_url?: string
           subject_id?: string
@@ -124,16 +136,19 @@ export type Database = {
           created_at: string
           display_name: string
           id: string
+          role: Database["public"]["Enums"]["profile_role"]
         }
         Insert: {
           created_at?: string
           display_name: string
           id: string
+          role?: Database["public"]["Enums"]["profile_role"]
         }
         Update: {
           created_at?: string
           display_name?: string
           id?: string
+          role?: Database["public"]["Enums"]["profile_role"]
         }
         Relationships: []
       }
@@ -597,6 +612,8 @@ export type Database = {
       opp_deadline_precision: "time" | "date"
       opp_deadline_type: "fixed" | "rolling" | "tbd"
       opp_ingestion_method: "manual" | "script"
+      opportunity_review_status: "pending" | "approved" | "rejected"
+      profile_role: "member" | "operator"
       review_kind:
         | "contest"
         | "research"
@@ -750,6 +767,8 @@ export const Constants = {
       opp_deadline_precision: ["time", "date"],
       opp_deadline_type: ["fixed", "rolling", "tbd"],
       opp_ingestion_method: ["manual", "script"],
+      opportunity_review_status: ["pending", "approved", "rejected"],
+      profile_role: ["member", "operator"],
       review_kind: [
         "contest",
         "research",
@@ -770,4 +789,3 @@ export const Constants = {
     },
   },
 } as const
-

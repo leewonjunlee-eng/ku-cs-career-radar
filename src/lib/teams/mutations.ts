@@ -42,7 +42,11 @@ function mapDatabaseError(error: { code?: string; message?: string } | null) {
 }
 
 export async function createTeam(userId: string, input: TeamCreateInput) {
-  const { data, error } = await createAdminClient().rpc('create_team', { p_actor_id: userId, p_opportunity_id: input.opportunityId, p_name: input.name, p_introduction: (input.introduction ?? null) as string, p_max_members: input.maxMembers, p_roles: input.roles, p_skills: input.skills, p_contact_link: (input.contactLink ?? null) as string });
+  const admin = createAdminClient();
+  const { data: opportunity, error: opportunityError } = await admin.from('opportunities').select('id').eq('id', input.opportunityId).eq('review_status', 'approved').maybeSingle();
+  if (opportunityError) throw opportunityError;
+  if (!opportunity) throw new HttpError(404, 'NOT_FOUND', '공개된 공고를 찾을 수 없습니다.');
+  const { data, error } = await admin.rpc('create_team', { p_actor_id: userId, p_opportunity_id: input.opportunityId, p_name: input.name, p_introduction: (input.introduction ?? null) as string, p_max_members: input.maxMembers, p_roles: input.roles, p_skills: input.skills, p_contact_link: (input.contactLink ?? null) as string });
   mapDatabaseError(error);
   if (!data) throw new HttpError(500, 'INTERNAL_ERROR', '팀을 만들 수 없습니다.');
   return data;

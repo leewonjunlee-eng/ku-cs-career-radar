@@ -83,14 +83,23 @@ export function SiteNav() {
   const pathname = usePathname();
   const [logoutError, setLogoutError] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [operator, setOperator] = useState(false);
   // null = 확인 중. 표시용일 뿐 권한 판단은 서버가 한다.
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
   useEffect(() => {
-    createBrowserClient()
-      .auth.getSession()
-      .then(({ data }) => setSignedIn(Boolean(data.session)))
-      .catch(() => setSignedIn(false));
+    void (async () => {
+      try {
+        const { data } = await createBrowserClient().auth.getSession();
+        const loggedIn = Boolean(data.session);
+        setSignedIn(loggedIn);
+        if (!loggedIn) return;
+        const response = await fetch('/api/admin/session', { cache: 'no-store' });
+        if (response.ok) setOperator((await response.json() as { operator: boolean }).operator);
+      } catch {
+        setSignedIn(false);
+      }
+    })();
   }, []);
 
   async function logout() {
@@ -132,6 +141,13 @@ export function SiteNav() {
             </Link>
           </li>
         ))}
+        {operator && (
+          <li>
+            <Link href="/admin" aria-current={pathname === '/admin' ? 'page' : undefined} className={itemClass(pathname === '/admin')}>
+              운영
+            </Link>
+          </li>
+        )}
         <li className="ml-2 flex min-h-10 items-center gap-2 border-l border-slate-200 pl-3">
           {signedIn === false && <>
           <Link

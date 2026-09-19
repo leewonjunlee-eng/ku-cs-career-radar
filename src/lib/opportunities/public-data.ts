@@ -74,6 +74,7 @@ export async function listPublicOpportunities(
   let query = admin
     .from('opportunities')
     .select(publicSelect, { count: 'exact' })
+    .eq('review_status', 'approved')
     // SQL sorting performs pagination before mapping. Fixed upcoming deadlines
     // precede rolling/TBD; id keeps ties stable.
     // 고려대 원문 공고를 먼저 보여준다. 그 안에서는 마감일 순.
@@ -150,6 +151,7 @@ export async function listThisWeekOpportunities(now = new Date()): Promise<Publi
   const { data, error } = await admin
     .from('opportunities')
     .select(publicSelect)
+    .eq('review_status', 'approved')
     .eq('deadline_type', 'fixed')
     .gt('deadline', now.toISOString())
     .order('deadline', { ascending: true })
@@ -166,6 +168,7 @@ export async function getPublicOpportunity(id: string, now = new Date()): Promis
     .from('opportunities')
     .select(publicSelect)
     .eq('id', id)
+    .eq('review_status', 'approved')
     .maybeSingle();
 
   if (error) throw error;
