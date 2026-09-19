@@ -45,6 +45,33 @@ export type Database = {
           },
         ]
       }
+      review_point_events: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          reason: string
+          review_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          reason: string
+          review_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          reason?: string
+          review_id?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       opportunities: {
         Row: {
           category: Database["public"]["Enums"]["opp_category"]
@@ -137,18 +164,21 @@ export type Database = {
           display_name: string
           id: string
           role: Database["public"]["Enums"]["profile_role"]
+          review_access_until: string | null
         }
         Insert: {
           created_at?: string
           display_name: string
           id: string
           role?: Database["public"]["Enums"]["profile_role"]
+          review_access_until?: string | null
         }
         Update: {
           created_at?: string
           display_name?: string
           id?: string
           role?: Database["public"]["Enums"]["profile_role"]
+          review_access_until?: string | null
         }
         Relationships: []
       }
@@ -591,6 +621,10 @@ export type Database = {
       create_team_request: {
         Args: { p_actor_id: string; p_message: string; p_team_id: string }
         Returns: string
+      }
+      purchase_review_access: {
+        Args: { p_actor_id: string; p_product: string }
+        Returns: { points: number; review_access_until: string }[]
       }
       reject_team_request: {
         Args: { p_actor_id: string; p_request_id: string; p_team_id: string }
