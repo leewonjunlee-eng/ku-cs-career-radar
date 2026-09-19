@@ -21,9 +21,11 @@ export class HttpError extends Error {
 }
 
 function configuredOrigins() {
+  const vercelDeploymentUrl = process.env.VERCEL_URL;
   const values = [
     process.env.NEXT_PUBLIC_SITE_URL,
     process.env.SITE_URL,
+    vercelDeploymentUrl ? `https://${vercelDeploymentUrl}` : undefined,
     ...(process.env.NEXT_PUBLIC_ALLOWED_ORIGINS ?? '').split(','),
   ];
   return values.map((value) => {
