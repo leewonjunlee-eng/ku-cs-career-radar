@@ -9,7 +9,6 @@ import {
   parseOpportunityQuery,
 } from '@/lib/opportunities/query';
 import { ValidationError } from '@/lib/validation/common';
-import { UnavailableNotice } from '@/components/unavailable-notice';
 
 function toSearchParams(raw: Record<string, string | string[] | undefined>): URLSearchParams {
   const params = new URLSearchParams();
@@ -160,10 +159,6 @@ export default async function HomePage({
         </p>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold">팀원 찾기</h2>
-        <UnavailableNotice>팀 모집글·참여 요청</UnavailableNotice>
-      </section>
     </div>
   );
 }
