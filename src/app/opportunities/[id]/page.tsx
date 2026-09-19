@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { KoreaUniversityBadge } from '@/components/opportunity-card';
+import { OpportunityExamples } from '@/components/opportunity-examples';
 import { ReviewCard } from '@/components/reviews/review-card';
 import { ReviewForm } from '@/components/reviews/review-form';
 import { BookmarkButton } from '@/components/bookmark-button';
@@ -91,6 +92,8 @@ export default async function OpportunityDetailPage({
           </div>
         )}
       </section>
+
+      <OpportunityExamples opportunity={opportunity} />
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">후기 작성</h2>
