@@ -9,7 +9,7 @@ import { opportunityTabHref, opportunityTabs } from '@/lib/opportunities/query';
 const TABS = [{ label: '홈', categories: [] as string[] }, ...opportunityTabs.filter((tab) => !tab.categories.includes('lab'))];
 const SECONDARY = [
   { href: '/reviews', label: '후기 모아보기' },
-  { href: '/me', label: '내 활동' },
+  { href: '/me', label: '마이페이지' },
 ] as const;
 
 const itemClass = (current: boolean) =>
